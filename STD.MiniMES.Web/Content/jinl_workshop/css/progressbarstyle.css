@@ -1,0 +1,204 @@
+
+
+
+
+.progressbar{
+	
+    position:relative;
+    display:block;
+    width:246px;
+    border-radius:5px;
+}
+
+.progressbar:before{
+    position:absolute;
+    display:block;
+    content:"";
+    width:246px;
+	background-color:#142954;
+    height:10px;
+    top:0px;
+    left:0px;
+	-webkit-border-radius:5px;
+    border-radius:5px;
+}
+.bar {
+	
+	position:absolute;
+	display:block;
+	height:10px;
+	top:0px;
+	left:0px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	overflow:hidden;
+	background-color:rgba(87,188,255,0.8);
+}
+.bar.color2 {
+	background:rgb(229,195,25);
+	background:-moz-linear-gradient(top,  rgba(229,195,25,1) 0%, rgba(168,140,0,1) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,195,25,1)), color-stop(100%,rgba(168,140,0,1)));
+	background:-webkit-linear-gradient(top,  rgba(229,195,25,1) 0%,rgba(168,140,0,1) 100%);
+	background:-o-linear-gradient(top,  rgba(229,195,25,1) 0%,rgba(168,140,0,1) 100%);
+	background:-ms-linear-gradient(top,  rgba(229,195,25,1) 0%,rgba(168,140,0,1) 100%);
+	background:linear-gradient(to bottom,  rgba(229,195,25,1) 0%,rgba(168,140,0,1) 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5c319', endColorstr='#a88c00',GradientType=0 );
+	-webkit-box-shadow:0px 0px 12px 0px rgba(229, 195, 25, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
+	box-shadow:0px 0px 12px 0px rgba(229, 195, 25, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
+}
+.bar.color3 {
+	background:rgb(232,25,87);
+	background:-moz-linear-gradient(top,  rgba(232,25,87,1) 0%, rgba(170,0,51,1) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(232,25,87,1)), color-stop(100%,rgba(170,0,51,1)));
+	background:-webkit-linear-gradient(top,  rgba(232,25,87,1) 0%,rgba(170,0,51,1) 100%);
+	background:-o-linear-gradient(top,  rgba(232,25,87,1) 0%,rgba(170,0,51,1) 100%);
+	background:-ms-linear-gradient(top,  rgba(232,25,87,1) 0%,rgba(170,0,51,1) 100%);
+	background:linear-gradient(to bottom,  rgba(232,25,87,1) 0%,rgba(170,0,51,1) 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#e81957', endColorstr='#aa0033',GradientType=0 );
+	-webkit-box-shadow:0px 0px 12px 0px rgba(232, 25, 87, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
+	box-shadow:0px 0px 12px 0px rgba(232, 25, 87, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
+}
+.bar.color4 {
+	background:rgb(24,109,226);
+	background:-moz-linear-gradient(top,  rgba(24,109,226,1) 0%, rgba(0,69,165,1) 100%);
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(24,109,226,1)), color-stop(100%,rgba(0,69,165,1)));
+	background:-webkit-linear-gradient(top,  rgba(24,109,226,1) 0%,rgba(0,69,165,1) 100%);
+	background:-o-linear-gradient(top,  rgba(24,109,226,1) 0%,rgba(0,69,165,1) 100%);
+	background:-ms-linear-gradient(top,  rgba(24,109,226,1) 0%,rgba(0,69,165,1) 100%);
+	background:linear-gradient(to bottom,  rgba(24,109,226,1) 0%,rgba(0,69,165,1) 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#186de2', endColorstr='#0045a5',GradientType=0 );
+	-webkit-box-shadow:0px 0px 12px 0px rgba(24, 109, 226, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
+	box-shadow:0px 0px 12px 0px rgba(24, 109, 226, 1),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.45),inset 1px 0px 0px 0px rgba(255, 255, 255, 0.25),inset -1px 0px 0px 0px rgba(255, 255, 255, 0.25);
+}
+.bar:before {
+	position:absolute;
+	display:block;
+	content:"";
+	width:200px;
+	height:150%;
+	top:-25%;
+	left:-25px;
+	
+}
+.bar:after {
+	position:absolute;
+	display:block;
+	content:"";
+	width:64px;
+	height:16px;
+	right:0;
+	top:0;
+	-webkit-border-radius:0px 16px 16px 0px;
+
+}
+.bar span {
+	position:absolute;
+	display:block;
+	width:100%;
+	height:64px;
+	-webkit-border-radius:16px;
+	border-radius:16px;
+	top:0;
+	left:0;
+	
+}
+.label {
+	font-family:'Aldrich', sans-serif;
+	position:absolute;
+	display:block;
+	width:40px;
+	height:10px;
+	line-height:10px;
+	top:0px;
+	left:20px;
+	text-align:left;
+	
+	font-weight:bold;
+	font-size:12px;
+	color:#00FFFF;
+	text-align:center;
+	
+}
+label span {
+	position:absolute;
+	display:block;
+	width:12px;
+	height:9px;
+	top:0px;
+	left:0px;
+	background:transparent;
+	overflow:hidden;
+}
+label span:before {
+	position:absolute;
+	display:block;
+	content:"";
+	width:8px;
+	height:8px;
+	top:4px;
+	left:2px;
+	border:1px solid rgba(0,0,0,0.5);
+	background:rgb(86,86,86);
+	background:-moz-linear-gradient(-45deg,  rgba(86,86,86,1) 0%, rgba(76,76,76,1) 50%);
+	background:-webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba(86,86,86,1)), color-stop(50%,rgba(76,76,76,1)));
+	background:-webkit-linear-gradient(-45deg,  rgba(86,86,86,1) 0%,rgba(76,76,76,1) 50%);
+	background:-o-linear-gradient(-45deg,  rgba(86,86,86,1) 0%,rgba(76,76,76,1) 50%);
+	background:-ms-linear-gradient(-45deg,  rgba(86,86,86,1) 0%,rgba(76,76,76,1) 50%);
+	background:linear-gradient(135deg,  rgba(86,86,86,1) 0%,rgba(76,76,76,1) 50%);
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#565656', endColorstr='#4c4c4c',GradientType=1 );
+	-webkit-box-shadow:0px -1px 2px 0px rgba(0, 0, 0, 0.15);
+	box-shadow:0px -1px 2px 0px rgba(0, 0, 0, 0.15);
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	transform:rotate(45deg);
+}
+@-webkit-keyframes sparkle {
+	from {background-position:0 0;}
+	to {background-position:0 -64px;}
+}
+@-moz-keyframes sparkle {
+	from {background-position:0 0;}
+	to {background-position:0 -64px;}
+}
+@-o-keyframes sparkle {
+	from {background-position:0 0;}
+	to {background-position:0 -64px;}
+}
+@keyframes sparkle {
+	from {background-position:0 0;}
+	to {background-position:0 -64px;}
+}
+
+@media(min-width:1367px) and (max-width:1920px){
+	.progressbar{
+    width:360px;
+}
+
+.progressbar:before{
+    width:360px;
+    height:12px;
+
+}
+.bar {
+	height:12px;
+
+}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

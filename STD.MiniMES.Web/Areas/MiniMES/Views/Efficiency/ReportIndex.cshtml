@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Allproductcheck";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    <script src="/Content/js/viewModel/com.viewModel.searchEdit.js"></script>
+    <script type="text/javascript">
+    var data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+    using("lookup", easyuifix.datagrid_editor_extend);
+    using(['validatebox', 'datebox', 'numberbox', 'combobox'], easyuifix.datagrid_editor_extend);
+        ko.bindingViewModel(viewModel(data));
+    function viewModel(data) {
+        com.viewModel.searchEdit.apply(this, arguments);
+        this.searchClick();
+    };
+
+    </script>
+}
+<div class="z-toolbar">
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-arrow_refresh" title="刷新" data-bind="click:refreshClick">刷新</a>
+    <a href="#" plain="true" class="easyui-splitbutton" data-options="menu:'#dropdown',iconCls:'icon-download'">导出</a>
+</div>
+
+<div id="dropdown" style="width:100px; display:none;">
+    <div data-options="iconCls:'icon-ext-xls'" suffix="xls" data-bind="click:downloadClick">Excel xls  </div>
+    <div data-options="iconCls:'icon-page_excel'" suffix="xlsx" data-bind="click:downloadClick">Excel xlsx   </div>
+    <div data-options="iconCls:'icon-ext-doc'" suffix="doc" data-bind="click:downloadClick">Word     </div>
+</div>
+
+<div class="container_12" style="position:relative;">
+
+    <div class="grid_1 lbl">工单编号</div>
+    <div class="grid_2 val"><input type="text" data-bind="value:form.OrderNo" class="z-txt " /></div>
+    <div class="grid_1 lbl">产线</div>
+    <div class="grid_2 val"> <input type="text" data-options="showblank:true,valueField:'LineId',textField:'LineName'" data-bind="datasource:dataSource.dsLine,comboboxValue:form.LineId" class="z-txt easyui-combobox" /></div>
+    <div class="grid_1 lbl">产品编号</div>
+    <div class="grid_2 val"><input type="text" data-bind="value:form.ProductCode" class="z-txt " /></div>
+    <div class="clear"></div>
+
+    <div class="clear"></div>
+
+    <div class="grid_1 lbl">生产日期</div>
+    <div class="grid_2 val"><input type="text" data-bind="value:form.StartTime" class="z-txt  easyui-daterange" /></div>
+    <div class="grid_1 lbl">产品名称</div>
+    <div class="grid_2 val"><input type="text" data-bind="value:form.ProductName" class="z-txt " /></div>
+    <div class="clear"></div>
+
+    <div class="prefix_9" style="position:absolute;top:5px;height:0;">
+        <a id="a_search" href="#" class="buttonHuge button-blue" data-bind="click:searchClick" style="margin:0 15px;">查询</a>
+        <a id="a_reset" href="#" class="buttonHuge button-blue" data-bind="click:clearClick">清空</a>
+    </div>
+</div>
+
+<table data-bind="datagrid:grid" style="display:none">
+    <thead>
+        <tr>
+            <th field="OrderNo" sortable="true" align="left" width="120">工单编号</th>
+            <th field="StartTime" sortable="true" align="left" width="120">生产日期</th>
+            <th field="LineId" sortable="true" align="left" width="120" hidden="hidden">线体编号</th>
+            <th field="LineName" sortable="true" align="left" width="120">生产线体</th>
+            <th field="ProductCode" sortable="true" align="left" width="120">产品编号</th>
+            <th field="ProductName" sortable="true" align="left" width="180">产品名称</th>
+            <th field="PlanCount" sortable="true" align="left" width="120">计划数量</th>
+            <th field="SumCount" sortable="true" align="left" width="120">生产数量</th>
+            <th field="NGCount" sortable="true" align="left" width="120">不良品数</th>
+            <th field="NGRate" sortable="true" align="left" width="120">不良率</th>
+        </tr>
+    </thead>
+</table>

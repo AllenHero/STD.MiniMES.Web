@@ -1,0 +1,404 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扫码看板</title>
+    <link href="~/Content/bootstrap/Css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/js/bootstrap-select-1.13.0-dev/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap/js/jquery-2.1.1.min.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/bootstrap-select-1.13.0-dev/dist/js/bootstrap-select.js"></script>
+    <script src="~/Content/js/bootstrap-select-1.13.0-dev/dist/js/i18n/defaults-zh_CN.min.js"></script>
+
+    <link rel="stylesheet" href="~/Content/MiniMes/js/Chart.min-2.8.0.js" />
+    <link rel="stylesheet" href="~/Content/MiniMes/Css/kanban.css" />
+    <style>
+        .flexbox {
+            margin: 10px 0;
+        }
+
+        .flexbox_item {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        textarea {
+            width: 100%;
+        }
+
+        .charts {
+            width: 60%;
+        }
+
+        .dark {
+            min-height: 104px;
+            color: #fff;
+            border-color: transparent;
+            background-color: #0f0f15;
+        }
+
+        .textarea {
+            min-height: 100px;
+            width: 100%;
+            border-color: transparent;
+            padding: 6px 10px;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 4px;
+            resize: none;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 页面视图 -->
+    <div class="container">
+        <!-- section -->
+        <div class="headview_box rows">
+            <div class="logo">
+                @*<img src="~/Content/WorkshopBoard/images/SMES-SW.png" alt="">*@
+            </div>
+            <div class="title">扫码看板</div>
+            <div class="today" id="nowDateTimeSpan"></div>
+        </div>
+        <!-- section -->
+        <div class="section_box rows">
+            <div class="section_item column">
+                <!-- 单号录取 -->
+                <div class="flexbox" style="align-items: center;">
+                    <label class="label">工单号：</label>
+                    <select id="id_select" class="selectpicker show-tick form-control flexbox_item form-dark" data-live-search="true" data-width="300px" data-height="50px" data-size="5" onchange="OrderChange()"></select>
+
+                    <label class="label">单次计数：</label>
+                    <input id="id_Ratio" class="flexbox_item form-dark" type="text" value="1" />
+                    <button class="btn btn_primary">修改</button>
+                </div>
+                <!-- 录取信息 -->
+                <div class="flexbox" style="margin:10px -20px;">
+                    <div class="flexbox_item">
+                        <p>扫码框：</p>
+                        <textarea class="dark" cols="30" rows="3" style="width:100%" id="id_Search" onkeydown="if (event.keyCode == 13) { SearchData(); }"></textarea>
+                    </div>
+                    <div class="flexbox_item">
+                        <p>条码号：</p>
+                        <div class="textarea dark">
+                            <p id="id_Barcode"></p>
+                            <p class="color_success" id="id_message"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section -->
+        <div class="section_box rows">
+            <div class="section_item column">
+                <div class="flexbox">
+                    <div class="flexbox_item">
+                        <p class="label">线体</p>
+                        <p id="id_LineName"></p>
+                        <p class="label">工单号</p>
+                        <p id="id_OrderNo"></p>
+                        <p class="label">工单数量</p>
+                        <p class="primary_color" style="font-size:40px;" id="id_PlanQty"></p>
+                    </div>
+                    <div class="flexbox_item" style="text-align:left">
+                        <p class="label">产品型号</p>
+                        <p id="id_ProductCode"></p>
+                        <p class="label">产品名称</p>
+                        <p id="id_ProductName"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="section_item column">
+                <div class="flexbox" style="text-align:center;">
+                    <div class="flexbox_item">
+                        <p>当日完成数量</p>
+                        <p class="purple_color" style="font-size:40px;" id="id_Qty"></p>
+                    </div>
+                    <div class="flexbox_item">
+                        <p>完成总数量</p>
+                        <p class="primary_color" style="font-size:40px;" id="id_TTQty"></p>
+                    </div>
+                    <div class="flexbox_item">
+                        <p>不良计数</p>
+                        <p class="warning_color" style="font-size:40px;" id="id_QtyNG"></p>
+                    </div>
+                </div>
+                <!-- 图表 -->
+                <div class="charts">
+                    <div class="charts_item">
+                        <div class="chart_contains" style="margin:15px auto;">
+                            <canvas id="complete"></canvas>
+                            <span class="result" id="id_Rate"></span>
+                        </div>
+                        <p class="chart_label">完成比率</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer style="position:absolute;left:0; bottom:0; z-index:999; position:fixed;" class="footer_box">
+            <div class="footleft"><p id="id_TenantName"></p></div>
+        </footer>
+    </div>
+    <script src="~/Content/MiniMes/js/Chart.min-2.8.0.js"></script>
+
+    <script>
+        //var options = {
+        //    tooltips: {
+        //        enabled: false
+        //    },
+        //    legend: {
+        //        display: false
+        //    },
+        //    cutoutPercentage: 70
+        //}
+
+        //// 计划完成率图表
+        //var ctx = document.getElementById('complete').getContext('2d');
+        //var myPieChart = new Chart(ctx, {
+        //    type: 'doughnut',
+        //    data: {
+        //        labels: ['实际产量', '剩余产量'],
+        //        datasets: [{
+        //            data: [65, 35],
+        //            backgroundColor: ["#40a9ff", "#27435e"],
+        //            borderWidth: 0
+        //        }]
+        //    },
+        //    options: options
+        //});
+    </script>
+
+    <script type="text/javascript">
+        //获取工厂名称
+        function LoadTenantName() {
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantID = Request["TenantID"];
+            $.ajax({
+                url: "../WorkshopBoard/LoadTenantName",
+                data: {
+                    "TenantID": TenantID
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    if (result != null && result.length>0) {
+                        $("#id_TenantName").html(result[0].TenantName);
+                    } 
+                }
+            });
+        }
+        LoadTenantName();
+    </script>
+
+    <script type="text/javascript">
+        //获取线体人员
+        function GetLine() {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantID = Request["TenantID"];
+            $.ajax({
+                url: "../LineBoard/GetLineBoardData",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantID
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    $("#id_LineName").html(result[0].LineName);
+                }
+            });
+        }
+        GetLine();
+    </script>
+
+    <script type="text/javascript">
+        //获取工单
+        function GetOrderNo() {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantID = Request["TenantID"];
+            //alert(LineId);
+            //alert(TenantID);
+            $.ajax({
+                url: "../ScanBarCode/GetOrderNo",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantID
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    selectStr = "";
+                    for (var i = 0; i < result.length; i++) {
+                        selectStr += '<option value="' + result[i].WorkSheetNo + '">' + result[i].WorkSheetNo + '</option>';
+                    }
+                    $("#id_select").html(selectStr);
+                    $("#ProCode").selectpicker('refresh');//动态刷新
+                    $('#ProCode').selectpicker('render');
+                    OrderChange();
+                }
+            });
+        }
+        GetOrderNo();
+
+        //切换工单
+        function OrderChange() {
+            var OrderNo = $("#id_select").val();
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantID = Request["TenantID"];
+            $.ajax({
+                url: "../ScanBarCode/GetOrderData",
+                data: {
+                    "LineId": LineId,
+                    "OrderNo": OrderNo,
+                    "TenantID": TenantID
+                },
+                async: false,
+                success: function (data) {
+                    
+                    var result = $.parseJSON(data);
+                    if (result.ok == false) {
+                        $("#id_message").html(result.message);
+                        document.getElementById("id_message").style.color = "red";
+                    }
+                    else {
+                        $("#id_OrderNo").html(result.OrderNo);
+                        $("#id_ProductCode").html(result.ProductCode);
+                        $("#id_ProductName").html(result.ProductName);
+                        $("#id_Qty").html(result.Qty);
+                        $("#id_QtyNG").html(result.QtyNG);
+                        $("#id_PlanQty").html(result.PlanQty);
+                        //$("#id_Ratio").html(result.Ratio);
+                        $("#id_Ratio").val(result.Ratio);
+                        $("#id_StandUsers").html(result.StandUsers);
+                        $("#id_TTQty").html(result.TTQty);
+                        $("#id_Rate").html(result.Rate);
+
+                        if (Number(result.TTQty) >= Number(result.PlanQty)) {
+                            document.getElementById("id_PlanQty").style.color = "red";
+                            $("#id_PlanQty").html(Number(result.PlanQty)+ "  该工单已经做满");
+                        }
+                        else
+                            document.getElementById("id_PlanQty").style.color = "#00FFFF";
+                    }
+                }
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        //扫条码
+        function SearchData() {
+            var Barcode = document.getElementById("id_Search").value.replace("*", "");
+            $("#id_Barcode").html(Barcode);
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantID = Request["TenantID"];
+            var OrderNo = $("#id_OrderNo").html();
+            //var TallyRatio = $("#id_Ratio").html();
+            var TallyRatio = $("#id_Ratio").val();
+            var Person = $("#id_Person").html();
+            var PlanQty = $("#id_PlanQty").html();
+
+
+            $.ajax({
+                url: "../ScanBarCode/GetScanBarcode",
+                data: { "TenantID": TenantID, "Barcode": Barcode, "LineId": LineId, "OrderNo": OrderNo, "TallyRatio": TallyRatio, "Person": Person, "PlanQty": PlanQty },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    if (result["ok"] == true) {
+                        document.getElementById("id_Search").value = "";
+                        document.getElementById("id_message").style.color = "green";
+                        $("#id_message").html(result["message"]);
+                        $("#id_Qty").html(result["Qty"]);
+                        $("#id_QtyNG").html(result["QtyNG"]);
+                        $("#id_TTQty").html(result["TTQty"]);
+                        $("#id_Rate").html(result["Rate"]);
+
+                        if (Number(result["TTQty"]) >= Number(result.PlanQty)) {
+                            document.getElementById("id_PlanQty").style.color = "red";
+                            $("#id_PlanQty").html(Number(result.PlanQty) + "  该工单已经做满");
+                        }
+                        else
+                            document.getElementById("id_PlanQty").style.color = "#00FFFF";
+                    }
+                    else {
+                        document.getElementById("id_message").style.color = "red";
+                        document.getElementById("id_Search").value = "";
+                        $("#id_message").html("保存失败。" + result["message"]);
+                    }
+                }
+            });
+
+
+        }
+    </script>
+
+    <script language="JavaScript">
+        function startTime() {
+            var today = new Date();//定义日期对象
+            var yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年
+            var MM = today.getMonth() + 1;//通过日期对象的getMonth()方法返回年
+            var dd = today.getDate();//通过日期对象的getDate()方法返回年
+            var hh = today.getHours();//通过日期对象的getHours方法返回小时
+            var mm = today.getMinutes();//通过日期对象的getMinutes方法返回分钟
+            var ss = today.getSeconds();//通过日期对象的getSeconds方法返回秒
+            // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09
+            MM = checkTime(MM);
+            dd = checkTime(dd);
+            mm = checkTime(mm);
+            ss = checkTime(ss);
+            var day; //用于保存星期（getDay()方法得到星期编号）
+            if (today.getDay() == 0) day = "星期日 "
+            if (today.getDay() == 1) day = "星期一 "
+            if (today.getDay() == 2) day = "星期二 "
+            if (today.getDay() == 3) day = "星期三 "
+            if (today.getDay() == 4) day = "星期四 "
+            if (today.getDay() == 5) day = "星期五 "
+            if (today.getDay() == 6) day = "星期六 "
+            $("#nowDateTimeSpan").html("<p>" + yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + "   " + day + "<p>");
+            //setTimeout('startTime()',1000);//每一秒中重新加载startTime()方法
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        setInterval(startTime, 1000);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,162 @@
+/*
+ | ------------------------------------------
+ | Glide styles
+ | ------------------------------------------
+ | Here are slider styles
+ | 
+*/
+
+
+
+
+
+
+
+
+/*内容部分*/
+
+.slider{width:100%;height:620px;background-color:#204480;overflow:hidden;display: block;padding-top:0px;}
+.slider ul li{height:532px;margin-top:48px;width:100%;overflow:hidden;float:left;width:100%;}
+  
+
+
+
+/*盒子带容�?/
+.slider .slides {
+
+	/* Simple clear fix */
+	overflow: hidden;
+	/**	
+		 * Prevent blinking issue
+		 * Not tested. Experimental.
+		 */
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+	/**
+		 * Here is CSS transitions 
+		 * responsible for slider animation in modern broswers
+		 */
+	-webkit-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-moz-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-ms-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+	-o-transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+ 	transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.slides .slide {
+
+	height:100%;
+	float: left;
+	clear: none;
+}
+.slider-arrows {
+}
+/*.slider-arrow {
+	position: absolute;
+	display: block;
+	margin-bottom: -20px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+	font-size: 2em;
+	background-color: #333;
+	background-color: rgba(50,50,50,.3);
+	border-radius: 50%;
+}
+.slider-arrow--right {
+	bottom: 50%;
+	right: 10px;
+}
+.slider-arrow--left {
+	bottom: 50%;
+	left: 10px;
+}*/
+/*
+background:url(img/.png) no-repeat;
+*/
+.slider{position:relative;}
+.slider-nav {
+	position: absolute;
+	top:0px;
+	width:20%;
+	display: block;
+
+}
+.slider-nav__item {  /*nva样式*/
+	width: 30px;
+	height: 8px;
+	float: left;
+	clear: none;
+	display: block;
+	margin: 0 0px;
+	background:#244D91;
+	border-radius:2px;
+	
+}
+.slider-nav__item:hover {
+	background: #244D91;
+}
+.slider-nav__item--current {
+	background:#17325D;
+} /*被选中后的样式*/
+@media (min-width:1921px) and (max-width:3841px){
+.outslide{top:160px;}
+.outslide .centerslide .innerslide{height:calc(100% - 100px);
+}
+/*内容部分*/
+.slider{width:calc(100% + 17px);height:calc(100% - 181px);padding-top:30px; }
+.slider ul li{height:1840px;width:100%;overflow:hidden;float:left;}
+.slider-arrow {
+	margin-bottom: -20px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+
+}/*左右按钮样式及放置位�?/
+.slider-arrow--right {
+
+	display:none;
+}
+.slider-arrow--left {
+
+	display:none;
+}
+.slider-nav {
+	width:20%;
+}
+.slider-nav__item {  /*nva样式*/
+	width: 60px;
+	height: 30px;
+	float: left;
+	margin: 0 5px;
+	border-radius:6px;
+	
+}
+}
+@media (min-width:1367px) and (max-width:1921px){
+
+}/*左右按钮样式及放置位�?/
+.slider-arrow--right {
+  
+	display:none;
+}
+.slider-arrow--left {
+
+	display:none;
+}
+.slider-nav {
+	width:20%;
+
+}
+.slider-nav__item {  /*nva样式*/
+	width: 80px;
+	height: 26px;
+	float: left;
+	margin: 10px 5px;
+	border-radius:20px;
+	
+}
+	}

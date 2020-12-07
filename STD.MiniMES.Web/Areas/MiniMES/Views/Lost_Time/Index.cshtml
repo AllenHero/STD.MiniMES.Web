@@ -1,0 +1,381 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        .dcl_zs span {
+            width: 10px;
+            height: 10px;
+            float: left;
+            margin-top: 5px;
+            line-height: 16px;
+            margin-top: 10px;
+        }
+
+        .AutoNewline {
+            Word-break: break-all; /*必须*/
+            word-wrap: break-word;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>Lost_Time</title>
+
+    <script src="~/Content/MiniMes/js/jquery.min.js"></script>
+    <script src="~/Content/MiniMes/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/MiniMes/js/jquery.searchableSelect.js"></script>
+
+    <link href="~/Content/MiniMes/Css/commentbox_css.css" rel="stylesheet" />
+    <link href="~/Content/MiniMes/Css/jquery.searchableSelect.css" rel="stylesheet" />
+    <link href="~/Content/MiniMes/Css/hwLayer.css" rel="stylesheet" />
+    <link href="~/Content/MiniMes/Css/dellcss.css" rel="stylesheet" />
+    <link href="~/Content/MiniMes/Css/lq.datetimepick.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        function GetRequest() {
+            var url = location.search; //获取url中含"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('select').searchableSelect();
+        });
+    </script>
+
+</head>
+<body onload="opener.location.reload()">
+    <div class="wapperbg">
+        <div class="DmRequestinputbox">
+            <dl>
+                <dt>
+                    <div class="form-group  form-group2 float-left w140">
+                        <input style="background-color:#fff;color:#000;" type="text" name="datepicker" id="datetimepicker3" class="form-control form2" value="" />
+                    </div>
+                </dt>
+                <dt>
+                    <div class="form-group  form-group2 float-left w140">
+                        <input style="background-color:#fff;color:#000;" type="text" name="datepicker" id="datetimepicker4" class="form-control form2" value="" />
+                    </div>
+                </dt>
+                <dt class="Dm_scanst" style="margin-left:1%;"><input value="" type="button" class="Dmbtn" onclick="Search()"></dt>
+                <dt class="scanst"><input value="导出Excel" type="button" onclick="Export()" class="searchbtn"></dt>
+            </dl>
+        </div>
+        <div>
+            <div class="tableincontent Dmtableincontent" style="border-bottom:1px solid #d9d9d9;">
+                <div class="table-head">
+                    <table cellpadding="0" cellspacing="0">
+                        <colgroup>
+                            <col style="width: 1%;" />
+                            <col style="width: 15%;" />
+                            <col style="width: 15%;" />
+                            <col style="width: 15%;" />
+                            <col style="width: 18%;" />
+                            <col style="width: 18%;" />
+                            <col style="width: 18%;" />
+                        </colgroup>
+                        <thead>
+                            <tr class="thbg">
+                                <th></th>
+                                <th>线体</th>
+                                <th>开始时间</th>
+                                <th>结束时间</th>
+                                <th>停机次数</th>
+                                <th>停机时间（min）</th>
+                                <th>最长停机时间（min）</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="content_height">
+                    <div class="table-body">
+                        <table cellpadding="0" cellspacing="0">
+                            <colgroup>
+                                <col style="width: 1%;" />
+                                <col style="width: 15%;" />
+                                <col style="width: 15%;" />
+                                <col style="width: 15%;" />
+                                <col style="width: 18%;" />
+                                <col style="width: 18%;" />
+                                <col style="width: 18%;" />
+                            </colgroup>
+                            <tbody id="tbDayData"></tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <footer style="position:absolute;left:0;bottom:0;">
+                <div class="footleft"><p id="id_TenantName"></p></div>
+                <input id="id_Page" type="text" hidden="hidden" value="0">
+            </footer>
+        </div>
+
+        <!--弹出层---->
+        <div class="hw-overlay" id="hw-layer">
+            <div class="hw-layer-wrap" style="height:400px;top:20px; border:1px solid green">
+                <span class="glyphicon glyphicon-remove hwLayer-close"></span>
+                <h4 class="ycll">录入</h4>
+                <div class="yy_ll" style="height:250px;">
+                    <div class="gzyy_lr">
+                        <p>不良明细</p>
+                        <div class="yy_fx">
+                            <textarea id="id_DetailedNG" name="a" style="height:50px;"></textarea>
+                        </div>
+                        <p>备注</p>
+                        <div class="yy_fx">
+                            <textarea id="id_Remark" name="a1" style="height:50px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <input onclick="ConfirmReason()" type="button" class="btnsure" value="确定">
+                <input onclick="btnCancel()" type="button" class="btncansel" value="取消">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $('.bm').bind({
+                focus: function () {
+                    if (this.value == this.defaultValue) {
+                        this.value = "";
+                    }
+                },
+                blur: function () {
+                    if (this.value == "") {
+                        this.value = this.defaultValue;
+                    }
+                }
+            });
+        })
+    </script>
+
+    <!--日期控件---->
+    <script type="text/javascript" src="~/Content/MiniMes/js/jquery.js"></script>
+    <script type="text/javascript" src="~/Content/MiniMes/js/selectUi.js"></script>
+    <script type="text/javascript" src="~/Content/MiniMes/js/lq.datetimepick.js"></script>
+
+    <script type="text/javascript">
+        var today = new Date();
+        var submitTime = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        $("#datetimepicker3").attr('value', submitTime);
+        $("#datetimepicker4").attr('value', submitTime);
+        $(function () {
+            $("#datetimepicker1").on("click", function (e) {
+                e.stopPropagation();
+                $(this).lqdatetimepicker({
+                    css: 'datetime-hour'
+                });
+            });
+            $("#datetimepicker2").on("click", function (e) {
+                e.stopPropagation();
+                $(this).lqdatetimepicker({
+                    css: 'datetime-hour'
+                });
+            });
+            $("#datetimepicker3").on("click", function (e) {
+                e.stopPropagation();
+                $(this).lqdatetimepicker({
+                    css: 'datetime-day',
+                    dateType: 'D',
+                    selectback: function () {
+                        //Search();
+                    }
+                });
+            });
+            $("#datetimepicker4").on("click", function (e) {
+                e.stopPropagation();
+                $(this).lqdatetimepicker({
+                    css: 'datetime-day',
+                    dateType: 'D',
+                    selectback: function () {
+                        //Search();
+                    }
+                });
+            });
+        })
+    </script>
+
+    <script type="text/javascript">
+        //获取工厂名称
+        function LoadTenantName() {
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantID = Request["TenantID"];
+            $.ajax({
+                url: "../WorkshopBoard/LoadTenantName",
+                data: {
+                    "TenantID": TenantID
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+
+                    $("#id_TenantName").html(result[0].TenantName);
+                }
+            });
+        }
+        LoadTenantName();
+
+    </script>
+
+    <script type="text/javascript">
+        function startTime() {
+            var today = new Date();//定义日期对象
+            var yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年
+            var MM = today.getMonth() + 1;//通过日期对象的getMonth()方法返回年
+            var dd = today.getDate();//通过日期对象的getDate()方法返回年
+            var hh = today.getHours();//通过日期对象的getHours方法返回小时
+            var mm = today.getMinutes();//通过日期对象的getMinutes方法返回分钟
+            var ss = today.getSeconds();//通过日期对象的getSeconds方法返回秒
+            // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09
+            MM = checkTime(MM);
+            dd = checkTime(dd);
+            mm = checkTime(mm);
+            ss = checkTime(ss);
+            var day; //用于保存星期（getDay()方法得到星期编号）
+            if (today.getDay() == 0) day = "星期日 "
+            if (today.getDay() == 1) day = "星期一 "
+            if (today.getDay() == 2) day = "星期二 "
+            if (today.getDay() == 3) day = "星期三 "
+            if (today.getDay() == 4) day = "星期四 "
+            if (today.getDay() == 5) day = "星期五 "
+            if (today.getDay() == 6) day = "星期六 "
+            $("#nowDateTimeSpan").html("<p>" + yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + "   " + day + "<p>");
+            //setTimeout('startTime()',1000);//每一秒中重新加载startTime()方法
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+
+    <script type="text/javascript">
+        function Search() {
+            var Request = new Object();
+            Request = GetRequest();
+            var sdt = $("#datetimepicker3").val();
+            var edt = $("#datetimepicker4").val();
+            var TenantId = Request['TenantID'];
+            var LineId = Request['LineId'];
+            $.ajax({
+                url: "../Lost_Time/GetLost_Time",
+                data: { "LineId": LineId, "sDate": sdt, "eDate": edt, "TenantId": TenantId },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    ////table 表格数据
+                    var tableStr = "";
+                    if (result["ok"] + "" == "false") {
+                        var content = "";
+                        $("#tbDayData").html(content);
+                    }
+                    else {
+                        for (var i = 0; i < result["DataTable"].length; i++) {
+                            var data = result["DataTable"][i].ID + "|" + result["DataTable"][i].DetailedNG + "|" + result["DataTable"][i].Remark + "";
+                            var colorStr = "";
+                            //if (result["DataTable"][i].Rate >= 85)
+                            //    colorStr = "<td class=\"greenfont\"><p>";
+                            //else
+                            //    colorStr = "<td class=\"redfont\"><p>";
+                            var rowStr = "<tr><td></td>"
+                                        + "<td>" + result["DataTable"][i].LineName + "</td>"
+                                        + "<td>" + result["DataTable"][i].sTime + "</td>"
+                                        + "<td>" + result["DataTable"][i].eTime + "</td>"
+                                        + "<td>" + result["DataTable"][i].StopCount + "</td>"
+                                        + "<td>" + result["DataTable"][i].StopTime + "</td>"
+                                        + "<td>" + result["DataTable"][i].MAXStop + "</td>"
+                                    + "</tr>";
+                            tableStr = tableStr + rowStr;
+                        }
+                        $("#tbDayData").html(tableStr);
+                    }
+                }
+            })
+        };
+        Search();
+    </script>
+
+    <script type="text/javascript" src="~/Content/MiniMes/export.js"></script>
+
+    <script type="text/javascript">
+        function Export() {
+            var Request = new Object();
+            Request = GetRequest();
+            var sdt = $("#datetimepicker3").val();
+            var edt = $("#datetimepicker4").val();
+            //var st = $("#SelectStation").val();
+            //var Shift = $("#SelectShift").val();
+            var TenantId = Request['TenantID'];
+            var LineId = Request['LineId'];
+            location.href = "../Lost_Time/Export?LineId=" + LineId + "&sDate=" + sdt + "&eDate=" + edt + "&TenantId=" + TenantId + "";
+        }
+    </script>
+
+    <script>
+        $(function () {
+            //展示层
+            function showLayer(id) {
+                var layer = $('#' + id),
+                    layerwrap = layer.find('.hw-layer-wrap');
+                layer.fadeIn();
+                //屏幕居中
+                layerwrap.css({
+                    'margin-top': -layerwrap.outerHeight() / 2
+                });
+            }
+
+            //隐藏层
+            function hideLayer() {
+                $('.hw-overlay').fadeOut();
+            }
+
+            $('.hwLayer-ok,.hwLayer-cancel,.hwLayer-close').on('click', function () {
+                hideLayer();
+            });
+
+            //触发弹出层
+            $('.show-layer').on('click', function () {
+                var layerid = $(this).data('show-layer');
+                showLayer(layerid);
+            });
+
+            //点击或者触控弹出层外的半透明遮罩层，关闭弹出层
+            $('.hw-overlay').on('click', function (event) {
+                if (event.target == this) {
+                    hideLayer();
+                }
+            });
+
+            //按ESC键关闭弹出层
+            $(document).keyup(function (event) {
+                if (event.keyCode == 27) {
+                    hideLayer();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

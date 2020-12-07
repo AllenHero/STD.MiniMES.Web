@@ -1,0 +1,138 @@
+﻿
+@{
+    ViewBag.Title = "minimes_restdate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts{
+    <script src="/Content/js/viewModel/com.viewModel.searchEdit.js"></script>
+    <script src="~/Content/js/plupload/plupload.full.min.js"></script>
+    <script type="text/javascript">
+        using(['numberbox', 'datebox', 'combobox', 'lookup', 'datetimebox']);
+        var data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+        ko.bindingViewModel(new viewModel(data));
+
+        function viewModel(data) {
+            com.viewModel.searchEdit.apply(this, arguments);
+            this.grid.OnBeforeDestroyEditor = function (editors, row) {
+            };
+        };
+
+        //导入
+         $(function(){
+            var uploader = new plupload.Uploader({
+                runtimes: 'html5,flash,silverlight,browserplus,gears',
+                browse_button: 'import',
+                url: '/MiniMES/minimes_restdate/EditImport',
+                flash_swf_url: '/Content/js/plupload/Moxie.swf',
+                silverlight_xap_url: '/Content/js/plupload/Moxie.xap',
+                drop_element: 'uploadfilelist',
+                filters : {
+                    max_file_size : '10mb',
+                    mime_types: [
+                        { title: "Excel 2003 files", extensions: "xls" },
+                        { title: "Excel 2007 files", extensions: "xlsx" }
+                    ]
+                },
+                multi_selection: false,
+                init: {
+                    PostInit: function(uploader) {
+                        file=$('input[type="file"]')[0];
+                        fileid=file.id;
+                    },
+                    FilesAdded: function (up, files) {
+                        var win = parent.$.messager.progress({
+                            title: '请稍等',
+                            msg: '正在上传...'
+                        });
+                        up.start();
+                    },
+                    UploadComplete: function (up, files) {
+                    },
+                    BeforeUpload: function (uploader, file) {
+
+                    },
+                    UploadProgress: function(up, file) {
+                        var percent = up.total.loaded*100/up.total.size;
+                        var bar = parent.$.messager.progress("bar");
+                        bar.progressbar('setValue', percent);
+                    },
+                    FileUploaded: function (up, files, result) {
+                        parent.$.messager.progress("close");
+                        var data = eval('(' + result.response + ')');
+                        alert(data.message);
+                        $("#tbList").datagrid("reload");
+                    },
+                    Error: function (uploader, errObject) {
+                        var obj = errObject;
+                    }
+                }
+            });
+            uploader.init();
+        })
+
+         
+
+         //双击选择更新人
+        $("#CreatePerson").click(function () {
+            var target = parent.$('#selectUsers').length ? parent.$('#selectUsers') : parent.$('<div id="selectUsers"></div>').appendTo('body');
+            utils.clearIframe(target);
+            var opt = { title: '选择人员', width: 800, height: 550, modal: true, collapsible: false, minimizable: false, maximizable: true, closable: true };
+            opt.content = "<iframe id='frm_win_user' src='/minimes/LookupUsers?Type=single' style='height:100%;width:100%;border:0;' frameborder='0'></iframe>";
+            opt.onSelect = function (data) {
+                var total = data.total;
+                var rows = data.rows;
+                if (rows != null) {
+                    $("#CreatePerson").attr("value", data.rows[0].UserName);//赋值
+                    $("#CreatePerson").change();
+                }
+            };
+            target.window(opt);
+        });
+
+
+    </script>
+}
+
+<div class="z-toolbar">
+    <a id="import" href="#" plain="true" class="easyui-linkbutton" icon="icon-page_excel">批量导入</a>
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-arrow_refresh" title="刷新" data-bind="click:refreshClick">刷新</a>
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-add" title="新增" data-bind="click:addClick">新增</a>
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-edit" title="编辑" data-bind="click:editClick">编辑</a>
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-cross" title="删除" data-bind="click:deleteClick">删除</a>
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-save" title="保存" data-bind="click:saveClick">保存</a>
+    <a target="_blank" id="down" href="~/upload/masterplate/休息日期导入模板.xlsx" plain="true" class="easyui-linkbutton" icon="icon-download" title="下载">下载导入模板</a>
+    <a href="#" plain="true" class="easyui-splitbutton" data-options="menu:'#dropdown',iconCls:'icon-download'">导出</a>
+</div>
+
+<div id="dropdown" style="width:100px; display:none;">
+    <div data-options="iconCls:'icon-ext-xls'" suffix="xls" data-bind="click:downloadClick">Excel2003   </div>
+    <div data-options="iconCls:'icon-page_excel'" suffix="xlsx" data-bind="click:downloadClick">Excel2007   </div>
+    <div data-options="iconCls:'icon-ext-doc'" suffix="doc" data-bind="click:downloadClick">Word2003    </div>
+</div>
+
+<div class="container_12" style="position:relative;height:50px;">
+
+    <div class="grid_1 lbl">休息日期</div>
+    <div class="grid_2 val"> <input type="text"  data-bind="value:form.RestDate" class="z-txt easyui-daterange" /></div> 
+    <div class="clear" style="height:13px;"></div>
+
+    <div class="prefix_9" style="position:absolute;top:5px;height:0;">
+        <a id="a_search" href="#" class="buttonHuge button-blue" data-bind="click:searchClick" style="margin:0 15px;">查询</a>
+        <a id="a_reset" href="#" class="buttonHuge button-blue" data-bind="click:clearClick">清空</a>
+    </div>
+</div>
+
+<table data-bind="datagrid:grid" style="display:none">
+    <thead>
+        <tr>
+            <th field="ID" hidden="true" sortable="true" align="left" width="80" editor="text">ID</th>
+            <th field="RestDate" sortable="true" align="center" width="130" editor="datebox" formatter="com.formatDate" >休息日期</th>
+            <th field="CreatePerson" sortable="true" align="center" width="200">更新人</th>
+            <th field="CreateDate" sortable="true" align="center" width="130" editor="datebox" formatter="com.formatTime">更新时间</th>
+        </tr>
+    </thead>
+</table>
+
+
+

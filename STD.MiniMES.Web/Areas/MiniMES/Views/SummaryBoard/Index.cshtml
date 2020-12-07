@@ -1,0 +1,865 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+    <style>
+        .row-col1 {
+            height: 230px;
+        }
+
+        .list-contant ul li p {
+            font-size: 20px;
+        }
+
+        .list-contant ul li {
+            background: none;
+            color: #eeeff1;
+            border: none;
+        }
+
+        .inputfill .form-control {
+            background: #081526;
+            border: none;
+            color: #eeeff1;
+        }
+
+        .inputfill label {
+            color: #eeeff1;
+            font-weight: normal
+        }
+
+        .nicescroll-rails-vr .nicescroll-cursors {
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+            animation: pace-stripe-animation 500ms linear infinite;
+            background-size: 20px 20px;
+        }
+
+        @@keyframes pace-stripe-animation {
+            from {
+                background-position-y: 0;
+            }
+
+            to {
+                background-position-y: 100%;
+            }
+        }
+        /*文字滚动*/
+        .scrollfont {
+            width: 98%;
+            height: 190px;
+        }
+
+        .Scroller {
+            padding: 0px;
+            height: 180px;
+            width: 100%;
+        }
+
+            .Scroller * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+        .ScrollMid {
+            float: left;
+        }
+
+            .ScrollMid dl {
+                width: 100%;
+            }
+
+                .ScrollMid dl dt {
+                    font-size: 10px;
+                    color: #6AB0EA;
+                    height: 33px;
+                    width: 100%;
+                }
+
+            .ScrollMid dt {
+                list-style: none;
+                float: left;
+                width: 100%;
+                line-height: 50px;
+                color: 2b2b2b;
+            }
+
+            .ScrollMid dl .progressbox span, .ScrollMid dl .progressbox div {
+                float: left;
+            }
+
+            .ScrollMid dl .progressbox span {
+                line-height: 14px;
+                font-size: 10px;
+                padding-right: 0%;
+            }
+
+            .ScrollMid dl .progressbox .sright {
+                float: right
+            }
+
+        .order_progress h2 {
+            color: #fcfcfc;
+            font-size: 12px;
+            line-height: 26px;
+        }
+
+        .progress {
+            width: 45%;
+            height: 12px !important;
+            background-color: #3d5464 !important;
+            border-radius: 12px !important;
+        }
+
+        .progress-bar {
+            line-height: 12px !important;
+            font-size: 12px !important;
+            color: #0a7487 !important;
+            background-color: #42e0fc !important;
+        }
+
+        .progressbox .pro-title {
+            width: 110px;
+            color: #fcfcfc;
+            font-weight: normal
+        }
+
+        .progressbox span {
+            color: #999
+        }
+
+
+        .col-inside #main, .col-inside #main2, .col-inside #main6, #main3 {
+            width: 100%;
+            height: 180px;
+        }
+
+        .col-inside #main2 {
+            width: 100%;
+            height: 150px;
+        }
+        .col-inside #main6 {
+            width: 100%;
+            height: 150px;
+        }
+
+        #main4 {
+            width: 100%;
+            height: 140px;
+        }
+
+        table {
+            width: 100%;
+            color: #fefefe
+        }
+
+        .yc-table tr {
+            background: none !important;
+        }
+
+        .yc-table thead tr th {
+            text-align: left !important;
+            font-weight: normal;
+            border-bottom: none !important
+        }
+
+        .yc-table tbody tr td {
+            height: 40px !important;
+            text-align: left !important;
+            border-bottom: 1px solid #3d5465;
+            border-top: 1px solid #3d5465 !important;
+            color: #fefefe;
+            font-size: 12px;
+            padding: 0 !important
+        }
+
+            .yc-table tbody tr td .yc {
+                width: 80px;
+                text-align: center;
+                margin: 5px 0px 5px 15px;
+                height: 20px;
+                border-radius: 3px;
+            }
+
+        .yc-red {
+            background: #ed6a6a
+        }
+
+        .yc-yellow {
+            background: #f5a623
+        }
+
+        .yc-green {
+            background: #6cd49b
+        }
+
+        .list-group-horizontal {
+            margin-bottom: 10px !important;
+            color: #fff;
+            padding: 5px 10px;
+        }
+
+            .list-group-horizontal .list-group-item span {
+                margin: 5px 10px;
+                float: left;
+                width: 12px;
+                height: 12px;
+                display: block
+            }
+
+            .list-group-horizontal .list-group-item {
+                display: inline-block;
+                margin-bottom: 0;
+                margin-right: 0;
+                height: 20px;
+                line-height: 20px;
+                padding: 0px 10px;
+                color: #bdc5ca;
+                background: none;
+                border: none;
+            }
+
+        .row-col1 {
+            padding: 10px !important;
+            background: url(../../../../Content/jinl_workshop/images/shoporderbg.png) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .row-col2 {
+            padding: 10px !important;
+            background: url(../../../../Content/jinl_workshop/images/long1.png) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .col-inside {
+            height: 230px;
+            padding: 10px;
+            background: url(../../../../Content/jinl_workshop/images/shoporderbg.png) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .set-table tr td {
+            padding: 0px;
+            text-align: center;
+            backgroung: none
+        }
+
+            .set-table tr td img {
+                width: 20px;
+                height: 20px;
+                margin: 0 auto;
+            }
+    </style>
+
+    <link href="~/Content/jinl_workshop/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jinl_workshop/css/conmmentcss.css" rel="stylesheet" />
+     
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <title>车间看板</title>
+</head>
+<body style="background-color:#0a2737;position:relative">
+    <div class="container">
+        <div class="rowbox1">
+            <div class="rowleft col-md-12 col-lg-12">
+                <nav class="headnav navbar">
+                    <div class="row">
+                        <div class="logoimg col-md-4 col-lg-4 pull-left">
+                            <img src="~/Content/fengming/images/jiln.png">
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <h4 class="headercenter" id="id_WorkshopName"></h4>
+                        </div>
+                        <div class="righttime col-md-4 col-lg-4 text-right">
+                            <p id="nowDateTimeSpan"></p>
+
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="outslide">
+                    <div class="centerslide">
+                        <div class="innerslide" id="innerslide">
+                            <div class="Windbox">
+                                <div class="row">
+                                    <div class="row-col1 col-md-3 col-lg-3">
+
+                                        <div class="order_progress">
+                                            <h2>工单进度</h2>
+                                            <div class="scrollfont">
+                                                <DIV class="Scroller" id="idScroller">
+                                                    <DIV class="ScrollMid" id="idScrollMid">
+                                                        <DL id="dl_OrderNoProgress"></DL>
+                                                    </DIV>
+                                                </DIV>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="col-inside">
+                                            <div class="list-group list-group-horizontal">
+                                                设备运行时间效率
+                                                <div class="pull-right list-group-item"><span style="margin-left:0; background:#42e0fc"></span>停机时间</div>
+                                                <div class="pull-right list-group-item"><span style="margin-left:0; background:#f5a623;width:15px;height:4px"></span>时间利用率</div>
+                                            </div>
+                                            <div id="main"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row-col1 col-md-5 col-lg-5">
+                                        <div class="list-group list-group-horizontal">
+                                            异常汇总
+                                            <div class="pull-right list-group-item"><span style="background:#ff6f6d"></span>呼叫中</div>
+                                            <div class="pull-right list-group-item"><span style="background:#f5a623"></span>处理中</div>
+                                            <div class="pull-right list-group-item"><span style="background:#6cd49b"></span>已完成</div>
+                                        </div>
+                                        <table class="yc-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>工位</th>
+                                                    <th>异常名称</th>
+                                                    <th>责任人</th>
+                                                    <th>呼叫时间</th>
+                                                    <th>处理时间</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="table_UndisposedException"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="row" style="margin-top:15px;">
+                                    <div class="row-col1 col-md-3 col-lg-3">
+                                        <div class="list-group list-group-horizontal">
+                                            工单信息
+                                            <p>模具：<span id="sp_ProductCode"></span></p>
+                                            <p>工单：<span id="sp_OrderNo"></span></p>
+                                        </div>
+                                        <div id="main4"></div>
+                                    </div>
+
+                                    <div class="col-md-4 col-lg-4">
+                                        <div class="col-inside">
+                                            <div class="list-group list-group-horizontal">
+                                                质量数据
+
+                                                <div style="color: #bdc5ca;float:right" class="FirstCheck">
+                                                    检验总数<span id="CheckCount"></span>
+                                                    合格数量<span id="OKCount"></span>
+                                                    不合格数量<span id="NGCount"></span>
+                                                    合格率<span id="OKRate"></span>
+                                                </div>
+
+                                                <div style="color: #bdc5ca;float:right;display:none" class="RandomPlto">
+                                                    不良现象柏拉图<span id="datetime"></span>
+                                                </div>
+                                            </div>
+                                            <div id="main2" class="FirstCheck"></div>
+                                            <div id="main6" class="RandomPlto"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row-col1 col-md-5 col-lg-5">
+                                        <div class="list-group list-group-horizontal">
+                                            异常工时统计
+                                            <div class="pull-right list-group-item"><span style="background:#1f6dcd"></span>品质异常</div>
+                                            <div class="pull-right list-group-item"><span style="background:#c6533c"></span>设备异常</div>
+                                            <div class="pull-right list-group-item"><span style="background:#42e0fc"></span>生产异常</div>
+                                        </div>
+                                        <div id="main3"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row row-col2" style="margin-top:15px">
+                                    <div class="list-group list-group-horizontal">
+                                        机台状态
+                                        <div class="pull-right list-group-item"><span style="background:#636b81"></span>未切单</div>
+                                        <div class="pull-right list-group-item"><span style="background:#c6533c"></span>停机中</div>
+                                        <div class="pull-right list-group-item"><span style="background:#dd9926"></span>换模中</div>
+                                        <div class="pull-right list-group-item"><span style="background:#1f6dcd"></span>生产中</div>
+                                    </div>
+                                    <table class="set-table" id="table_LineStatus"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
+<script src="~/Content/jinl_workshop/js/jquery-1.8.3.min.js"></script>
+<script src="~/Content/jinl_workshop/js/echarts.common.min.js"></script>
+<script src="~/Content/jinl_workshop/js/Echats2.js"></script>
+<script src="~/Content/jinl_workshop/js/echarts-all.js"></script>
+<script type="text/javascript">
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+</script>
+<script language="JavaScript">
+
+    function startTime() {
+        $.ajax({
+            url: "../WorkshopBoard/GetDate",
+            data: {
+
+            },
+            success: function (data) {
+                $("#nowDateTimeSpan").html(data);
+            }
+        });
+    }
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+    setInterval(startTime, 1000);
+</script>
+
+<script type="text/javascript">
+    //加载车间信息
+    function GetWorkshop() {
+        var Request = new Object();
+        Request = GetRequest();
+        var TenantID = Request["TenantID"];
+        var WorkShopId = Request["DepartCode"];
+        $.ajax({
+            url: "../WorkshopBoard/LoadWorkshopName",
+            data: {
+                "WorkShopId": "" + WorkShopId + "",
+                "TenantID": TenantID
+            },
+            success: function (data) {
+                $("#id_WorkshopName").html("[  " + data + "  ]" + "看板");
+            }
+        });
+    }
+    GetWorkshop();
+</script>
+
+<script type="text/javascript">
+    //获取工单进度
+    function LoadOrderNoProgress() {
+        var Request = new Object();
+        Request = GetRequest();
+        var TenantID = Request["TenantID"];
+        var DepartCode = Request["DepartCode"];
+        $.ajax({
+            url: "/api/MiniMES/SummaryBoard/GetOrderNoProgress",
+            data: {
+                "TenantID": TenantID,
+                "WorkShopId": DepartCode
+            },
+            async: true,
+            success: function (data) {
+                if (data != null && data != '' && data.length > 0) {
+                    $("#dl_OrderNoProgress").html('');
+                    var dl_OrderNoProgress = '';
+                    for (var i = 0; i < data.length; i++) {
+                        var item = data[i];
+                        var PlanRatio = 100 + '%';
+                        if (item.Qty < item.PlanQty) {
+                            PlanRatio = item.PlanRatio;
+                        }
+                        var display = '';
+                        if (i >=6) {
+                            display = "display:none";
+                        }
+                        dl_OrderNoProgress += "<DT class=\"progressbox\" style='" + display + "' ProductCode='" + item.ProductCode + "'  OrderNo='" + item.OrderNo + "'  Qty='" + item.Qty + "'  PlanQty='" + item.PlanQty +"'>"
+                            + "<span class=\"pro-title\" >" + item.OrderNo + "</span >"
+                            + "<div class=\"progress\">"
+                            + "<div class=\"progress-bar\" style=\"width:" + PlanRatio + "\">" + item.PlanRatio + "</div>"
+                            + "</div>"
+                            + "<span class=\"sright\">" + (item.Qty / 1000).toFixed(0) + "k</span>"
+                            + "</DT >";
+
+                    }
+                    $("#dl_OrderNoProgress").html(dl_OrderNoProgress);
+                    LoadOrderNoProgressCharts(data[0].ProductCode, data[0].OrderNo, data[0].Qty, data[0].PlanQty);
+                    setInterval(AutoScrollLoadOrderNoProgress, 5000);
+                }
+            }
+        });
+    }
+    LoadOrderNoProgress();
+
+    function AutoScrollLoadOrderNoProgress()
+    {
+        var hide = false;
+        var detail = false;
+        var show = false;
+        $.each($(".progressbox"), function (index, item) {
+            if (!hide) {
+                if (index != $(".progressbox").length-1) {
+                    var display = $(this).css('display');
+                    if (display != 'none') {
+                        $(this).css('display', 'none');
+                        hide = true;
+                    }
+                }
+                
+            }
+            else {
+                var display = $(this).css('display');
+                if (!detail) {
+                    if (display != 'none') {
+                        var ProductCode = $(this).attr('ProductCode');
+                        var OrderNo = $(this).attr('OrderNo');
+                        var Qty = $(this).attr('Qty');
+                        var PlanQty = $(this).attr('PlanQty');
+                        LoadOrderNoProgressCharts(ProductCode, OrderNo, Qty, PlanQty);
+                        detail = true;
+                    }
+                }
+                else {
+                    if (!show) {
+                        if (display == 'none') {
+                            $(this).css('display', '');
+                            show = true;
+                        }
+                    }
+                }
+               
+            }
+           
+            
+        });
+        if (!hide) {
+            var ProductCode = '';
+            var OrderNo = '';
+            var Qty = '';
+            var PlanQty ='';
+            $.each($(".progressbox"), function (index, item) {
+                if (index<6) {
+                    $(this).css('display', '');
+                    if (index == 0) {
+                        ProductCode = $(this).attr('ProductCode');
+                        OrderNo = $(this).attr('OrderNo');
+                        Qty = $(this).attr('Qty');
+                        PlanQty = $(this).attr('PlanQty'); 
+                    }
+                }
+                else {
+                    $(this).css('display', 'none');
+                } 
+            });
+            LoadOrderNoProgressCharts(ProductCode, OrderNo, Qty, PlanQty);
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    //获取停机时间
+    function LoadEquipmentData() {
+        var Request = new Object();
+        Request = GetRequest();
+        var TenantID = Request["TenantID"];
+        var DepartCode = Request["DepartCode"];
+        $.ajax({
+            url: "/api/MiniMES/SummaryBoard/GetEquipmentData",
+            data: {
+                "TenantID": TenantID,
+                "WorkShopId": DepartCode
+            },
+            async: true,
+            success: function (data) {
+                if (data != null && data != '[]') {
+                    var obj = data;
+                    var x = [];
+                    var y = [];
+                    var z = [];
+                    $.each(obj, function (index, item) {
+                        x.push(item.Date);
+                        z.push(item.Rate);
+                        y.push(item.StopTime);
+                    });
+                    LoadEquipmentDataCharts(x, y, z);
+                }
+            }
+        });
+    }
+    LoadEquipmentData();
+</script>
+
+<script type="text/javascript">
+    //获取异常呼叫
+    function LoadUndisposedException() {
+        var Request = new Object();
+        Request = GetRequest();
+        var TenantID = Request["TenantID"];
+        var DepartCode = Request["DepartCode"];
+        $.ajax({
+            url: "/api/MiniMES/SummaryBoard/GetUndisposedException",
+            data: {
+                "TenantID": TenantID,
+                "WorkShopId": DepartCode
+            },
+            async: true,
+            success: function (data) {
+                $("#table_UndisposedException").html('');
+                if (data != null && data != '[]') {
+                    var table_UndisposedException = '';
+                    for (var i = 0; i < data.length; i++) {
+                        var item = data[i];
+                        var color = 'yc-red';
+                        if (item.Status == '5') {
+                            color = 'yc-yellow';
+                        }
+                        if (item.Status == '10') {
+                            color = 'yc-green';
+                        }
+                        var display = '';
+                        if (i >= 4) {
+                            display = "display:none";
+                        }
+                        table_UndisposedException += "<tr  class=\"UndisposedException\" style='" + display + "' >"
+                            + "<td><div class=\"yc yc-red\">" + item.StationName + "</div></td>"
+                            + "<td>" + item.ExceptionName + "</td>"
+                            + "<td>" + item.HandleUserName + "</td>"
+                            + "<td>" + item.ResponseTimeS + "</td>"
+                            + "<td>" + item.RelieveTimeS + "</td>"
+                            + "</tr>";
+                    }
+
+                    $("#table_UndisposedException").html(table_UndisposedException);
+                    setInterval(AutoScrollLoadUndisposedException, 5000);
+                }
+            }
+        });
+    }
+    LoadUndisposedException();
+    function AutoScrollLoadUndisposedException() {
+        var hide = false;
+        var show = false;
+        $.each($(".UndisposedException"), function (index, item) {
+            if (!hide) {
+                if (index != $(".UndisposedException").length - 1) {
+                    var display = $(this).css('display');
+                    if (display != 'none') {
+                        $(this).css('display', 'none');
+                        hide = true;
+                    }
+                }
+
+            }
+            else {
+                var display = $(this).css('display');
+                if (!show) {
+                    if (display == 'none') {
+                        $(this).css('display', '');
+                        show = true;
+                    }
+                } 
+            } 
+        });
+        if (!hide) { 
+            $.each($(".UndisposedException"), function (index, item) {
+                if (index < 4) {
+                    $(this).css('display', '');
+                }
+                else {
+                    $(this).css('display', 'none');
+                }
+            }); 
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    //获取停机时间
+    function LoadExceptionWeekAnalysis() {
+        var Request = new Object();
+        Request = GetRequest();
+        var TenantID = Request["TenantID"];
+        var DepartCode = Request["DepartCode"];
+        $.ajax({
+            url: "/api/MiniMES/SummaryBoard/GetExceptionWeekAnalysis",
+            data: {
+                "TenantID": TenantID,
+                "WorkShopId": DepartCode
+            },
+            async: true,
+            success: function (data) {
+                if (data != null && data != '[]') {
+                    var obj = data;
+                    var x = [];
+                    var y1 = [];
+                    var y2 = [];
+                    var y3 = [];
+                    $.each(obj, function (index, item) {
+                        x.push(item.ExceptionOrder);
+                        $.each(item.Exception, function (index2, item2) {
+                            var iExceptionName = item2.ExceptionName;
+                            if (iExceptionName.indexOf('品质') >= 0) {
+                                y1.push(item2.LossTime);
+                            }
+                            if (iExceptionName.indexOf('设备') >= 0) {
+                                y2.push(item2.LossTime);
+                            }
+                            if (iExceptionName.indexOf('生产') >= 0) {
+                                y3.push(item2.LossTime);
+                            }
+                        });
+                    });
+                    LoadExceptionWeekAnalysisCharts(x, y1, y2, y3);
+                }
+            }
+        });
+    }
+    LoadExceptionWeekAnalysis();
+</script>
+
+<script type="text/javascript">
+    //获取停机时间
+    function LoadLineStatus() {
+        var Request = new Object();
+        Request = GetRequest();
+        var TenantID = Request["TenantID"];
+        var DepartCode = Request["DepartCode"];
+        $.ajax({
+            url: "/api/MiniMES/SummaryBoard/GetLineStatus",
+            data: {
+                "TenantID": TenantID,
+                "WorkShopId": DepartCode
+            },
+            async: true,
+            success: function (data) {
+                if (data != null && data != '' && data.length > 0) {
+                    $("#table_LineStatus").html('');
+                    var table_LineStatus = '';
+                    for (var i = 0; i < data.length; i++) {
+                        var item = data[i];
+                        if (i % 15 == 0) {
+                            if (i != 0) {
+                                table_LineStatus += "</tr>";
+                            }
+                            table_LineStatus += "<tr>";
+                        }
+                        var img = "/Content/jinl_workshop/images/jtblue.png";
+                        if (item.StateName.indexOf("未切单") >= 0) {
+                            img = "/Content/jinl_workshop/images/jtgrey.png";
+                        }
+                        if (item.StateName.indexOf("停机中") >= 0) {
+                            img = "/Content/jinl_workshop/images/jtred.png";
+                        }
+                        if (item.StateName.indexOf("换模中") >= 0) {
+                            img = "/Content/jinl_workshop/images/jtyellow.png";
+                        }
+                        if (item.StateName.indexOf("生产中") >= 0) {
+                            img = "/Content/jinl_workshop/images/jtblue.png";
+                        }
+                        table_LineStatus += "<td><img src=\"" + img + "\">" + item.LineName + "</td>";
+                        if (i == data.length - 1) {
+                            table_LineStatus += "</tr>";
+                        }
+                    }
+                    $("#table_LineStatus").html(table_LineStatus);
+                }
+            }
+        });
+    }
+    LoadLineStatus();
+</script>
+
+<script type="text/javascript">
+    //获取停机时间
+    function LoadFirstCheck() {
+        $(".FirstCheck").show();
+        $(".RandomPlto").hide();
+        var Request = new Object();
+        Request = GetRequest();
+        var TenantID = Request["TenantID"];
+        var DepartCode = Request["DepartCode"];
+        $.ajax({
+            url: "/api/MiniMES/SummaryBoard/GetFirstCheckByWorkShopCode",
+            data: {
+                "TenantID": TenantID,
+                "WorkShopId": DepartCode
+            },
+            async: true,
+            success: function (data) {
+                if (data != null && data != '[]') {
+                    var obj = data;
+                    var x = [];
+                    if (obj.OKCount>0) {
+                        x.push({ value: obj.OKCount, name: "首件合格" });
+                    }
+                    if (obj.NGCount > 0) {
+                        x.push({ value: obj.NGCount, name: "首件不合格" });
+                    }
+                   
+                    $("#CheckCount").html((obj.OKCount + obj.NGCount));
+                    $("#OKCount").html((obj.OKCount));
+                    $("#NGCount").html((obj.NGCount));
+                    if ((obj.OKCount + obj.NGCount) > 0) {
+                        $("#OKRate").html(((obj.OKCount * 100) / (obj.OKCount + obj.NGCount)).toFixed(0) + "%");
+                        LoadFirstCheckCharts(x);
+                    } 
+                }
+            }
+        });
+    }
+</script>
+
+
+<script type="text/javascript">
+        
+    function LoadRandomPltoInfo() {
+        $(".FirstCheck").hide();
+        $(".RandomPlto").show();
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantID = Request["TenantID"];
+            var DepartCode = Request["DepartCode"];
+            $.ajax({
+                url: "/api/MiniMES/SummaryBoard/GetRandomPltoInfo",
+                data: {
+                    "TenantID": TenantID,
+                    "WorkShopId": DepartCode
+                },
+                async: true,
+                success: function (data) {
+                    if (data != null && data != '[]') {
+                        $("#datetime").html(data.beginDate + '至' + data.endDate);
+                        LoadRandomPltoInfoCharts(data.situationArrt, data.countArrt, data.lvArrt);
+                    }
+                }
+            });
+    }
+    LoadRandomPltoInfo();
+    LoadFirstCheck();
+    function ToggleCheck()
+    {
+        $(".FirstCheck").toggle();
+        $(".RandomPlto").toggle();
+    }
+
+    setInterval(ToggleCheck, (30 * 1000));
+</script>
+
+<script type="text/javascript">
+
+    function LoadAll() {
+        LoadOrderNoProgress();
+        LoadEquipmentData();
+        LoadUndisposedException();
+        LoadExceptionWeekAnalysis();
+        LoadLineStatus();
+        LoadFirstCheck();
+    }
+    setInterval(LoadAll, (10 * 60*1000));
+    
+   
+</script>

@@ -1,0 +1,1462 @@
+﻿@using STD.MiniMES.Web;
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>信息化机台看板</title>
+
+    <link href="~/Content/fengming/css/conmmentcss.css" rel="stylesheet" />
+    <script src="~/Content/fengming/js/echarts-all.js"></script>
+    <script src="~/Content/fengming/js/echarts.common.min.js"></script>
+
+    <link href="~/Content/bootstrap/Css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/js/bootstrap-select-1.13.0-dev/dist/css/bootstrap-select.min.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap/js/jquery-2.1.1.min.js"></script>
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/bootstrap-select-1.13.0-dev/dist/js/bootstrap-select.js"></script>
+    <script src="~/Content/js/bootstrap-select-1.13.0-dev/dist/js/i18n/defaults-zh_CN.min.js"></script>
+
+
+    <script type="text/javascript">
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+        $(function () {
+            $('#myCarousel').carousel({ interval: 3000 });
+        })
+
+    </script>
+    <style>
+        .form-control {
+            color: black;
+            font-weight: bold;
+        }
+
+        #StartAndEnd {
+            width: 80px;
+            height: 30px;
+            background-color: #6FB243;
+            border-radius: 8px;
+            box-shadow: 2px 3px 6px rgba(0,0,0,0.3);
+            line-height: 30px;
+            border: none;
+            text-align: center;
+        }
+
+            #StartAndEnd:active {
+                box-shadow: none;
+            }
+
+        #ChangeOver {
+            width: 80px;
+            height: 30px;
+            background-color: #6FB243;
+            border-radius: 8px;
+            box-shadow: 2px 3px 6px rgba(0,0,0,0.3);
+            line-height: 30px;
+            border: none;
+            text-align: center;
+        }
+
+            #ChangeOver:active {
+                box-shadow: none;
+            }
+
+        #HandleException {
+            width: 100px;
+            height: 30px;
+            background-color: #6FB243;
+            border-radius: 8px;
+            box-shadow: 2px 3px 6px rgba(0,0,0,0.3);
+            line-height: 30px;
+            border: none;
+            text-align: center;
+        }
+
+            #HandleException:active {
+                box-shadow: none;
+            }
+
+        #MachineMaintenance {
+            width: 100px;
+            height: 30px;
+            background-color: #6FB243;
+            border-radius: 8px;
+            box-shadow: 2px 3px 6px rgba(0,0,0,0.3);
+            line-height: 30px;
+            border: none;
+            text-align: center;
+        }
+
+            #MachineMaintenance:active {
+                box-shadow: none;
+            }
+    </style>
+</head>
+
+<body style="background-color:#0b2637;padding:0;margin:0;position:relative">
+    <div class="container">
+        <div class="rowbox1">
+            <div class="rowleft col-md-12 col-lg-12">
+                <nav class="headnav navbar">
+                    <div class="row">
+                        <div class="logoimg col-md-4 col-lg-4 pull-left">
+                            <a href="" id="AReturnHome"><img src="~/Content/fengming/images/jiln.png" style="width:60px;height:40px"></a>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <h4 class="headercenter">工位信息化看板</h4>
+                        </div>
+                        <div class="righttime col-md-4 col-lg-4 text-right">
+                            <h4 style=" text-align: right;" id="nowDateTimeSpan"></h4>
+                        </div>
+                    </div>
+                </nav>
+                <div class="wind_title row">
+                    <div class="station_toptitle" style="height:120px !important">
+                        <table class="stationtop_table">
+                            <tr>
+                                <td>机台名称 : <span id="txtLineName"></span></td>
+                                <td>标准人数 : <span id="txtPlanPerson"></span></td>
+                                <td>实际人数 : <span id="txtPerson" style="background-color:#1C6DC8"></span></td>
+
+                            </tr>
+                            <tr>
+                                <td>产品名称 : <span id="txtProductName"></span></td>
+                                <td>工单编号 : <span id="txtOrderNo" style="background-color:#1C6DC8"></span></td>
+                                <td>产品编号 : <span id="txtProductCode"></span></td>
+                            </tr>
+                            <tr>
+                                <td>标准模穴 : <span id="txtStandardMould" style="background-color:#1C6DC8"></span></td>
+                                <td>实际模穴 : <span id="txtActualMould"></span></td>
+                                <td>模穴率 : <span id="txtMouldRate"></span></td>
+                            </tr>
+                            <tr>
+                                <td>计划达成率 : <span id="txtRatioQty" ></span></td>
+                                <td>计划数量 : <span id="txtPlanQty"></span></td>
+                                <td>完成数量 : <span id="txtQty"></span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="outslide" style="margin-top:72px;">
+                    <div class="centerslide">
+                        <div class="innerslide">
+                            <div class="Windbox">
+
+                                <div class="row windtable" style="margin-top:30px">
+                                    <div class="col-md-3">
+                                        <div class="windcol">
+                                            <table class="table station_table" style="padding-top:20px">
+                                                <thead>
+                                                    <tr>
+                                                        <th>设备状态</th>
+                                                        <th class="text-right"><span class="gray" id="txtStateName">生产中</span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><span class="stationstate_faker">白班产能</span></td>
+                                                        <td class="text-right"><span class="stationstate_faker" id="txtDayShiftQty"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="stationstate_default">白班生产时间</span></td>
+                                                        <td class="text-right"><span class="stationstate_default" id="txtDayShiftTime"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="stationstate_faker">晚班产能</span></td>
+                                                        <td class="text-right"><span class="stationstate_faker" id="txtEveningShiftQty"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="stationstate_default">晚班生产时间</span></td>
+                                                        <td class="text-right"><span class="stationstate_default" id="txtEveningShiftTime"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="stationstate_faker"><button id="StartAndEnd" onclick="EditState()">开始/停止</button></span></td>
+                                                        <td class="text-right"><span class="stationstate_faker"></span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" style="padding:0;">
+                                        <div class="windcol">
+                                            <table class="table station_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>日计划达成率</th>
+                                                        <th class="text-right"><span class="red" id="txtRatioQtyNew"></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>日计划量</td><td class="text-right"><b id="txtPlanQtyNew"></b></td></tr>
+                                                    <tr><td>日产能</td><td class="text-right"><b id="txtQtyNew"></b></td></tr>
+                                                    @*
+                                                    <tr><td>差异数量</td><td class="text-right"><b id="txtDifferQty"></b></td></tr>*@
+                                                    <tr><td>备存计划达成率</td><td class="text-right"><b id="txtReserveRate"></b></td>
+                                                    <tr><td>单次计数</td><td class="text-right"><b id="txtRatio"></b></td></tr>
+                                                    <tr><td><button id="ChangeOver" onclick="Operate(1)">换模开始/换模结束</button></td><td class="text-right"></td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="windcol">
+                                            <table class="table station_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>生产效率</th>
+                                                        <th class="text-right"><span class="blue" id="txtPlanRatio"></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>标准UPH</td><td class="text-right"><b id="txtPlanUPH"></b></td></tr>
+                                                    <tr><td>实际UPH</td><td class="text-right"><b id="txtCurUPH"></b></td></tr>
+                                                    <tr><td>标准C/T</td><td class="text-right"><b id="txtPlanCT"></b></td></tr>
+                                                    <tr><td>实际C/T</td><td class="text-right"><b id="txtCurCT"></b></td></tr>
+                                                    <tr><td><button id="HandleException" onclick="Operate(2)">处理异常开始/处理异常结束</button></td><td class="text-right"></td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3" style="padding-left:0;">
+                                        <div class="windcol">
+                                            <table class="table station_table">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="padding:6px 0px;">时间稼动率</th>
+                                                        <th class="text-right"><span class="blue" id="txtUtilization"></span></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr><td>开始时间</td><td style="padding:6px 0px;" class="text-right"><b id="txtCreateDateStr"></b></td></tr>
+                                                    <tr><td>生产时间</td><td class="text-right"><b id="txtProductTime"></b></td></tr>
+                                                    <tr><td>停机次数</td><td class="text-right"><b id="txtStopCount"></b></td></tr>
+                                                    <tr><td>停机时间</td><td class="text-right"><b id="txtStopTime"></b></td></tr>
+                                                    <tr><td><button id="MachineMaintenance" onclick="Operate(3)">机台维修开始/机台维修结束</button></td><td class="text-right"></td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row station_chart" style="padding:0px 15px;margin:0px">
+                                    <div class="andoncol stationcolbg">
+                                        <div id="main2" class="main2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="navbar1" style="position:absolute;left:0; bottom:0; z-index:999; position:fixed;">
+                    <div class="row" style="padding:0;margin:0">
+                        <div class="col-lg-6 text-left"><p id="id_TenantName" style="color:white;width:300px;font-size:15px"></p></div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框（Modal） 切单-->
+    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel" style="color:#000">工单切换</h4>
+                </div>
+                <div class="modal-body" style="color:#000">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="name" class="col-sm-3" style="left:60px;" id="OrderNoSelect">选择工单</label>
+                            <div class="col-sm-9">
+                                <select id="divSelect" onchange="SelectChange()" class="selectpicker show-tick form-control" data-live-search="true" data-width="415px" data-height="50px" data-size="5"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_OrderNo" class="col-sm-3 control-label">工单</label>
+                            <div class="col-sm-9">
+                                <input type="text" disabled="disabled" class="form-control" id="id_OrderNo" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_UPH" class="col-sm-3 control-label">UPH</label>
+                            <div class="col-sm-9">
+                                <input type="text" disabled="disabled" class="form-control" id="id_UPH" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_Ratio" class="col-sm-3 control-label">单次计数</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="id_Ratio" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_Person" class="col-sm-3 control-label">人数</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="id_Person" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_StandardMould" class="col-sm-3 control-label">标准模穴</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="id_StandardMould" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_ActualMould" class="col-sm-3 control-label">实际模穴</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="id_ActualMould" value="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="id_Cancel" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" id="btnSubmitChangeOrder" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框（Modal） 修改人数,UPH,单次计数-->
+    <div class="modal fade" id="editModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel" style="color:#000">修改切单参数</h4>
+                </div>
+                <div class="modal-body" style="color:#000">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="txtPreOrderNo" class="col-sm-3 control-label">工单编号</label>
+                            <div class="col-sm-9">
+                                <input type="text" disabled="disabled" class="form-control" id="txtPreOrderNo" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPreUPH" class="col-sm-3 control-label">UPH</label>
+                            <div class="col-sm-9">
+                                <input type="text" disabled="disabled" class="form-control" id="txtPreUPH" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPreRatio" class="col-sm-3 control-label">单次计数</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="txtPreRatio" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPrePerson" class="col-sm-3 control-label">人数</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="txtPrePerson" value="">
+                             
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="id_CancelEdit" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" id="btnEditData" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框（Modal） 修改模穴数据-->
+    <div class="modal fade" id="editMould" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel" style="color:#000">修改模穴</h4>
+                </div>
+                <div class="modal-body" style="color:#000">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="txtStrOrderNo" class="col-sm-3 control-label">工单编号</label>
+                            <div class="col-sm-9">
+                                <input type="text" disabled="disabled" class="form-control" id="txtStrOrderNo" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtStrActualMould" class="col-sm-3 control-label">实际模穴</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="txtStrActualMould" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="txtStrStandardMould" class="col-sm-3 control-label">标准模穴</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="txtStrStandardMould" value="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="id_CancelMould" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" id="btnEditMould" class="btn btn-primary">
+                        确定
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 生产工单查询 -->
+    <div class="modal fade" id="WorkNoSelect" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+        <div class="modal-dialog" style="width:1052px;height:500px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel2">
+                        生产工单查询
+                    </h4>
+                </div>
+                <div class="modal-body" style="background-color:#17325d">
+
+                    @{
+                    Html.RenderPartial("WorkNo_Partial");
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Content/fengming/js/jquery.nicescroll.js"></script>
+    <script src="~/Content/js/fengming/Board.js"></script>
+    <script type="text/javascript">
+        $('.innerslide').niceScroll({
+            cursorcolor: "#2E7DC2",//#CC0071 光标颜色
+            cursoropacitymax: "0", //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+            touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+            cursorwidth: "5px", //像素光标的宽度
+            cursorborder: "1", // 游标边框css定义
+            cursorborderradius: "8px",//以像素为光标边界半径
+            autohidemode: false //是否隐藏滚动条
+        });
+    </script>
+
+    <script src="~/Content/js/core/utils.js"></script>
+    <script type="text/javascript">
+
+        var UserName = "";
+        $(function () {
+
+            //统一登录
+            var LineCode = utils.getQueryString("LineCode").replace("#", "");
+            var StationCode = utils.getQueryString("StationCode").replace("#", "");
+            var TenantID = utils.getQueryString("TenantID").replace("#", "");
+            if (TenantID == null || TenantID == '') {
+                TenantID = utils.getQueryString("TenantId").replace("#", ""); 
+            }
+            var TenantPSD = utils.getQueryString("TenantPSD").replace("#", "");
+            UserName = decodeURI(utils.getQueryString("UserName").replace("#", ""));
+            var param = "LineCode=" + LineCode + "&StationCode=" + StationCode + "&TenantPSD=" + TenantPSD + "&TenantID=" + TenantID;
+            param = "http://192.168.10.12:8101/LineViewer/StationHome?" + param;
+            $("#AReturnHome").attr("href", param);
+
+            //获取产线数据
+            GetLineData();
+            //获得当前工厂的名称
+            LoadTenantName();
+            //获取固定数据
+            GetMainData();
+            //获取工单数据
+            GetOrderData();
+            //获取小时产量数据
+            GetChartData();
+            //判断工单停止/开始
+            Show();
+            //获取产能和生产时间
+            GetLineQtyAndTime();
+            //换模
+            ShowStatus(1);
+            //处理异常
+            ShowStatus(2);
+            //机台维修
+            ShowStatus(3);
+
+            //每隔10s刷新一次数据
+            var showQtyAndTimeTimes = setInterval(GetLineQtyAndTime, 20000);
+            clearInterval(GetLineQtyAndTime);
+            showQtyAndTimeTimes = setInterval(GetLineQtyAndTime, 20000);
+
+            //每隔1h刷新一次数据
+            var showLineTimes = setInterval(GetLineData, 3600000);
+            clearInterval(GetLineData);
+            showLineTimes = setInterval(GetLineData, 3600000);
+
+            //每隔10s刷新一次数据
+            var showOrderTimes = setInterval(GetMainData, 30000);
+            clearInterval(GetMainData);
+            showOrderTimes = setInterval(GetMainData, 30000);
+
+            //每隔20s刷新一次数据
+            var showTimes = setInterval(GetOrderData, 30000);
+            clearInterval(GetOrderData);
+            showTimes = setInterval(GetOrderData, 30000);
+
+            //每隔1小时刷新一次数据
+            var showhourTimes = setInterval(GetChartData, 3600000);
+            clearInterval(GetChartData);
+            showhourTimes = setInterval(GetChartData, 3600000);
+
+            //切单确认操作
+            $("#btnSubmitChangeOrder").click(function () {
+                var Request = new Object();
+                Request = GetRequest();
+                //var WorkSheetNoProduct = $("#divSelect").val();
+                //var strs = WorkSheetNoProduct.split("|");
+                //var WorkSheetNo = strs[0];
+                var WorkSheetNo=$("#id_OrderNo").val();//直接取出
+                var UPH = $("#id_UPH").val();
+                var Ratio = $("#id_Ratio").val();
+                var Person = $("#id_Person").val();
+                var PlanPerson = $("#txtPlanPerson").html();//标准人数
+                var ActualMould = $("#id_ActualMould").val();//实际模穴
+                var StandardMould = $("#id_StandardMould").val();//标准模穴
+                if (UPH == "" || Ratio == "" || Person == "") {
+                    alert("请输入相关参数");
+                } else {
+                    var TenantId = Request['TenantID'];
+                    if (TenantId == null || TenantId == '') {
+                        TenantId = Request["TenantId"];
+                    }
+                    $.ajax({
+                        url: "../LineBoard/OrderOK",
+                        data: {
+                            "WorkSheetNo": WorkSheetNo,
+                            "UPH": UPH,
+                            "Ratio": Ratio,
+                            "Person": Person,
+                            "PlanPerson": PlanPerson,
+                            "LineId": Request['LineId'],
+                            "TenantID": TenantId,
+                            "ActualMould": ActualMould,
+                            "StandardMould": StandardMould
+                        },
+                        async: false,
+                        success: function (data) {
+                            if (data == "") {
+                                //模拟点击事件 关闭切单页面
+                                $('#id_Cancel').trigger('click');
+                                GetMainData();
+                                GetOrderData();
+                            }
+                            else {
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("保存失败，请重新保存");
+                        }
+                    });
+                }
+            });
+
+            //打开切单页面
+            $("#txtOrderNo").click(function () {
+                $('#myModal').modal();
+                setProduct();
+            });
+
+            //打开修改人数，UPH，单词计数页面
+            $("#txtPerson").click(function () {
+                $('#editModal').modal();
+                GetData();
+            });
+
+            //打开修改实际模穴，标准模穴页面
+            $("#txtStandardMould").click(function () {
+                $('#editMould').modal();
+                GetMouldData();
+            });
+
+            //打开弹框
+             $("#OrderNoSelect").click(function () {
+                 $('#WorkNoSelect').modal("show");//显示
+                 //QueryWorkList()(function () {  });//当点击时再加载数据
+            });
+
+            //关闭弹框
+            $("#divModelWorkNo").on("click", "#tbodyWorkList tr", function () {
+                $("#id_OrderNo").val($(this).children("td:eq(0)").html());//带出工单
+                var ProductCode = $(this).children("td:eq(1)").html();//产品编号
+                GetInfo(ProductCode);//获取单次计数和UPH
+                $("#WorkNoSelect").modal("hide");//隐藏
+            });
+        });
+
+        //换模
+        function IsEnableChangeOverStatus() {
+            var ChangeOverData = $("#ChangeOver").text();
+            if (ChangeOverData == "换模结束") {
+                document.getElementById("HandleException").disabled = true;
+                document.getElementById("MachineMaintenance").disabled = true;
+            }
+            else if (ChangeOverData == "换模开始") {
+                document.getElementById("HandleException").disabled = false;
+                document.getElementById("MachineMaintenance").disabled = false;
+            }
+        }
+
+        //处理异常
+        function IsEnableHandleExceptionStatus() {
+            var HandleExceptionData = $("#HandleException").text();
+            if (HandleExceptionData == "处理异常结束") {
+                document.getElementById("ChangeOver").disabled = true;
+                document.getElementById("MachineMaintenance").disabled = true;
+            }
+            else if (HandleExceptionData == "处理异常开始") {
+                document.getElementById("ChangeOver").disabled = false;
+                document.getElementById("MachineMaintenance").disabled = false;
+            }
+        }
+
+        //机台维修
+        function IsEnableMachineMaintenanceStatus() {
+            var MachineMaintenanceData = $("#MachineMaintenance").text();
+            if (MachineMaintenanceData == "机台维修结束") {
+                document.getElementById("ChangeOver").disabled = true;
+                document.getElementById("HandleException").disabled = true;
+            }
+            else if (MachineMaintenanceData == "机台维修开始") {
+                document.getElementById("ChangeOver").disabled = false;
+                document.getElementById("HandleException").disabled = false;
+            }
+        }
+
+        //判断开始/暂停
+        function Show() {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            var OrderNo = $("#txtOrderNo").html();
+            $.ajax({
+                    url: "../LineBoard/Show",
+                    data: {
+                        "LineId": LineId,
+                        "TenantID": TenantId,
+                        "OrderNo": OrderNo
+                    },
+                    async: false,
+                    success: function (data) {
+                        var result = $.parseJSON(data);
+                        if (result.Data == "开始") {
+                            $("#StartAndEnd").text("开始");
+                            $("#StartAndEnd").css('background-color', 'green');
+                        }
+                        else {
+                            $("#StartAndEnd").text("停止");
+                            $("#StartAndEnd").css('background-color', 'red');
+                        }
+                    }
+                });
+        }
+
+        //工单开始/暂停操作
+        function EditState() {
+            var data = $("#StartAndEnd").text();
+            var OrderNo = $("#txtOrderNo").html();
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            var LineId = Request['LineId'];
+            if (data == "停止") {
+                $.ajax({
+                    url: "../LineBoard/StartTime",
+                    data: {
+                        "OrderNo": OrderNo,
+                        "LineId": LineId,
+                        "TenantId": TenantId
+                    },
+                    async: false,
+                    success: function (data) {
+                        if (data == "") {
+                            Show();
+                        }
+                        else {
+                            alert(data);
+                        }
+                    },
+                    error: function () {
+                        alert("更新失败");
+                    }
+                });
+            }
+            else {
+                $.ajax({
+                    url: "../LineBoard/EndTime",
+                    data: {
+                        "OrderNo": OrderNo,
+                        "LineId": LineId,
+                        "TenantId": TenantId
+                    },
+                    async: false,
+                    success: function (data) {
+                        if (data == "") {
+                            Show();
+                        }
+                        else {
+                            alert(data);
+                        }
+                    },
+                    error: function () {
+                        alert("更新失败");
+                    }
+                });
+            }
+        }
+
+        //加载客户名称
+        function LoadTenantName() {
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            $.ajax({
+                url: "../WorkshopBoard/LoadTenantName",
+                data: {
+                    "TenantID": TenantId
+                },
+                async: true,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    $("#id_TenantName").html(result[0].TenantName);
+                }
+            });
+        }
+
+        //获取产线信息
+        function GetLineData() {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            $.ajax({
+                url: "../LineBoard/GetLineBoardData",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantId
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    if (result.length > 0) {
+                        $("#txtLineName").html(result[0].LineName);
+                        $("#txtPlanPerson").html(result[0].StandUsers);//标准人数
+                    }
+                }
+            });
+        }
+
+        //获取产线数据
+        function GetMainData() {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            $.ajax({
+                url: "../LineBoard/GetLineData",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantId
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    if (!result.status) {
+                        $("#txtPerson").html("0");
+                        $("#txtProductName").html("");
+                        $("#txtOrderNo").html("无工单");
+                        $("#txtProductCode").html("");
+                        $("#txtPlanQty").html("0");
+                        $("#txtRatio").html("0");
+                        $("#txtPlanUPH").html("0");
+                        $("#txtPlanCT").html("0");
+                    }
+                    else {
+                        var resultValue = result.rows;
+                        $("#txtPerson").html(resultValue.Person);//实际人数
+                        $("#txtProductName").html(resultValue.ProductName);
+                        $("#txtOrderNo").html(resultValue.OrderNo);
+                        $("#txtProductCode").html(resultValue.ProductCode);
+                        $("#txtPlanQty").html(resultValue.PlanQty);
+                        $("#txtRatio").html(resultValue.Ratio);
+                        $("#txtPlanUPH").html(resultValue.PlanUPH);
+                        $("#txtPlanCT").html(resultValue.PlanCT);
+                    }
+                }
+            });
+        }
+
+        //获取白晚班产能和生产时间
+        function GetLineQtyAndTime() {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            $.ajax({
+                url: "../LineBoard/GetLineQtyAndTime",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantId
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    if (!result.status) {
+                        $("#txtDayShiftQty").html("0");
+                        $("#txtDayShiftTime").html("0");
+                        $("#txtEveningShiftQty").html("0");
+                        $("#txtEveningShiftTime").html("0");
+                    }
+                    else {
+                        var resultValue = result.rows;
+                        $("#txtDayShiftQty").html(resultValue.DayShiftQty);
+                        $("#txtDayShiftTime").html(ChangeHourMinutestr(resultValue.DayShiftTime));
+                        $("#txtEveningShiftQty").html(resultValue.EveningShiftQty);
+                        $("#txtEveningShiftTime").html(ChangeHourMinutestr(resultValue.EveningShiftTime));
+                    }
+                }
+            });
+        }
+
+        //判断换模/异常处理/机台维修状态
+        function ShowStatus(Type) {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            var OrderNo = $("#txtOrderNo").html();
+            $.ajax({
+                url: "../LineBoard/ShowStatus",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantId,
+                    "Type": Type,
+                    "OrderNo":OrderNo
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    if (Type == 1) {
+                        if (result.ChangeOverData == "换模开始") {
+                            $("#ChangeOver").text("换模开始");
+                            $("#ChangeOver").css('background-color', 'blue');
+                        }
+                        else {
+                            $("#ChangeOver").text("换模结束");
+                            $("#ChangeOver").css('background-color', 'red');
+                        }
+                    }
+                    else if (Type == 2) {
+                        if (result.HandleExceptionData == "处理异常开始") {
+                            $("#HandleException").text("处理异常开始");
+                            $("#HandleException").css('background-color', 'blue');
+                        }
+                        else {
+                            $("#HandleException").text("处理异常结束");
+                            $("#HandleException").css('background-color', 'red');
+                        }
+                    }
+                    else if (Type == 3) {
+                        if (result.MachineMaintenanceData == "机台维修开始") {
+                            $("#MachineMaintenance").text("机台维修开始");
+                            $("#MachineMaintenance").css('background-color', 'blue');
+                        }
+                        else {
+                            $("#MachineMaintenance").text("机台维修结束");
+                            $("#MachineMaintenance").css('background-color', 'red');
+                        }
+                    }
+                }
+            });
+        }
+
+        //操作换模/处理异常/机台维修
+        function Operate(Type) {
+            var ChangeOverData = $("#ChangeOver").text();
+            var HandleExceptionData = $("#HandleException").text();
+            var MachineMaintenanceData = $("#MachineMaintenance").text();
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            var LineId = Request['LineId'];
+            var OrderNo = $("#txtOrderNo").html();
+            if (Type == 1) {
+                if (ChangeOverData == "换模开始") {
+                    $.ajax({
+                        url: "../LineBoard/StartOperate",
+                        data: {
+                            "LineId": LineId,
+                            "TenantId": TenantId,
+                            "Type": Type,
+                            "UserName": UserName,
+                            "OrderNo":OrderNo,
+                        },
+                        async: false,
+                        success: function (data) {
+                            if (data == "") {
+                                ShowStatus(1);
+                                IsEnableChangeOverStatus();
+                            }
+                            else {
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("更新失败");
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        url: "../LineBoard/EndOperate",
+                        data: {
+                            "LineId": LineId,
+                            "TenantId": TenantId,
+                            "Type": Type,
+                            "OrderNo":OrderNo,
+                        },
+                        async: false,
+                        success: function (data) {
+                            if (data == "") {
+                                ShowStatus(1);
+                                IsEnableChangeOverStatus();
+                            }
+                            else {
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("更新失败");
+                        }
+                    });
+                }
+            }
+            else if (Type == 2) {
+                if (HandleExceptionData == "处理异常开始") {
+                    $.ajax({
+                        url: "../LineBoard/StartOperate",
+                        data: {
+                            "LineId": LineId,
+                            "TenantId": TenantId,
+                            "Type": Type,
+                            "UserName": UserName,
+                            "OrderNo":OrderNo,
+                        },
+                        async: false,
+                        success: function (data) {
+                            if (data == "") {
+                                ShowStatus(2);
+                                IsEnableHandleExceptionStatus();
+                            }
+                            else {
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("更新失败");
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        url: "../LineBoard/EndOperate",
+                        data: {
+                            "LineId": LineId,
+                            "TenantId": TenantId,
+                            "Type": Type,
+                            "OrderNo":OrderNo,
+                        },
+                        async: false,
+                        success: function (data) {
+                            if (data == "") {
+                                ShowStatus(2);
+                                IsEnableHandleExceptionStatus();
+                            }
+                            else {
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("更新失败");
+                        }
+                    });
+                }
+            }
+            else if (Type == 3) {
+                if (MachineMaintenanceData == "机台维修开始") {
+                    $.ajax({
+                        url: "../LineBoard/StartOperate",
+                        data: {
+                            "LineId": LineId,
+                            "TenantId": TenantId,
+                            "Type": Type,
+                            "UserName": UserName,
+                            "OrderNo":OrderNo,
+                        },
+                        async: false,
+                        success: function (data) {
+                            if (data == "") {
+                                ShowStatus(3);
+                                IsEnableMachineMaintenanceStatus();
+                            }
+                            else {
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("更新失败");
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        url: "../LineBoard/EndOperate",
+                        data: {
+                            "LineId": LineId,
+                            "TenantId": TenantId,
+                            "Type": Type,
+                            "OrderNo":OrderNo,
+                        },
+                        async: false,
+                        success: function (data) {
+                            if (data == "") {
+                                ShowStatus(3);
+                                IsEnableMachineMaintenanceStatus();
+                            }
+                            else {
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("更新失败");
+                        }
+                    });
+                }
+            }
+        }
+
+        function ChangeHourMinutestr(time) {
+            var Hour = parseInt(parseInt(time) / 60);
+            var Minutestr = parseInt(parseInt(time) % 60);
+            var str = '';
+            if (Hour!=0) {
+                str += " "+Hour + "小时";
+            }
+            if (Minutestr != 0) {
+                str += " " +Minutestr + "分钟";
+            }
+            return str;
+        }
+        //获得定时刷新的数据
+        function GetOrderData() {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            $.ajax({
+                url: "../LineBoard/GetLineOrderData",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantId
+                },
+                async: true,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    if (!result.status) {
+                        $("#txtStateName").html("未切单");
+                        $("#txtRatioQtyNew").html("0%");
+                        $("#txtQtyNew").html("0");
+                        $("#txtPlanQtyNew").html("0");
+
+ $("#txtRatioQty").html("0%");
+                        $("#txtQty").html("0");
+
+                        $("#txtDifferQty").html("0");
+                        $("#txtPlanRatio").html("0%");
+                        $("#txtCurUPH").html("0");
+                        $("#txtCurCT").html("0");
+                        $("#txtCurCT").html("0");
+                        $("#txtCreateDateStr").html("");
+                        $("#txtUtilization").html("0%");
+                        $("#txtProductTime").html("0");
+                        $("#txtStopCount").html("0");
+                        $("#txtStopTime").html("0");
+                        $("#txtReserveRate").html("0");//备存计划达成率
+                        $("#txtStandardMould").html("0");//标准模穴
+                        $("#txtActualMould").html("0");//实际模穴
+                        $("#txtMouldRate").html("0%");//模穴率
+                    }
+                    else {
+                        var resultValue = result.rows;
+                        $("#txtPlanQtyNew").html(resultValue.DayPlanQty);
+                        $("#txtQtyNew").html(resultValue.DayQty);
+                        $("#txtRatioQtyNew").html(resultValue.DayRatioQty);//计划达成率
+ $("#txtQty").html(resultValue.Qty);
+                        $("#txtRatioQty").html(resultValue.RatioQty);//计划达成率
+
+                        $("#txtStateName").attr("class", resultValue.Color);
+                        $("#txtStateName").html(resultValue.StateName);
+                        $("#txtUtilization").html(resultValue.Utilization);//时间稼动率
+                     
+                        $("#txtStopCount").html(resultValue.StopCount);
+                        $("#txtStopTime").html(resultValue.StopTime);
+                        $("#txtCreateDateStr").html(resultValue.CreateDateStr);
+                        $("#txtProductTime").html(ChangeHourMinutestr(resultValue.ProductTime));
+                        $("#txtPlanRatio").html(resultValue.PlanRatio);//生产效率
+                        $("#txtDifferQty").html(resultValue.DifferQty);
+                        $("#txtCurCT").html(resultValue.CurCT);
+                        $("#txtCurUPH").html(resultValue.CurUPH);
+                        $("#txtUtilization").html(resultValue.Utilization);
+                        $("#txtReserveRate").html(resultValue.ReserveRate);//备存计划达成率
+                        $("#txtStandardMould").html(resultValue.StandardMould);//标准模穴
+                        $("#txtActualMould").html(resultValue.ActualMould);//实际模穴
+                        $("#txtMouldRate").html(resultValue.MouldRate);//模穴率
+                    }
+                }
+            });
+        }
+
+        //小时产量数据
+        function GetChartData() {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            $.ajax({
+                url: "../LineBoard/GetHourData",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantId
+                },
+                async: true,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    if (result.status) {
+                        var resultValue = result.rows;
+                        var xdata = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00'];
+                        var ydata = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+                        var hourValue = "";
+                        for (var i = 0; i < resultValue.length; i++) {
+                            hourValue = resultValue[i].StartTime;
+                            if (hourValue == "23:59") hourValue = "00:00";
+                            ydata[xdata.indexOf(hourValue)] = resultValue[i].QtySum;
+                        }
+                    }
+                    ShowHourData(xdata, ydata);
+                }
+            });
+        }
+
+        //切换产品
+        function setProduct() {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            $.ajax({
+                url: "../LineBoard/ChangeOrder",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantId
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    var selectStr = '';
+                    var selectStr = '<select>';
+                    var OrderNo = $("#txtOrderNo").html();
+                    for (var i = 0; i < result.length; i++) {
+                        var select = '';
+                        if (result[i].WorkSheetNo!=null&&result[i].WorkSheetNo.trim() == OrderNo) {
+                            select = 'selected="selected"';
+                        }
+                        selectStr += '<option ' + select+' MaterialCode="' + result[i].MaterialCode.trim() +'" value="' + result[i].WorkSheetNo.trim() + '|' + result[i].ProductCode.trim() + '">' + "序号" + result[i].Seq + '|' + result[i].WorkSheetNo.trim() + '|' + result[i].ProductName.trim() + '|' + result[i].ProductCode.trim() + '|' + result[i].LineName + '</option>';
+                    }
+                    selectStr += '</select>';
+                    $("#divSelect").html(selectStr);
+                    $("#divSelect").selectpicker('refresh');//动态刷新
+                    $('#divSelect').selectpicker('render');
+                    var person = $("#txtPlanPerson").html();
+                    $("#id_Person").val(person);
+                    if (result.length > 0) {
+                        SelectChange();
+                    }
+                }
+            });
+        }
+
+        //切换产品获取单次计数和UPH
+        function SelectChange() {
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            var WorkSheetNoProduct = $("#divSelect").val();
+            var MaterialCode=$('#divSelect').find('option:selected').attr('MaterialCode')
+            var strs = WorkSheetNoProduct.split("|");
+            var ProductCode = strs[1];
+            var OrderNo = strs[0];
+            $("#id_OrderNo").val(OrderNo);//显示工单
+            $.ajax({
+                url: "../LineBoard/SelectChange",
+                data: {
+                    "ProductCode": MaterialCode,
+                    "TenantID": TenantId,
+                    "OrderNo": OrderNo
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    $("#id_Ratio").val(result.Ratio);
+                    $("#id_UPH").val(result.UPH);
+                    $("#id_StandardMould").val(result.StandardMould);
+                    $("#id_Person").val(result.Person);
+                    $("#id_ActualMould").val(result.ActualMould);
+                }
+            });
+        }
+
+         //切换产品获取单次计数和UPH
+        function GetInfo(ProductCode) {
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            $.ajax({
+                url: "../LineBoard/SelectChange",
+                data: {
+                    "ProductCode": ProductCode,
+                    "TenantID": TenantId
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    $("#id_Ratio").val(result.Ratio);
+                    $("#id_UPH").val(result.UPH);
+                }
+            });
+        }
+
+        //获取数据
+        function GetData() {
+            var OrderNo = $("#txtOrderNo").html();
+            $.ajax({
+                url: "../LineBoard/GetData",
+                data: {
+                    "OrderNo": OrderNo
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    $("#txtPreOrderNo").val(OrderNo);
+                    $("#txtPreUPH").val(result.UPH);
+                    $("#txtPreRatio").val(result.Ratio);
+                    $("#txtPrePerson").val(result.Person);
+                }
+            });
+        }
+
+        //获取模数数据
+        function GetMouldData() {
+            var OrderNo = $("#txtOrderNo").html();
+            $.ajax({
+                url: "../LineBoard/GetMouldData",
+                data: {
+                    "OrderNo": OrderNo
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    $("#txtStrOrderNo").val(OrderNo);
+                    $("#txtStrActualMould").val(result.ActualMould);
+                    $("#txtStrStandardMould").val(result.StandardMould);
+                }
+            });
+        }
+
+        //修改切单参数
+        $("#btnEditData").click(function () {
+            var OrderNo = $("#txtOrderNo").html();
+            var UPH = $("#txtPreUPH").val();
+            var Ratio = $("#txtPreRatio").val();
+            var Person = $("#txtPrePerson").val();
+            $.ajax({
+                url: "../LineBoard/EditData",
+                data: {
+                    "OrderNo": OrderNo,
+                    "UPH": UPH,
+                    "Ratio": Ratio,
+                    "Person": Person,
+                },
+                async: false,
+                success: function (data) {
+                    if (data == "") {
+                        //模拟点击事件 关闭切单页面
+                        $('#id_CancelEdit').trigger('click');
+                        GetMainData();
+                    }
+                    else {
+                        alert(data);
+                    }
+                },
+                error: function () {
+                    alert("保存失败，请重新保存");
+                }
+            });
+        });
+
+        //修改模穴数据
+        $("#btnEditMould").click(function () {
+            var OrderNo = $("#txtOrderNo").html();
+            var ActualMould = $("#txtStrActualMould").val();
+            var StandardMould = $("#txtStrStandardMould").val();
+            $.ajax({
+                url: "../LineBoard/EditMould",
+                data: {
+                    "OrderNo": OrderNo,
+                    "ActualMould": ActualMould,
+                    "StandardMould": StandardMould,
+                },
+                async: false,
+                success: function (data) {
+                    if (data == "") {
+                        //模拟点击事件 关闭切单页面
+                        $('#id_CancelMould').trigger('click');
+                        GetMainData();
+                    }
+                    else {
+                        alert(data);
+                    }
+                },
+                error: function () {
+                    alert("保存失败，请重新保存");
+                }
+            });
+        });
+    </script>
+
+    <script language="JavaScript">
+        function startTime() {
+            //var today = new Date();//定义日期对象
+            //var yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年
+            //var MM = today.getMonth() + 1;//通过日期对象的getMonth()方法返回年
+            //var dd = today.getDate();//通过日期对象的getDate()方法返回年
+            //var hh = today.getHours();//通过日期对象的getHours方法返回小时
+            //var mm = today.getMinutes();//通过日期对象的getMinutes方法返回分钟
+            //var ss = today.getSeconds();//通过日期对象的getSeconds方法返回秒
+            //// 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09
+            //MM = checkTime(MM);
+            //dd = checkTime(dd);
+            //mm = checkTime(mm);
+            //var day; //用于保存星期（getDay()方法得到星期编号）
+            //if (today.getDay() == 0) day = "星期日 "
+            //if (today.getDay() == 1) day = "星期一 "
+            //if (today.getDay() == 2) day = "星期二 "
+            //if (today.getDay() == 3) day = "星期三 "
+            //if (today.getDay() == 4) day = "星期四 "
+            //if (today.getDay() == 5) day = "星期五 "
+            //if (today.getDay() == 6) day = "星期六 "
+            //$("#nowDateTimeSpan").html("<p>" + yyyy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + " " + day + "<p>");
+            //setTimeout('startTime()',1000);//每一秒中重新加载startTime()方法
+            $.ajax({
+                url: "../WorkshopBoard/GetDate",
+                data: {
+                },
+                async: false,
+                success: function (data) {
+                    $("#nowDateTimeSpan").html(data);
+                }
+            });
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+        startTime();
+
+        //每隔60s刷新一次数据
+        var shwMinTimes = setInterval(startTime, 1000);
+        clearInterval(shwMinTimes);
+        shwMinTimes = setInterval(startTime, 1000);
+    </script>
+</body>
+</html>
+

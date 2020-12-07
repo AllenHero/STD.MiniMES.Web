@@ -1,0 +1,1411 @@
+﻿@charset "utf-8";
+
+body, div, p, h1, h2, h3, h4, form, ul, li, dl, dt, dd, ol, img, a, span, em, i, strong, b, input, label {
+    margin: 0;
+    padding: 0;
+}
+
+img, a {
+    display: block;
+}
+
+ul, li {
+    list-style: none;
+}
+
+em, i {
+    font-style: normal;
+}
+
+dl dd {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer; /*color: #3399cc;*/
+}
+
+    a:hover {
+        color: #ffffff;
+    }
+
+body, html {
+    font-size: 14px;
+    width: 100%;
+    color: #000;
+    height: 100%;
+    overflow: hidden;
+    background-color: #F0F5F5;
+}
+
+.clearfix {
+    clear: both;
+    padding: 0;
+    margin: 0;
+}
+
+.wapper {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('../../images/MiniMES/MiniMES_zy/bg.png');
+    background-size: 100% 100%;
+}
+
+.wapperbg {
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "微软雅黑";
+    letter-spacing: 0.618px;
+}
+
+input {
+    color: #999;
+    font-size: 18px;
+    border: none;
+    outline-style: none;
+    letter-spacing: 1px;
+}
+
+
+/*MiniMES_css------------------------------------------------------------------------------------------------*/
+
+
+/*tab切换---*/
+.main_content #all {
+    width: 100%;
+    float: left;
+    display: block;
+}
+
+#title {
+    width: 100%;
+    height: 100px;
+    padding-top: 15px;
+    border: solid 1px #C6CDD5;
+}
+
+    #title ul {
+        width: 70%;
+        height: 70px;
+        float: left;
+        border-radius: 10px;
+        border-bottom: 1px solid #999;
+        overflow: hidden;
+        padding-top: 1px;
+    }
+
+        #title ul li {
+            float: left;
+            padding: 0;
+            margin: 0;
+            width: 20%;
+            margin-top: 0px;
+            line-height: 68px;
+            height: 68px;
+            font-weight: 600;
+            background-size: 100% 100%;
+            text-align: center;
+            font-size: 24px;
+            list-style: none;
+        }
+
+            #title ul li p {
+                font-size: 16px;
+                line-height: 12px;
+                font-weight: normal;
+            }
+
+    #title li:last-child {
+    }
+
+.logo a {
+    width: 19%;
+    margin-right: 2%;
+    height: 60px;
+    float: left;
+    background: url('../../images/MiniMES/LOGO.png') no-repeat right;
+    background-size: 95% 98%;
+}
+
+    .logo a:hover {
+        background: url('../../images/MiniMES/LOGO2.png') no-repeat right;
+        background-size: 95% 98%;
+    }
+
+.set {
+    width: 9%;
+    height: 60px;
+    float: right;
+    background: url('../../images/MiniMES/MiniMES_zy/nav_btn_more_default.png') no-repeat center;
+}
+
+    .set:hover {
+        background: url('../../images/MiniMES/MiniMES_zy/nav_btn_more_selected.png') no-repeat center;
+    }
+
+.new {
+    color: #fff;
+    text-shadow: 0px 1px 0 #999;
+    background: url('../../images/MiniMES/MiniMES_zy/nav_button_huizong_selected.png') no-repeat; font-weight: 600;
+}
+
+.old {
+    background: url('../../images/MiniMES/tpm_image/navbg.png') no-repeat;
+    background-size: 100% 100%;
+    color: #5a5a5a;
+    font-weight: normal;
+}
+
+.newer {
+    background: url('../../images/MiniMES/MiniMES/MiniMES_zy/leftsidebar_duanwei_selected.png') no-repeat; background-size: 100% 100%;
+    color: #fff;
+}
+
+.older {
+    color: #666;
+    font-weight: normal;
+}
+
+.leftcontent {
+    width: 100%;
+    height: 100%;
+    float: left;
+    padding: 0;
+    -moz-box-shadow: 0px 0px 20px #B2B2B2;
+    -webkit-box-shadow: 0px 0px 20px #B2B2B2;
+    box-shadow: 0px 0px 20px #B2B2B2;
+}
+
+#content {
+    clear: both;
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+.inContent {
+    width: 83.5%;
+    box-sizing: border-box;
+    float: right;
+}
+
+    .inContent .incontentbg {
+        background: url('../../images/MiniMES/MiniMES_zy/rightsidebar.png') no-repeat center; background-size: 100% 100%;
+        height: 560px;
+        width: 98%;
+        padding: 20px;
+        overflow: auto;
+    }
+
+        .inContent .incontentbg .incontfirst {
+            width: 100%;
+            overflow: hidden;
+            float: left;
+            margin-bottom: 40px;
+        }
+
+.incontfirst img, .incontfirst span {
+    float: left;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.incontfirst span {
+    padding-left: 15px;
+}
+
+.incontfirst dl dt {
+    width: 160px;
+    height: 160px;
+    float: left;
+    margin: 2% 0px 0px 3%;
+}
+
+    .incontfirst dl dt img {
+        width: 100%;
+        height: 100%;
+    }
+
+#content .info {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: auto;
+}
+
+.station_area {
+    width: 100%;
+    height: 60px;
+    float: left;
+    background: url('../../images/MiniMES/MiniMES_zy/tab_location.png') no-repeat; background-size: 100% 100%;
+    line-height: 60px;
+    font-size: 24px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+    .station_area span {
+        float: right
+    }
+
+        .station_area span img {
+            float: right;
+            margin: 15px 10px;
+        }
+
+#content .info .left_nav {
+    font-size: 24px;
+    top: 0px;
+    left: 0px;
+    width: 15%;
+    height: 560px;
+    overflow: auto;
+    text-align: center;
+    list-style: none;
+    position: absolute;
+    background: url('../../images/MiniMES/MiniMES_zy/leftsidebar.png') no-repeat; background-size: 100% 100%;
+}
+
+    #content .info .left_nav li {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        overflow: auto;
+    }
+
+.leftnav_title {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: #3a3a3a;
+    font-weight: 600;
+    background: url('../../images/MiniMES/MiniMES_zy/leftsidebar_title.png') no-repeat; background-size: 100% 100%;
+}
+
+.contentout {
+    width: 100%;
+    height: calc(100% - 180px);
+    position: absolute;
+    overflow: auto;
+    margin-top: 76px;
+}
+
+.height_box2, .height_box3 {
+    width: 100%;
+    height: calc(100% - 240px);
+    position: absolute;
+    overflow: auto;
+}
+
+.boardbox {
+    overflow: auto;
+    height: calc(100% - 240px);
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+/*tab-------------------------------*/
+/*异常汇总*/
+.table-head {
+    padding-right: 0px;
+    font-weight: normal;
+    color: #3a3a3a;
+    width: 100%;
+}
+
+    .table-head table tr th {
+        margin: 0;
+        font-weight: normal;
+        text-align: left;
+        height: 60px;
+        border-left: 1px solid #aaa;
+        border-right: 1px solid #fff;
+        font-size: 22px;
+        text-shadow: 0px 1px 0px #f9f9f9;
+        background: url('../../images/MiniMES/MiniMES_zy/nav.png') no-repeat; background-size: 100% 100%;
+        padding-left: 2%
+    }
+
+.table-body {
+    width: 100%;
+    display: block;
+    overflow-x: hidden;
+}
+
+    .table-body table tr td {
+        text-align: left;
+        font-size: 22px;
+        color: #3F4349;
+        height: 60px;
+        border-top: solid 6px rgba(255,255,255,0.3);
+        background: url('../../images/MiniMES/MiniMES_zy/nav2.png') no-repeat; background-size: 100% 100%;
+        padding-left: 2%;
+        box-sizing: border-box;
+    }
+
+    .table-body table tr {
+        border-radius: 12px;
+    }
+
+    .table-head table, .table-body table {
+        width: 100%;
+    }
+
+.info .infoinset {
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.info2 {
+    position: absolute !important;
+}
+
+.line_board {
+    width: 100%;
+    height: 80px;
+    margin-top: 76px;
+    background: url('../../images/MiniMES/MiniMES_longhubang/pic_longhubang_bg.png') no-repeat; background-size: 100% 100%;
+}
+/*龙虎榜*/
+#content .info .left_nav2 {
+    font-size: 24px;
+    top: 20px;
+    left: 15px;
+    width: 15%;
+    overflow: auto;
+    text-align: center;
+    list-style: none;
+    position: absolute;
+}
+
+    #content .info .left_nav2 li {
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        background: url('../../images/MiniMES/MiniMES_longhubang/btn_longhubang_week.png') no-repeat; background-size: 100% 100%;
+    }
+
+.incontentbg2 {
+    background: url('../../images/MiniMES/MiniMES_longhubang/pic_huizong_rightbg.png') no-repeat center; background-size: 100% 100%;
+    height: 500px;
+    width: 98%;
+    padding: 20px;
+    overflow: auto;
+}
+
+    .incontentbg2 dl dt {
+        float: left;
+        width: 33.3%;
+        color: #aa611a;
+        text-align: center;
+        font-size: 24px;
+        padding-bottom: 15px;
+    }
+
+.infoinset2 table {
+    width: 100%;
+    font-size: 18px;
+}
+
+    .infoinset2 table tr th {
+        height: 80px;
+    }
+
+    .infoinset2 table tr td {
+        height: 76px;
+        text-align: center;
+    }
+
+        .infoinset2 table tr td img {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+        }
+
+.borderright {
+    border-right: solid 1px #bbbbbb;
+}
+
+.borderleft {
+    border-left: solid 1px #fff;
+}
+/*数据分析*/
+.incontentbg2 #main, .incontentbg2 #main2 {
+    width: 100%;
+    height: 440px;
+    overflow: hidden;
+    display: block;
+}
+
+.incontentbg2 {
+    height: 560px !important;
+}
+
+    .incontentbg2 h1 {
+        font-size: 24px;
+        font-weight: normal;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        line-height: 30px;
+    }
+
+.main_tab {
+    width: 100%;
+    float: left;
+    margin: 0;
+}
+
+    .main_tab dl dt {
+        float: left;
+        font-size: 18px;
+        color: #666;
+        padding-left: 15px;
+        text-align: left;
+        line-height: 30px;
+    }
+
+        .main_tab dl dt span {
+            width: 20px;
+            height: 6px;
+            float: left;
+            margin-top: 10px;
+        }
+/*案例库*/
+.anliku_select {
+    width: 100%;
+    height: 70px;
+    float: left;
+    background: url('../../images/MiniMES/MiniMES_zy/tab_location.png') no-repeat; background-size: 100% 100%;
+    padding-top: 6px;
+}
+
+    .anliku_select dl dt {
+        float: left;
+        padding-left: 2%;
+    }
+
+        .anliku_select dl dt img {
+            width: 70%;
+            margin: 10px 0px 0px 0px;
+        }
+
+        .anliku_select dl dt .chaxun {
+            width: 90%;
+            height: 40px;
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+            margin-top: 10px;
+            background: url('../../images/MiniMES/MiniMES_shujjufenxi/table_btn1_query.png') no-repeat left; background-size: 100% 100%;
+        }
+
+        .anliku_select dl dt p, .anliku_select dl dt .c_select {
+            float: left;
+            font-size: 16px;
+        }
+
+.c_select {
+    display: block;
+    float: right;
+    width: 60%;
+    margin: 10px 0px 0px 10px;
+}
+
+    .c_select .select06 {
+        height: 80px;
+    }
+
+/*弹出层*/
+.yc_call, .yc_call2 {
+    width: 82%;
+    height: 560px;
+    padding: 40px 20px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 16.5%;
+    z-index: 999;
+    background: url('../../images/MiniMES/MiniMES_zy/rightsidebar_pop_called_red.png') no-repeat; background-size: 100% 100%;
+    font-size: 28px;
+    text-align: center;
+    line-height: 60px;
+    display: none;
+}
+
+.yc_call2 {
+    background: url('../../images/MiniMES/MiniMES_zy/rightsidebar_pop_called_yellow.png') no-repeat; background-size: 100% 100%;
+}
+
+.back_btn img {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin: 15px;
+}
+
+.yc_call table, .yc_call2 table {
+    width: 100%;
+}
+
+    .yc_call table tr td, .yc_call2 table tr td {
+        height: 120px;
+    }
+
+.yc_call center, .yc_call2 center {
+    font-size: 18px;
+    bottom: 0;
+}
+
+.MiniMES_red, .MiniMES_yellow {
+    display: none
+}
+
+.qd_no {
+    width: 50%;
+    height: 48px;
+    margin-left: 10px;
+    border: solid 1px #999;
+}
+
+.yc_call3 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    overflow: auto;
+}
+
+    .yc_call3 .yc_center h4 {
+        font-size: 24px;
+        line-height: 60px;
+        text-align: center;
+    }
+
+    .yc_call3 .yc_center {
+        width: 480px;
+        height: 450px;
+        margin: 6% auto;
+        background-color: #fafafa;
+        padding: 8px 20px;
+    }
+
+        .yc_call3 .yc_center ul li {
+            width: 100%;
+            height: 60px;
+            font-size: 18px;
+        }
+
+            .yc_call3 .yc_center ul li .c_select {
+                width: 70%;
+                float: right;
+                height: 48px;
+                z-index: 99999;
+            }
+
+            .yc_call3 .yc_center ul li button {
+                float: left;
+                margin: 1%;
+                width: 48%;
+                background-color: #f0f0f0;
+            }
+
+input[type='radio'], input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    opacity: 0;
+}
+
+.input_style {
+    background: url('../../images/MiniMES/green.png') no-repeat; width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.radio_bg {
+    background-position: -118px 0;
+}
+
+.checkbox_bg {
+    background-position: 0 0;
+}
+
+.radio_bg_check {
+    background-position: -166px 0;
+}
+
+.checkbox_bg_check {
+    background-position: -48px 0;
+}
+
+.yc_small {
+    width: 98%;
+    margin: 0 auto;
+    border: solid 1px #c0c0c0;
+    height: 140px;
+    padding: 2%;
+    overflow: auto;
+}
+
+    .yc_small ul li {
+        float: left;
+        width: 30%;
+        height: 60px;
+        margin: 1%;
+    }
+
+        .yc_small ul li button {
+            width: 100%;
+            float: left;
+            height: 54px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .yc_small ul li button {
+            background: #30B64A;
+        }
+
+            .yc_small ul li button.active {
+                background: red;
+            }
+
+/*tpm---------------------------------------------------------------------------------------------------------*/
+#title .navbg2 li {
+    width: 25% !important
+}
+
+.duty_table .tpm_table-head tr th {
+    text-align: center !important;
+    font-size: 20px !important;
+    background: url('../../images/MiniMES/tpm_image/tablethbg.png') no-repeat !important; border: none !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    background-size: 100% 100% !important;
+}
+
+.duty_table .tpm_table-body tr td {
+    text-align: center !important;
+    font-size: 20px !important;
+    background: url('../../images/MiniMES/tpm_image/tpmtabletrbg.png') no-repeat !important; border: none !important;
+    background-size: 100% 100% !important;
+}
+
+.duty_table {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: block;
+    background: url('../../images/MiniMES/tpm_image/tpmcontentbg.png') no-repeat; background-size: 100% 100%;
+    border: solid 6px #ccc;
+    border-top: 2px solid #ccc;
+}
+
+    .duty_table .tpm_table-body tr td .tpmpro_btn {
+        width: 100%;
+        line-height: 60px;
+        background: url('../../images/MiniMES/tpm_image/tpmprobtn.png') no-repeat; background-size: 100% 100%;
+        text-shadow: 1px -1px 0px rgba(255,255,255,0.4);
+        color: #111;
+    }
+
+    .duty_table .tpm_table-body tr td .tpmpro_btn2 {
+        color: #0090DC
+    }
+
+    .duty_table .tpm_table-body .tpm_deteil td {
+        color: #0090DC
+    }
+
+    .duty_table .tpm_table-body tr td .tpmpro_btn:hover {
+        width: 100%;
+        line-height: 60px;
+        background: url('../../images/MiniMES/tpm_image/tpmprobtnclick.png') no-repeat; background-size: 100% 100%;
+        text-shadow: 1px -1px 0px rgba(255,255,255,0.4);
+        color: #0C0
+    }
+
+.tpm_incontentbg2 {
+    height: 100%;
+    width: 85%;
+    padding: 0px;
+    overflow: hidden;
+}
+
+    .tpm_incontentbg2 .duty_table {
+        border: solid 1px #aaa !important;
+    }
+
+.tpm_beizhu {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+    padding-top: 20px;
+}
+
+    .tpm_beizhu b {
+        color: #333;
+    }
+
+.duty_table2 .tpm_table-head tr th {
+    text-align: center !important;
+    background: url('../../images/MiniMES/tpm_image/tpmtabletrbg.png') no-repeat !important; border: none !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    background-size: 100% 100% !important;
+}
+
+.look_deteil {
+    width: 100px;
+    height: 40px;
+    border: dashed 1px #0090DC;
+    color: #0090DC;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+    .look_deteil:hover {
+        border: dashed 1px #3BD56C;
+        color: #3BD56C;
+        background-color: #fff;
+    }
+/*计划保养*/
+.info .tpm_planincontentbg {
+    width: 85%;
+    float: right;
+    height: 100%;
+}
+
+.plantitle {
+    width: 200px;
+    height: 100%;
+    padding-top: 0px;
+    background: url('../../images/MiniMES/tpm_image/leftsidebar.png') no-repeat; background-size: 100% 100%;
+}
+
+    .plantitle ul {
+        width: 100%;
+        height: 60px;
+        border-radius: 0px;
+        border-bottom: 1px solid #999;
+        padding-top: 1px;
+        background: url('../../images/MiniMES/MiniMES_zy/nav.png') no-repeat; background-size: 100% 100%;
+    }
+
+        .plantitle ul li {
+            border-bottom: 2px solid #ccc;
+            border-top: 2px solid rgba(255,255,255,0.6);
+            border-right: 1px solid rgba(0,0,0,0.3);
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            margin-top: 0px;
+            line-height: 60px;
+            height: 60px;
+            clear: both;
+            font-weight: 600;
+            background-size: 100% 100%;
+            text-align: center;
+            font-size: 22px;
+            list-style: none;
+        }
+
+            .plantitle ul li p {
+                font-size: 16px;
+                line-height: 12px;
+                font-weight: normal;
+            }
+
+.newbtn {
+    background-color: #46D474;
+    color: #fff;
+}
+
+.oldbtn {
+    background-color: #f0f0f0;
+    font-weight: 600;
+}
+
+.info .duty_table2 table tr th, .info .duty_table2 table tr td {
+    font-size: 18px !important;
+}
+
+/*设备履历*/
+
+#content-main {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#eq_title {
+    width: 14%;
+    height: 100%;
+    border: solid 1px #C6CDD5;
+    float: left;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    background: url('../../images/MiniMES/tpm_image/leftsidebar.png') no-repeat; background-size: 100% 100%;
+}
+
+    #eq_title ul li {
+        border-bottom: 2px solid #ccc;
+        border-top: 2px solid rgba(255,255,255,0.6);
+        border-right: 1px solid rgba(0,0,0,0.3);
+        float: left;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        margin-top: 0px;
+        line-height: 68px;
+        height: 68px;
+        font-weight: 600;
+        background-size: 100% 100%;
+        text-align: center;
+        font-size: 22px;
+        list-style: none;
+    }
+
+        #eq_title ul li p {
+            font-size: 16px;
+            line-height: 12px;
+            font-weight: normal;
+        }
+
+    #eq_title li:last-child {
+    }
+
+.tpm_info {
+    width: 85% !important;
+    right: 0;
+    padding-top: none !important
+}
+
+#content .info .tab_nav, #content .info .tj_tabnav {
+    font-size: 24px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    float: left;
+    text-align: center;
+    list-style: none;
+    position: absolute;
+    background-size: 100% 100%;
+}
+
+    #content .info .tab_nav li {
+        width: 25%;
+        height: 60px;
+        line-height: 60px;
+        float: left;
+        background: url('../../images/MiniMES/tpm_image/eq_chuange.png') no-repeat; background-size: 100% 100%;
+    }
+
+.contentout2 {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.eqinContent {
+    width: 100% !important;
+    margin-top: 60px !important;
+}
+
+    .eqinContent .incontentbg {
+        height: 560px;
+        width: 100% !important;
+        padding: 20px;
+        overflow: auto;
+        background: none !important;
+        padding: none !important;
+    }
+
+.eqtable-body table tr .greybg {
+    background-color: #f0f5f5;
+}
+
+.eqincontentbg {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+    .eqincontentbg .eqduty_table {
+        width: 100%;
+        height: 100%;
+    }
+
+.eqtable-body table {
+    width: 100%;
+    overflow: hidden;
+}
+
+.eqtable-body tr td {
+    height: 70px;
+    text-align: left;
+    color: #666;
+    font-size: 20px;
+    background-color: #fff;
+    padding-left: 20px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    border-top: 2px solid rgba(255,255,255,0.9)
+}
+
+.eqolder {
+    background: url('../../images/MiniMES/tpm_image/eq_chuange.png') no-repeat; background-size: 100% 100%;
+}
+
+.eqnewer {
+    background: url('../../images/MiniMES/tpm_image/eq_chuange2.png') no-repeat !important; background-size: 100% 100% !important;
+    color: #0C3;
+}
+
+.duty_table2 .eqtable-head {
+    width: 100%;
+}
+
+.eqtable-head tr th {
+    background: url('../../images/MiniMES/tpm_image/tablethbg.png') no-repeat !important; background-size: 100% 100% !important;
+    border: none !important;
+}
+
+.eqtable-body table tbody tr td {
+    overflow: hidden !important;
+    text-align: left !important;
+    background: url('../../images/MiniMES/tpm_image/tpmtabletrbg.png') no-repeat !important; border: none !important;
+    background-size: 100% 100% !important;
+}
+
+.tj_sh, .jx_sh, .tj_sh01, .jx_sh01 {
+    color: rgba(255,102,0,1) !important
+}
+
+.wc_sh {
+    color: rgba(0,204,102,1) !important;
+}
+/*数据统计*/
+.tab_nav2 li {
+    width: 50% !important;
+}
+
+#content .info .tj_tabnav li {
+    width: 25%;
+    height: 60px;
+    line-height: 60px;
+    float: left;
+    background-color: #F5F5F5
+}
+
+.tjolder {
+    background-color: #F5F5F5;
+    border: solid 1px #ccc;
+    font-weight: 600;
+}
+
+.tjnewer {
+    background-color: #46D474 !important;
+    color: #fff;
+    border: solid 1px #ccc;
+}
+
+.tjtable-body tr td {
+    overflow: hidden !important;
+    border-left: solid 1px #ccc !important;
+    text-align: left !important;
+    background: url('../../images/MiniMES/tpm_image/tpmtabletrbg.png') no-repeat !important; background-size: 100% 100% !important;
+}
+
+.tj_top {
+    width: 100%;
+    margin-top: 10px;
+}
+
+    .tj_top tr td {
+        border: solid 1px #ccc;
+        text-align: center;
+        line-height: 50px;
+        background-color: #f0f0f0;
+    }
+
+        .tj_top tr td p {
+            font-size: 24px;
+            color: #333;
+        }
+/*弹出框ckpage*/
+button {
+    outline-style: none;
+    border: none;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #E1EAE9;
+    padding: 6px 20px 0px 20px;
+}
+
+    header ul li {
+        float: left;
+        font-size: 22px;
+        color: #000;
+    }
+
+        header ul li center {
+            line-height: 40px;
+        }
+
+    header ul .lfbtn {
+        width: 40px;
+        height: 40px;
+        background: url('../../images/MiniMES/tpm_image/rightback.png') no-repeat center; background-size: 100% 100%;
+    }
+
+    header ul .rtbtn {
+        width: 120px;
+        height: 40px;
+        background: url('../../images/MiniMES/tpm_image/rtbotton.png') no-repeat; background-size: 100% 100%;
+        color: rgba(255,102,0,1);
+        float: right;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+
+    header ul .lfbtn:hover {
+        background: url('../../images/MiniMES/tpm_image/rightbackclick.png') no-repeat; background-size: 100% 100%;
+    }
+
+    header ul .rtbtn:hover {
+        background: url('../../images/MiniMES/tpm_image/rtbottonclick.png') no-repeat; background-size: 100% 100%;
+    }
+
+.ckpage, .sh_ckpage {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+}
+
+    .ckpage .outcontain, .sh_ckpage .outcontain {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        overflow: hidden;
+    }
+
+.ckpage, .sh_ckpage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.ck_container {
+    width: 98%;
+    left: 1%;
+    display: block;
+    padding-top: 10px;
+    overflow: auto;
+    height: calc(100% - 130px);
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+}
+
+    .ck_container ul li {
+        border-bottom: 2px solid #dbdbdb;
+        box-shadow: 0px 2px 0px #fff;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+        .ck_container ul li table {
+            width: 100%;
+            border-right: 1px solid #dbdbdb;
+            border-bottom: 1px solid #dbdbdb;
+            text-align: center;
+            font-size: 18px;
+        }
+
+    .ck_container ul table tr th {
+        border-left: 1px solid #dbdbdb;
+        color: #5a5a5a;
+        border-top: 1px solid #dbdbdb;
+        height: 48px;
+    }
+
+    .ck_container ul table tr td {
+        border-left: 1px solid #dbdbdb;
+        color: #333;
+        border-top: 1px solid #dbdbdb;
+    }
+
+        .ck_container ul table tr td img {
+            height: 100px;
+        }
+
+    .ck_container ul li h2 {
+        font-weight: 600;
+        line-height: 48px;
+        color: #FF6600;
+        font-size: 18px;
+    }
+
+    .ck_container ul li dl {
+        width: 100%;
+        height: auto;
+    }
+
+        .ck_container ul li dl dt {
+            float: left;
+            margin: 15px;
+        }
+
+            .ck_container ul li dl dt img {
+                width: 80px;
+                height: 80px;
+            }
+
+        .ck_container ul li dl .ck_photo button {
+            width: 80px;
+            height: 80px;
+            float: right;
+            background: url('../../images/MiniMES/tpm_image/photo.png') no-repeat center; background-size: 100% 100%;
+        }
+
+            .ck_container ul li dl .ck_photo button:hover {
+                background: url('../../images/MiniMES/tpm_image/photoclcik.png') no-repeat center; background-size: 100% 100%;
+            }
+/*审核/保存 按钮*/
+.sh_btn {
+    width: 100%;
+    height: 60px;
+    bottom: 0px;
+    position: absolute;
+    z-index: 999;
+    padding-left: 25%
+}
+
+.sh_ok, .sh_ng {
+    float: left !important;
+    width: 300px;
+    height: 50px;
+    background-color: #f60;
+    margin-left: 2%;
+    color: #fff;
+}
+
+.sh_ok {
+    background-color: rgba(0,204,0,1);
+    border: 1px solid #090
+}
+
+    .sh_ok:hover {
+        background-color: rgba(0,204,0,0.5);
+    }
+
+.sh_ng:hover, .ck_baocun:hover {
+    background-color: #FF944D
+}
+
+.ck_baocun {
+    width: 300px;
+    height: 50px;
+    background-color: #f60;
+    bottom: 10px;
+    position: absolute;
+    z-index: 999;
+    box-shadow: inset 0px 0px 2px rgba(255,255,255,0.9);
+    left: 40%;
+    border: solid 1px #EA5E00;
+    clear: both;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.ckinconent {
+    width: 92%;
+    left: 4%;
+    top: 2%;
+    height: 80%;
+    position: absolute;
+    overflow: hidden;
+    background-color: #f0f5f5;
+    box-shadow: inset 0px 0px 3px rgba(255,255,255,1);
+    border: solid 1px #999;
+    border-radius: 8px;
+}
+
+.ck_container ul table tr .ng {
+    background-color: #FF6600;
+    color: #fff;
+}
+
+.ycxl_class {
+    width: 50%;
+    height: 370px;
+    box-shadow: 1px 2px 15px rgba(0,0,0,0.2);
+    position: absolute;
+    border: solid 1px #bbb;
+    left: 25%;
+    top: 25%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 9999;
+    display: none;
+}
+
+.ycxl_inconent {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f5f5;
+}
+
+    .ycxl_inconent h4 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: normal;
+        color: #000;
+        line-height: 40px;
+    }
+
+@media (min-width:1366px) and (max-width:1920px) {
+}
+
+@media (min-width:799px) and (max-width:1281px) {
+    .inContent {
+        width: 81%;
+    }
+
+        .inContent .incontentbg {
+            height: 600px;
+        }
+
+    #content .info .left_nav {
+        font-size: 24px;
+        width: 17%;
+        height: 600px;
+    }
+
+        #content .info .left_nav li {
+            height: 64px;
+            line-height: 64px;
+        }
+
+    .incontfirst dl dt {
+        width: 160px;
+        height: 160px;
+        float: left;
+        margin: 2% 0px 0px 2%;
+    }
+
+    .table-body table tr td {
+        font-size: 22px;
+        height: 78px;
+    }
+
+    .incontentbg2 #main, .incontentbg2 #main2 {
+        height: 480px;
+    }
+
+    .incontentbg2 {
+        height: 600px !important;
+    }
+
+    .contentout {
+        height: calc(100% - 180px)
+    }
+
+    .height_box2, .height_box3 {
+        height: calc(100% - 250px);
+    }
+
+    .boardbox {
+        height: calc(100% - 240px);
+    }
+
+    .hwLayer-ok, .hwLayer-cancel, .hwLayer-ok2, .hwLayer-cancel2, .hwLayer-ok3, .hwLayer-cancel3 {
+        width: 45%;
+        float: left;
+        margin-left: 0.5%
+    }
+
+    .yc_call, .yc_call2 {
+        width: 80%;
+        height: 600px;
+        left: 19%;
+    }
+
+    .anliku_select dl dt {
+        padding-left: 1%;
+    }
+
+    .anliku_select {
+        height: 78px;
+        font-size: 22px;
+    }
+
+    .c_select .select06 {
+        line-height: 60px;
+    }
+
+    .yc_call table tr td, .yc_call2 table tr td {
+        font-size: 32px;
+    }
+
+    .back_btn {
+        font-size: 32px;
+    }
+
+    .yc_call center, .yc_call2 center {
+        font-size: 28px;
+    }
+
+    .incontentbg2 #main2 {
+        max-width: 960px;
+    }
+}
+
+@media (min-width:768px) and (max-width:798px) {
+}
+
+@media (min-width:480px) and (max-width:767px) {
+}
+
+@media (max-width:480px) {
+}

@@ -1,0 +1,206 @@
+﻿<style type="text/css">
+    body {
+        background-color: #17325d;
+    }
+
+    #repair_bg_id {
+        width: 99.8%;
+        text-align: center;
+        font-size: 14px;
+    }
+        #repair_bg_id td {
+            font-size: 14px;
+            height: 30px;
+            color: white;
+        }
+
+    #tblProductPlan {
+        margin-top: 5px;
+    }
+
+    .bigLongInput {
+        width: 180px;
+        height: 100%;
+        border: none;
+        color: white;
+    }
+
+    .longInput {
+        width: 130px;
+        height: 100%;
+        background-color: #17325d;
+        border: none;
+        color: white;
+    }
+
+    .commonInput {
+        width: 97%;
+        height: 100%;
+        background-color: #17325d;
+        border: none;
+        color: white;
+    }
+    #repair_bg_id  > tbody > tr:hover {
+        background-color: #337ab7;
+        cursor: pointer;
+    }
+</style>
+
+<div class="row" style="color:white;">
+    <div class="col-md-12  text-center">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="lbid" id="cxmc">产线名称</label>
+            </div>
+            <div class="form-group">
+                <select id="line_select" class="selectpicker show-tick form-control" data-live-search="true" data-width="180px" data-size="5">
+                    <option selected="selected" value="">选择产线</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail2">产品编号</label>
+                <input type="text" class="form-control" id="ProductCode_input" placeholder="">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail2">生产工单</label>
+                <input type="text" class="form-control" id="workShopCode_input_Select" placeholder="">
+                <input type="hidden" id="query_date_id">
+            </div>
+            <div class="form-group">
+                <label for="txtProductCode">生产时间</label>
+                <input type="date" class="form-control" id="date_info_select" placeholder="">
+            </div>
+            <button type="button" style="margin-left:15px;" class="btn btn-primary" id="btnWorkListQuery">订单查询</button>
+            <button type="button" style="margin-left:15px;" class="btn btn-primary" id="btnClear">清空内容</button>
+        </form>
+    </div>
+</div>
+<div class="row" style="color:white;">
+    <div class="col-md-12  text-center" style="height:400px;overflow:auto;margin-top:10px;" id="divModelWorkNo">
+        <table id="repair_bg_id" class="table table-bordered  table-hover text-center">
+            <thead id="GetWorkList">
+                <tr style="text-align:center;">
+                    <th>生产工单</th>
+                    <th>产品编号</th>
+                    <th>产品名称</th>
+                    <th>所属产线</th>
+                    <th>计划日期</th>
+                    <th>计划数量</th>
+                </tr>
+            </thead>
+
+            <tbody id="tbodyWorkList">
+                <tr>
+                    <td colspan="8">加载数据中</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+
+    $(function () {
+        QueryWorkList();
+        getLineData();
+    });
+
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+
+    //加载
+    function QueryWorkList() {
+        $("#GetWorkList").show();
+        var Request = new Object();
+        Request = GetRequest();
+        var LineId = Request["LineId"];
+        var TenantId = Request['TenantID'];
+        if (TenantId == null || TenantId == '') {
+            TenantId = Request["TenantId"];
+        }
+        $.ajax({
+            type: 'GET',
+            url: '/api/MiniMES/SummaryBoard/GetWorkSheetList',
+            timeout: 60000,
+            data: {
+                "LineId": LineId,
+                "TenantID": TenantId, 
+            },
+            dataType: "json",
+            contentType: "application/json",
+            async: false,
+            success: function (data) {
+                if (data.length > 0) {
+                    $("#tbodyWorkList").html(data);
+                }
+            }
+        });
+    }
+
+    //获取产线
+    function getLineData() {
+        $.ajax({
+            type: 'GET',
+            url: '/api/MiniMES/SummaryBoard/GetCurrentLineList',
+            timeout: 60000,
+            data: { "workshopId": "" },
+            dataType: "json",
+            contentType: "application/json",
+            async: true,
+            success: function (data) {
+                if (data.length > 0) {
+                    //窗体select
+                    $("#line_select").append(data);
+                    $("#line_select").selectpicker('refresh');//动态刷新
+                    $('#line_select').selectpicker('render');
+                }
+            }
+        });
+    }
+
+    //查询
+    $("#btnWorkListQuery").click(function () {
+        var date = $("#date_info_select").val();
+        $.ajax({
+            type: 'GET',
+            url: '/api/MiniMES/SummaryBoard/GetWorkSheet',
+            timeout: 60000,
+            data: {
+                "WorkSheetNo": $("#workShopCode_input_Select").val(),
+                "PlanDate": date, 
+                "Line_id": $("#line_select").val(),
+                "ProductCode": $("#ProductCode_input").val()
+            },
+            dataType: "json",
+            contentType: "application/json",
+            async: true,
+            success: function (data) {
+                if (data.length > 0) {
+                    $("#tbodyWorkList").html(data);
+                }
+            }
+        });
+    });
+
+    //清空
+    $("#btnClear").click(function () {
+        $("#line_select").selectpicker("val", "");
+        $("#ProductCode_input").val("");
+        $("#workShopCode_input_Select").val("");
+        $("#date_info_select").val("");
+    });
+
+
+</script>

@@ -1,0 +1,95 @@
+2020-04-24 11:52:35,218 [15524] DEBUG Servicecloud_tenant - 获取实体列表
+2020-04-24 11:52:35,218 [14052] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:52:35,680 [15524] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  ''
+2020-04-24 11:52:35,682 [14052] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:52:35,736 [15984] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:52:35,736 [10908] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '' and a.PlanDate = '2020/4/24 0:00:00' and a.TenantId = '' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-04-24 11:52:35,748 [15524] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-04-24 11:52:35,844 [15984] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:52:35,862 [15524] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  ''and OrderNo =  '无工单'and TenantID =  '' order by CreateDate Desc
+2020-04-24 11:52:35,905 [23096] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 08:00:00' AND LastTime <= '2020-04-24 20:00:00'
+2020-04-24 11:52:35,918 [23096] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 20:00:00' AND LastTime <= '2020-04-25 08:00:00'
+2020-04-24 11:52:35,950 [19608] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-04-24 11:52:35,951 [19608] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  ''and OrderNo =  '无工单'and TenantID =  ''and Type =  '1' order by CreateDate Desc
+2020-04-24 11:52:36,014 [23096] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-04-24 11:52:36,015 [23096] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  ''and OrderNo =  '无工单'and TenantID =  ''and Type =  '2' order by CreateDate Desc
+2020-04-24 11:52:36,034 [19608] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-04-24 11:52:36,035 [19608] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  ''and OrderNo =  '无工单'and TenantID =  ''and Type =  '3' order by CreateDate Desc
+2020-04-24 11:52:56,244 [15524] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 08:00:00' AND LastTime <= '2020-04-24 20:00:00'
+2020-04-24 11:52:56,251 [15524] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 20:00:00' AND LastTime <= '2020-04-25 08:00:00'
+2020-04-24 11:52:56,287 [15524] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 08:00:00' AND LastTime <= '2020-04-24 20:00:00'
+2020-04-24 11:52:56,291 [15524] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 20:00:00' AND LastTime <= '2020-04-25 08:00:00'
+2020-04-24 11:53:00,153 [23096] DEBUG Serviceminimes_uph - 获取动态列表
+2020-04-24 11:53:00,155 [23096] DEBUG MiniMES - select * from minimes_uph order by ID limit 0, 20
+2020-04-24 11:53:00,167 [23096] DEBUG MiniMES - select count(*) from ( select * from minimes_uph ) tb_temp
+2020-04-24 11:53:06,153 [19608] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:53:06,154 [19608] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:53:06,172 [23096] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:53:06,173 [23096] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:53:06,189 [19608] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:53:06,190 [15984] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:53:06,191 [19608] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:53:06,191 [15984] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:53:14,115 [15524] DEBUG Serviceminimes_uph - 编辑记录
+2020-04-24 11:53:14,122 [15524] DEBUG Serviceminimes_uph - 获取动态对象
+2020-04-24 11:53:14,126 [15524] DEBUG MiniMES - select 
+                    minimes_uph
+                .* from 
+                    minimes_uph
+                 where  ID =  '9e2e973c-98d7-4af5-bb6b-a79f9431ec4c'
+2020-04-24 11:53:14,150 [15524] DEBUG MiniMES - update 
+                    minimes_uph
+                 set `WorkShopId` = 'c3b621ea-29a0-4d7b-b8cc-87f72aee5612', `WorkShopName` = '冲压车间', `ProductCode` = 'JL-10003', `StandardUPH` = '100', `CreateDate` = '2020-04-24 11:53:14', `CreatePerson` = '管理员', `TenantID` = '082d68ce-4d00-4f95-acee-a5b934f3eb9a', `Ratio` = '1.0' where  ID =  '9e2e973c-98d7-4af5-bb6b-a79f9431ec4c'
+2020-04-24 11:53:14,155 [15524] DEBUG Serviceminimes_uph - 获取动态对象
+2020-04-24 11:53:14,155 [15524] DEBUG MiniMES - select 
+                    minimes_uph
+                .* from 
+                    minimes_uph
+                 where  ID =  'b4989ce9-c015-4831-a98a-b1b6c43102bd'
+2020-04-24 11:53:14,156 [15524] DEBUG MiniMES - update 
+                    minimes_uph
+                 set `WorkShopId` = '08ff98d5-aaa4-4a58-8bdc-244b1ddaef20', `WorkShopName` = '注塑车间', `ProductCode` = '201.1.32', `StandardUPH` = '1000', `CreateDate` = '2020-04-24 11:53:14', `CreatePerson` = '管理员', `TenantID` = '082d68ce-4d00-4f95-acee-a5b934f3eb9a', `Ratio` = '2.0' where  ID =  'b4989ce9-c015-4831-a98a-b1b6c43102bd'
+2020-04-24 11:53:14,157 [15524] DEBUG Serviceminimes_uph - 获取动态对象
+2020-04-24 11:53:14,157 [15524] DEBUG MiniMES - select 
+                    minimes_uph
+                .* from 
+                    minimes_uph
+                 where  ID =  'cc195f24-c340-46ec-8707-daae260ff61e'
+2020-04-24 11:53:14,158 [15524] DEBUG MiniMES - update 
+                    minimes_uph
+                 set `WorkShopId` = '08ff98d5-aaa4-4a58-8bdc-244b1ddaef20', `WorkShopName` = '注塑车间', `ProductCode` = 'Zs0001', `StandardUPH` = '200', `CreateDate` = '2020-04-24 11:53:14', `CreatePerson` = '管理员', `TenantID` = '082d68ce-4d00-4f95-acee-a5b934f3eb9a', `Ratio` = '3.0' where  ID =  'cc195f24-c340-46ec-8707-daae260ff61e'
+2020-04-24 11:53:16,146 [23096] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 08:00:00' AND LastTime <= '2020-04-24 20:00:00'
+2020-04-24 11:53:16,149 [23096] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 20:00:00' AND LastTime <= '2020-04-25 08:00:00'
+2020-04-24 11:53:16,164 [15984] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 08:00:00' AND LastTime <= '2020-04-24 20:00:00'
+2020-04-24 11:53:16,167 [15984] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 20:00:00' AND LastTime <= '2020-04-25 08:00:00'
+2020-04-24 11:53:16,222 [23096] DEBUG Serviceminimes_uph - 获取动态列表
+2020-04-24 11:53:16,223 [23096] DEBUG MiniMES - select * from minimes_uph order by ID limit 0, 20
+2020-04-24 11:53:16,225 [23096] DEBUG MiniMES - select count(*) from ( select * from minimes_uph ) tb_temp
+2020-04-24 11:53:36,053 [23096] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 08:00:00' AND LastTime <= '2020-04-24 20:00:00'
+2020-04-24 11:53:36,056 [23096] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 20:00:00' AND LastTime <= '2020-04-25 08:00:00'
+2020-04-24 11:53:36,071 [15984] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 08:00:00' AND LastTime <= '2020-04-24 20:00:00'
+2020-04-24 11:53:36,074 [15984] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-04-24 20:00:00' AND LastTime <= '2020-04-25 08:00:00'
+2020-04-24 11:53:36,088 [23096] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:53:36,088 [23096] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:53:36,102 [15524] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:53:36,103 [15524] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:53:36,115 [15984] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:53:36,116 [15984] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:53:36,124 [15524] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-04-24 11:53:36,125 [15524] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-04-24 11:54:48,939 [23152] DEBUG Serviceminimes_uph - 获取动态列表
+2020-04-24 11:54:49,458 [23152] DEBUG MiniMES - select * from minimes_uph order by ID limit 0, 20
+2020-04-24 11:54:49,503 [23152] DEBUG MiniMES - select count(*) from ( select * from minimes_uph ) tb_temp
+2020-04-24 11:55:03,084 [23292] DEBUG Serviceminimes_uph - 获取动态列表
+2020-04-24 11:55:03,087 [23292] DEBUG MiniMES - select * from minimes_uph order by ID limit 0, 20
+2020-04-24 11:55:03,089 [23292] DEBUG MiniMES - select count(*) from ( select * from minimes_uph ) tb_temp
+2020-04-24 11:55:08,811 [23152] DEBUG Serviceminimes_uph - 编辑记录
+2020-04-24 11:55:08,817 [23152] DEBUG Serviceminimes_uph - 获取动态对象
+2020-04-24 11:55:08,822 [23152] DEBUG MiniMES - select 
+                    minimes_uph
+                .* from 
+                    minimes_uph
+                 where  ID =  '9e2e973c-98d7-4af5-bb6b-a79f9431ec4c'
+2020-04-24 11:55:08,838 [23152] DEBUG MiniMES - update 
+                    minimes_uph
+                 set `WorkShopId` = 'c3b621ea-29a0-4d7b-b8cc-87f72aee5612', `WorkShopName` = '冲压车间', `ProductCode` = 'JL-10003', `StandardUPH` = '100', `CreateDate` = '2020-04-24 11:55:08', `CreatePerson` = '管理员', `TenantID` = '082d68ce-4d00-4f95-acee-a5b934f3eb9a', `Ratio` = '2' where  ID =  '9e2e973c-98d7-4af5-bb6b-a79f9431ec4c'

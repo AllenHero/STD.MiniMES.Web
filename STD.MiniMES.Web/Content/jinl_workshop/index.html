@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	
+<style>
+	.row-col1{height:230px;}
+	.list-contant ul li p{font-size:20px;}
+    .list-contant ul li{ background:none;color:#eeeff1;border:none;}
+	.inputfill .form-control{background:#081526;border:none;color:#eeeff1;}
+	.inputfill label{color:#eeeff1;font-weight:normal}
+    .nicescroll-rails-vr .nicescroll-cursors {
+	 background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+	 animation: pace-stripe-animation 500ms linear infinite;
+	 background-size: 20px 20px;
+	}
+@keyframes pace-stripe-animation {
+	from { background-position-y: 0; }
+	to   { background-position-y: 100%; }
+}   
+	/*文字滚动*/
+	.scrollfont{width:98%;height:190px;}
+	.Scroller { padding:0px; height:180px; width:100%;} 
+	.Scroller *{margin:0px; padding:0px;} 
+	.ScrollMid {float:left;} 
+	.ScrollMid dl{width:100%;} 
+	.ScrollMid dl dt{font-size:16px;color:#6AB0EA;height:33px;width:100%;}
+	.ScrollMid dt{list-style:none; float:left; width:100%;line-height:50px;color:2b2b2b; } 
+	.ScrollMid dl .progressbox span,.ScrollMid dl .progressbox div{float:left;}
+	.ScrollMid dl .progressbox span{line-height:14px;font-size:12px;padding-right:3%;}
+	.ScrollMid dl .progressbox .sright{float:right}
+     
+    .order_progress h2{color:#fcfcfc;font-size:14px;line-height:26px;}
+    .progress{width:45%;height:12px !important;background-color:#3d5464 !important; border-radius:12px !important;}
+    .progress-bar{line-height:12px !important;font-size:12px !important;color:#0a7487 !important;background-color:#42e0fc !important;}
+    .progressbox .pro-title{width:100px;color:#fcfcfc;font-weight:normal}
+    .progressbox span{color:#999}
+  
+    
+    .col-inside #main,.col-inside #main2,#main3{width:100%;height:180px;}
+    #main4{width:100%;height:140px;}
+     table{width:100%;color:#fefefe}
+    .yc-table tr{ background:none !important;}
+    .yc-table thead tr th{text-align:left !important; font-weight:normal;border-bottom:none !important }
+    .yc-table tbody tr td{height:40px !important;text-align:left !important;border-bottom:1px solid #3d5465;border-top:1px solid #3d5465 !important;color:#fefefe;font-size:12px;padding:0 !important}
+    .yc-table tbody tr td .yc{width:50px; text-align:center;margin:5px 0px 5px 15px;height:20px;border-radius:3px;}
+    .yc-red{background:#ed6a6a}
+    .yc-yellow{background:#f5a623}
+    .yc-green{background:#6cd49b}
+    .list-group-horizontal{margin-bottom:10px !important;color:#fff;padding:5px 10px;}
+    .list-group-horizontal .list-group-item span{margin:5px 10px;float:left;width:12px;height:12px;display:block}
+	.list-group-horizontal .list-group-item {
+		display: inline-block;
+		margin-bottom: 0;
+		margin-right: 0;
+		height:20px;
+		line-height:20px;
+		padding:0px 10px;
+		color:#bdc5ca;
+		background:none;
+		border:none;
+	}
+	.row-col1{padding:10px !important;background:url(images/shoporderbg.png) no-repeat;background-size:100% 100%;}
+    .row-col2{padding:10px !important;background:url(images/long1.png) no-repeat;background-size:100% 100%;}
+    .col-inside{height:230px;padding:10px;background:url(images/shoporderbg.png) no-repeat;background-size:100% 100%;}
+    .set-table tr td{padding:0px;text-align:center;backgroung:none}
+    .set-table tr td img{width:20px;height:20px;margin:0 auto;}
+
+</style>
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/conmmentcss.css" rel="stylesheet" />
+<!--<script src="js/jquery-2.2.4.min.js"></script>-->
+<script src="js/echarts.common.min.js"></script>	
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script>
+  $(document).ready(function() {
+	var nice = $("html").niceScroll();  // The document page (body)
+    $("#innerslide").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
+  });
+</script>
+</script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>制令单工序进度看板</title>
+</head>
+<body style="background-color:#0a2737;position:relative">
+   <div class="container">
+	 <div class="rowbox1">
+		<div class="rowleft col-md-12 col-lg-12">
+			<nav class="headnav navbar">
+				<div class="row">
+					<div class="logoimg col-md-4 col-lg-4 pull-left">
+						<img src="../images/fmlogo.png">
+					</div>
+					<div class="col-md-4 col-lg-4">
+						<h4 class="headercenter">[ 注塑车间 ]信息化看板</h4>
+					</div>
+					<div class="righttime col-md-4 col-lg-4 text-right">
+						<p>2019-10-10 23:00 星期二</p>
+						
+					</div>
+				</div>
+			</nav>
+
+			<div class="outslide">
+				<div class="centerslide">
+					<div class="innerslide" id="innerslide">
+                        <div class="Windbox">
+                           <div class="row">
+                           		<div class="row-col1 col-md-3 col-lg-3">
+                           		  
+                           		  <div class="order_progress">
+                       				<h2>工单进度</h2>
+				                  	  <div class="scrollfont">
+				                         <DIV class="Scroller" id="idScroller"> 
+				                           <DIV class="ScrollMid" id="idScrollMid"> 
+				                              <DL> 
+				                                <DT class="progressbox">
+				                                    <span class="pro-title">工单001</span>
+				                                       <div class="progress">  
+															 <div class="progress-bar" style="width:80%">80%</div>
+														</div>
+				                                     <span class="sright">10000</span>
+				                                 </DT>
+				                                 <DT class="progressbox">
+				                                    <span class="pro-title">工单001</span>
+				                                       <div class="progress">  
+															 <div class="progress-bar" style="width:44%">44%</div>
+														</div>
+				                                     <span class="sright">10000</span>
+				                                 </DT>
+				                                 <DT class="progressbox">
+				                                    <span class="pro-title">工单053501</span>
+				                                       <div class="progress">  
+															 <div class="progress-bar" style="width:50%">50%</div>
+														</div>
+				                                     <span class="sright">10000</span>
+				                                 </DT>
+				                                 <DT class="progressbox">
+				                                    <span class="pro-title">工单065701</span>
+				                                       <div class="progress">  
+															 <div class="progress-bar" style="width:30%">30%</div>
+														</div>
+				                                     <span class="sright">10000</span>
+				                                 </DT>
+				                                 <DT class="progressbox">
+				                                    <span class="pro-title">工单0343401</span>
+				                                       <div class="progress">  
+															 <div class="progress-bar" style="width:60%">60%</div>
+														</div>
+				                                     <span class="sright">10000</span>
+				                                 </DT>
+				                                 <DT class="progressbox">
+				                                    <span class="pro-title">工单043401</span>
+				                                       <div class="progress">  
+															 <div class="progress-bar" style="width:80%">80%</div>
+														</div>
+				                                     <span class="sright">10000</span>
+				                                 </DT>
+				                                 <DT class="progressbox">
+				                                    <span class="pro-title">工单043401</span>
+				                                       <div class="progress">  
+															 <div class="progress-bar" style="width:70%">70%</div>
+														</div>
+				                                     <span class="sright">10000</span>
+				                                 </DT>
+				                                 <DT class="progressbox">
+				                                    <span class="pro-title">工单022201</span>
+				                                       <div class="progress">  
+															 <div class="progress-bar" style="width:70%">70%</div>
+														</div>
+				                                     <span class="sright">10000</span>
+				                                 </DT>
+				                              </DL> 
+				                           </DIV>
+				                         </DIV>
+				                      </div>
+								  </div>
+                           		</div>
+                           		
+                           		<div class="col-md-4 col-lg-4">
+                           			<div class="col-inside">
+                       				    <div class="list-group list-group-horizontal">
+									     	设备运行时间效率
+							                <div class="pull-right list-group-item"><span style="margin-left:0; background:#42e0fc"></span>停机时间</div>
+							                <div class="pull-right list-group-item"><span style="margin-left:0; background:#f5a623;width:15px;height:4px"></span>时间利用率</div>
+						                 </div>
+                       				    <div id="main"></div>
+									</div>
+                           		</div>
+                           		<div class="row-col1 col-md-5 col-lg-5">
+                       			  <div class="list-group list-group-horizontal">
+									     	异常汇总
+							                <div class="pull-right list-group-item"><span style="background:#ff6f6d"></span>呼叫中</div>
+							                <div class="pull-right list-group-item"><span style="background:#f5a623"></span>处理中</div>
+							                <div class="pull-right list-group-item"><span style="background:#6cd49b"></span>已完成</div>
+						                 </div>
+                       			 <table class="yc-table">
+									   <thead>
+									      <tr>
+									         <th>工位</th>
+									         <th>异常名称</th>
+									         <th>责任人</th>
+									         <th>呼叫时间</th>
+									         <th>处理时间</th>
+									      </tr>
+									   </thead>
+									   <tbody>
+									      <tr>
+									         <td><div class="yc yc-red">1号机</div></td>
+									         <td>设备陈旧卡顿</td>
+									         <td>李青霞</td>
+									         <td>2019-10-10<br>20:08:08</td>
+									         <td>2019-10-10<br>20:12:09</td>
+									      </tr>
+									       <tr>
+									         <td><div class="yc yc-red">1号机</div></td>
+									         <td>设备陈旧卡顿</td>
+									         <td>李青霞</td>
+									         <td>2019-10-10<br>20:08:08</td>
+									         <td>2019-10-10<br>20:12:09</td>
+									      </tr>
+									       <tr>
+									         <td><div class="yc yc-yellow">2号机</div></td>
+									         <td>设备陈旧卡顿</td>
+									         <td>李青霞</td>
+									         <td>2019-10-10<br>20:08:08</td>
+									         <td>2019-10-10<br>20:12:09</td>
+									      </tr>
+									       <tr>
+									         <td><div class="yc yc-green">3号机</div></td>
+									         <td>设备陈旧卡顿</td>
+									         <td>李青霞</td>
+									         <td>2019-10-10<br>20:08:08</td>
+									         <td>2019-10-10<br>20:12:09</td>
+									      </tr>
+									   </tbody>
+									</table>
+                           		</div>
+                           </div>
+                      
+                            <div class="row" style="margin-top:15px;">
+                           		<div class="row-col1 col-md-3 col-lg-3">
+	                       		      <div class="list-group list-group-horizontal">
+									                 工单信息
+								          <p>产品：数据线</p>
+							              <p>工单：GD201908098879798</p>
+	                       		      </div>
+                       				  <div id="main4"></div>
+                           		</div>
+                           		
+                           		<div class="col-md-4 col-lg-4">
+                           			<div class="col-inside">
+                       				    <div class="list-group list-group-horizontal">
+									     	质量数据
+							                <div class="pull-right list-group-item"><span style="margin-left:0; background:#42e0fc"></span>不良数</div>
+							                <div class="pull-right list-group-item"><span style="margin-left:0; background:#f5a623;width:15px;height:4px"></span>累计百分比</div>
+						                 </div>
+                       				    <div id="main2"></div>
+									</div>
+                           		</div>
+                           		<div class="row-col1 col-md-5 col-lg-5">
+                   				    <div class="list-group list-group-horizontal">
+									     	异常工时统计
+							                <div class="pull-right list-group-item"><span style="background:#42e0fc"></span>设备异常</div>
+							                <div class="pull-right list-group-item"><span style="background:#f5a623"></span>物料异常</div>
+							                <div class="pull-right list-group-item"><span style="background:#1f6dcd"></span>生产异常</div>
+						              </div>
+                   				    <div id="main3"></div>
+                           		</div>
+                           </div>
+                      
+                            <div class="row row-col2" style="margin-top:15px">
+                            	 <div class="list-group list-group-horizontal">
+									     	机台状态  [ 注塑车间 ]
+							                <div  class="pull-right list-group-item"><span style="background:#636b81"></span>未切单</div>
+							                <div  class="pull-right list-group-item"><span style="background:#c6533c"></span>停机中</div>
+							                <div  class="pull-right list-group-item"><span style="background:#dd9926"></span>换模中</div>
+							                <div  class="pull-right list-group-item"><span style="background:#1f6dcd"></span>生产中</div>
+						          </div>
+						          <table class="set-table">
+						          	  <tr>
+						          	  	<td><img src="images/jtblue.png">00001#</td>
+						          	  	<td><img src="images/jtblue.png">00002#</td>
+						          	  	<td><img src="images/jtblue.png">00003#</td>
+						          	  	<td><img src="images/jtyellow.png">00004#</td>
+						          	  	<td><img src="images/jtyellow.png">00005#</td>
+						          	  	<td><img src="images/jtblue.png">00006#</td>
+						          	  	<td><img src="images/jtblue.png">00007#</td>
+						          	  	<td><img src="images/jtblue.png">00008#</td>
+						          	  	<td><img src="images/jtblue.png">00009#</td>
+						          	  	<td><img src="images/jtblue.png">00010#</td>
+						          	  	<td><img src="images/jtblue.png">00011#</td>
+						          	  	<td><img src="images/jtred.png">00012#</td>
+						          	  	<td><img src="images/jtyellow.png">00013#</td>
+						          	  	<td><img src="images/jtblue.png">00014#</td>
+						          	  	<td><img src="images/jtblue.png">00015#</td>
+						          	  	<td><img src="images/jtblue.png">00016#</td>
+						          	  	<td><img src="images/jtblue.png">00017#</td>
+						          	  	<td><img src="images/jtgrey.png">00018#</td>
+						          	  	<td><img src="images/jtblue.png">00019#</td>
+						          	  	
+						          	  </tr>
+						          	  <tr>
+						          	  	<td><img src="images/jtblue.png">00001#</td>
+						          	  	<td><img src="images/jtgrey.png">00002#</td>
+						          	  	<td><img src="images/jtblue.png">00003#</td>
+						          	  	<td><img src="images/jtyellow.png">00004#</td>
+						          	  	<td><img src="images/jtblue.png">00005#</td>
+						          	  	<td><img src="images/jtblue.png">00006#</td>
+						          	  	<td><img src="images/jtblue.png">00007#</td>
+						          	  	<td><img src="images/jtred.png">00008#</td>
+						          	  	<td><img src="images/jtblue.png">00009#</td>
+						          	  	<td><img src="images/jtblue.png">00010#</td>
+						          	  	<td><img src="images/jtblue.png">00011#</td>
+						          	  	<td><img src="images/jtblue.png">00012#</td>
+						          	  	<td><img src="images/jtblue.png">00013#</td>
+						          	  	<td><img src="images/jtgrey.png">00014#</td>
+						          	  	<td><img src="images/jtblue.png">00015#</td>
+						          	  	<td><img src="images/jtred.png">00016#</td>
+						          	  	<td><img src="images/jtblue.png">00017#</td>
+						          	  	<td><img src="images/jtblue.png">00018#</td>
+						          	  	<td><img src="images/jtblue.png">00019#</td>
+						          	  	
+						          	  </tr>
+						          </table>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</div>			
+</div>
+<script src="js/Echats2.js"></script>
+<script src="js/echarts-all.js"></script>
+<!--<script>
+var myChart4 = echarts.init(document.getElementById('main4')); 
+     var option4 = {
+        series : [
+            {
+                type:'gauge',	
+				radius: '80%',	
+				startAngle: 225,		
+				min:0,
+				max:100,            
+                splitNumber: 0,       // 分割段数，默认为5
+                axisLine: {            // 坐标轴线
+                    lineStyle: {       // 属性lineStyle控制线条样式
+                        color: [[0.3, '#42e0fc'],[0.7, '#F2AF00']], 
+                        width: 6
+                    }
+                },
+		        detail: {
+		            formatter: '{value}'
+		        },
+		        data: [{
+		            value: 50,
+		            name: '工单产量',
+		            
+		        }],
+            }
+        ]
+    };
+ myChart4.setOption(option4);
+ setInterval(function (){
+        option4.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
+        myChart4.setOption(option4,true);
+   },2000);
+
+</script>-->
+<!-- 文字滚动js ----->
+<script>
+	var $ = function (id) { 
+	return "string" == typeof id ? document.getElementById(id) : id; 
+	}; 
+	var Class = { 
+	create: function() { 
+	return function() { 
+	this.initialize.apply(this, arguments); 
+	} 
+	} 
+	} 
+	Object.extend = function(destination, source) { 
+	for (var property in source) { 
+	destination[property] = source[property]; 
+	} 
+	return destination; 
+	} 
+	function addEventHandler(oTarget, sEventType, fnHandler) { 
+	if (oTarget.addEventListener) { 
+	oTarget.addEventListener(sEventType, fnHandler, false); 
+	} else if (oTarget.attachEvent) { 
+	oTarget.attachEvent("on" + sEventType, fnHandler); 
+	} else { 
+	oTarget["on" + sEventType] = fnHandler; 
+	} 
+	}; 
+	var Scroller = Class.create(); 
+	Scroller.prototype = { 
+	initialize: function(idScroller, idScrollMid, options) { 
+	var oThis = this, oScroller = $(idScroller), oScrollMid = $(idScrollMid); 
+	this.SetOptions(options); 
+	this.Side = this.options.Side || ["up"];//方向 
+	this.scroller = oScroller; //对象 
+	this.speed = this.options.Speed; //速度 
+	this.timer = null; //时间 
+	this.pauseHeight = 0; //定高 
+	this.pauseWidth = 0; //定宽 
+	this.pause = 0; //定高(宽) 
+	this.side = 0; //参数 
+	//用于上下滚动 
+	this.heightScroller = parseInt(oScroller.style.height) || oScroller.offsetHeight; 
+	this.heightList = oScrollMid.offsetHeight; 
+	//用于左右滚动 
+	this.widthScroller = parseInt(oScroller.style.width) || oScroller.offsetWidth; 
+	this.widthList = oScrollMid.offsetWidth; 
+	//js取不到css设置的height和width 
+	oScroller.style.overflow = "hidden"; 
+	oScrollMid.appendChild(oScrollMid.cloneNode(true)); 
+	oScrollMid.appendChild(oScrollMid.cloneNode(true)); 
+	addEventHandler(oScroller, "mouseover", function() { oThis.Stop(); }); 
+	addEventHandler(oScroller, "mouseout", function() { oThis.Start(); }); 
+	this.Start(); 
+	}, 
+	//设置默认属性 
+	SetOptions: function(options) { 
+	this.options = {//默认值 
+	Step: 1,//每次变化的px量 
+	Speed: 20,//速度(越大越慢) 
+	Side: ["up"],//滚动方向:"up"是上，"down"是下，"left"是左，"right"是右 
+	PauseHeight: 0,//隔多高停一次 
+	PauseWidth: 0,//隔多宽停一次 
+	//当上下和左右一起使用时必须设置PauseHeight和PauseWidth来设置转向位置 
+	PauseStep: 3000//停顿时间(PauseHeight或PauseWidth大于0该参数才有效) 
+	}; 
+	Object.extend(this.options, options || {}); 
+	}, 
+	//转向 
+	Turn: function() { 
+	//通过设置方向数组的排列来转向 
+	this.Side.push(this.Side.shift().toLowerCase()); 
+	}, 
+	//上下滚动 
+	ScrollUpDown: function() { 
+	this.pause = this.pauseHeight; 
+	this.scroller.scrollTop = this.GetScroll(this.scroller.scrollTop, this.heightScroller, this.heightList, 
+	this.options.PauseHeight); 
+	this.pauseHeight = this.pause; 
+	var oThis = this; 
+	this.timer = window.setTimeout(function(){ oThis.Start(); }, this.speed); 
+	}, 
+	//左右滚动 
+	ScrollLeftRight: function() { 
+	this.pause = this.pauseWidth; 
+	//注意:scrollLeft超过1400会自动变回1400 注意长度 
+	this.scroller.scrollLeft = this.GetScroll(this.scroller.scrollLeft, this.widthScroller, this.widthList, 
+	this.options.PauseWidth); 
+	this.pauseWidth = this.pause; 
+	var oThis = this; 
+	this.timer = window.setTimeout(function(){ oThis.Start(); }, this.speed); 
+	}, 
+	//获取设置滚动数据 
+	GetScroll: function(iScroll, iScroller, iList, iPause) { 
+	var iStep = this.options.Step * this.side; 
+	if(this.side > 0){ 
+	if(iScroll >= (iList * 2 - iScroller)){ iScroll -= iList; } 
+	} else { 
+	if(iScroll <= 0){ iScroll += iList; } 
+	} 
+	this.speed = this.options.Speed; 
+	if(iPause > 0){ 
+	if(Math.abs(this.pause) >= iPause){ 
+	this.speed = this.options.PauseStep; this.pause = iStep = 0; this.Turn(); 
+	} else { 
+	this.pause += iStep; 
+	} 
+	} 
+	return (iScroll + iStep); 
+	}, 
+	//开始 
+	Start: function() { 
+	//document.getElementById("test").innerHTML+=sTurn+","; 
+	//方向设置 
+	switch (this.Side[0].toLowerCase()) { 
+	case "right" : 
+	if(this.widthList < this.widthScroller) return; 
+	this.side = -1; 
+	this.ScrollLeftRight(); 
+	break; 
+	case "left" : 
+	if(this.widthList < this.widthScroller) return; 
+	this.side = 1; 
+	this.ScrollLeftRight(); 
+	break; 
+	case "down" : 
+	if(this.heightList < this.heightScroller) return; 
+	this.side = -1; 
+	this.ScrollUpDown(); 
+	break; 
+	case "up" : 
+	default : 
+	if(this.heightList < this.heightScroller) return; 
+	this.side = 1; 
+	this.ScrollUpDown(); 
+	} 
+	}, 
+	//停止 
+	Stop: function() { 
+	clearTimeout(this.timer); 
+	} 
+	};
+	
+</script>
+<script>
+	new Scroller("idScroller", "idScrollMid",{ Side:["up",""], PauseHeight:50, PauseWidth:'100%'}); 
+</script>
+
+
+
+
+</body>
+</html>

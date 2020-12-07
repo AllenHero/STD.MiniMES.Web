@@ -1,0 +1,320 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <style>
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <title>制令单工序进度看板</title>
+    <link href="~/Content/newCSS/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/newCSS/css/conmmentcss.css" rel="stylesheet" />
+    <script src="~/Content/newCSS/js/jquery.min.js"></script>
+    <script src="~/Content/newCSS/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('#myCarousel').carousel({ interval: 10000 });
+        })
+    </script>
+
+    <script type="text/javascript">
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+    </script>
+</head>
+
+<body style="background-color:#0b2637;padding:0;margin:0;position:relative">
+    <div class="container">
+        <div class="rowbox1">
+            <div class="rowleft col-md-12 col-lg-12">
+                <nav class="headnav navbar">
+                    <div class="row">
+                        <div class="logoimg col-md-4 col-lg-4 pull-left">
+                            <img src="~/Content/newCSS/images/jiln.png" style="width:60px;height:40px">
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <h4 class="headercenter" id="id_WorkshopName"></h4>
+                        </div>
+                        <div class="righttime col-md-4 col-lg-4 text-right">
+                            <p id="nowDateTimeSpan"></p>
+                        </div>
+                    </div>
+                </nav>
+                <div class="wind_title row">
+                    <div class="col-md-5 text-center">
+                        <span><b class="wt_blue">生产中：</b> <item id="InProduction"></item></span>
+                        <span><b class="wt_green">已完成：</b> <item id="Completed"></item></span>
+                        <span><b class="wt_red">停机中：</b> <item id="Downtime"></item></span>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5 text-center">
+                        <span><b class="wt_orange">休息中：</b> <item id="RestTime"></item></span>
+                        <span><b class="wt_gray">未切单：</b><item id="Uncut"></item></span>
+                    </div>
+                </div>
+
+                <div class="outslide">
+                    <div class="centerslide">
+                        <div class="innerslide">
+                            <div class="Windbox">
+                                <div id="myCarousel" class="carousel slide">
+                                    <!-- 轮播（Carousel）指标 -->
+                                    <ol class="carousel-indicators btncarousel" id="id_carousel">
+                                    </ol>
+                                    <!-- 轮播（Carousel）项目 -->
+                                    <div class="carousel-inner" id="id_Main">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="~/Content/newCSS/js/jquery.nicescroll.js"></script>
+    <script type="text/javascript">
+        $('.innerslide').niceScroll({
+            cursorcolor: "#2E7DC2",//#CC0071 光标颜色
+            cursoropacitymax: "0", //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+            touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+            cursorwidth: "5px", //像素光标的宽度
+            cursorborder: "1", // 游标边框css定义
+            cursorborderradius: "8px",//以像素为光标边界半径
+            autohidemode: false //是否隐藏滚动条
+        });
+    </script>
+
+    <script language="JavaScript">
+
+        function startTime() { 
+            $.ajax({
+                url: "../WorkshopBoard/GetDate",
+                data: {
+
+                },
+                async: false,
+                success: function (data) {
+                    $("#nowDateTimeSpan").html(data);
+                }
+            });
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+        setInterval(startTime, 1000);
+    </script>
+
+    <script type="text/javascript">
+        //加载车间信息
+        function GetWorkshop() {
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantID = Request["TenantID"];
+            var WorkShopId = Request["DepartCode"];
+            $.ajax({
+                url: "../WorkshopBoard/LoadWorkshopName",
+                data: {
+                    "WorkShopId": "" + WorkShopId + "",
+                    "TenantID": TenantID
+                },
+                async: false,
+                success: function (data) {
+                    $("#id_WorkshopName").html("[  "+data+"  ]" + "看板");
+                }
+            });
+        }
+        GetWorkshop();
+    </script>
+
+    <script type="text/javascript">
+        //读取数据
+        function GetWorkshopBoardData() {
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantID = Request["TenantID"];
+            var DepartCode = Request["DepartCode"];
+            $.ajax({
+                url: "../WorkshopBoard/GetWorkshopBoardData",
+                data: {
+                    "DepartCode": "" + DepartCode + "",
+                    "TenantID": TenantID
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+
+                    var InProductionCount = 0;
+                    var CompletedCount = 0;
+                    var DowntimeCount = 0;
+                    var UncutCount = 0;
+                    var RestTimeCount = 0;
+
+                    var a = 0;
+                    for (var i = 0; i < result.length; i++) {
+
+                        if (result[i].StateName == "生产中") {
+                            InProductionCount = InProductionCount + 1;
+                        }
+                        if (result[i].StateName == "已完成") {
+                            CompletedCount = CompletedCount + 1;
+                        }
+                        if (result[i].StateName == "停机中") {
+                            DowntimeCount = DowntimeCount + 1;
+                        }
+                        if (result[i].StateName == "休息中") {
+                            RestTimeCount = RestTimeCount + 1;
+                        }
+                        if (result[i].StateName == "未切单") {
+                            UncutCount = UncutCount + 1;
+                        }
+                        OrderNo = "#OrderNo" + i;
+                        ProductCode = "#ProductCode" + i;
+                        Qty = "#Qty" + i;
+                        PlanQty = "#PlanQty" + i;
+                        StateName = "#StateName" + i;
+                        PlanRatio = "#PlanRatio" + i;
+                        ReserveRate = "#ReserveRate" + i;
+                        MouldRate = "#MouldRate" + i;
+                        $(StateName).attr("class", GetColor(result[i].StateName));
+                        $(OrderNo).html(result[i].OrderNo);
+                        $(ProductCode).html(result[i].ProductCode);
+                        $(Qty).html(result[i].Qty);
+                        $(PlanQty).html(result[i].PlanQty);
+                        $(StateName).html(result[i].StateName);
+                        $(PlanRatio).html(result[i].PlanRatio);
+                        $(ReserveRate).html(result[i].ReserveRate);
+                        $(MouldRate).html(result[i].MouldRate);
+                    }
+                    $(InProduction).html(InProductionCount + "台");
+                    $(Completed).html(CompletedCount + "台");
+                    $(Downtime).html(DowntimeCount + "台");
+                    $(Uncut).html(UncutCount + "台");
+                    $(RestTime).html(RestTimeCount + "台");
+                }
+            });
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        function GetColor(stateName)
+        { 
+            if (stateName =='已完成') {
+                return 'green';
+            }
+            if (stateName == '生产中') {
+                return 'blue';
+            }
+            if (stateName == '停机中') {
+                return 'red';
+            }
+            if (stateName == '休息中') {
+                return 'orange';
+            }
+            if (stateName == '未切单') {
+                return 'gray';
+            }
+            return 'green';
+        }
+        function LoadTable(obj, index) {
+            var table = '<div class="col-md-4">'
+                + '<div class="windcol">'
+                + '<table class="table">'
+                + ' <thead>'
+                + '  <tr><th>' + obj.LineName + '</th><th class="text-right"><span class="' + GetColor(obj.StateName) + '"  id="StateName' + index + '" >' + obj.StateName + '</span></th></tr>'
+                + '</thead>'
+                + '<tbody>'
+                + '<tr><td>任务单</td><td class="text-right" id="OrderNo' + index + '" >' + obj.OrderNo + '</td></tr>'
+                + '<tr><td>产品编码</td><td class="text-right" id="ProductCode' + index + '" >' + obj.ProductCode + '</td></tr>'
+                + ' <tr><td>产量</td><td class="text-right" id="Qty' + index + '" >' + obj.Qty + '</td></tr>'
+                + ' <tr><td>计划量</td><td class="text-right" id="PlanQty' + index + '" >' + obj.PlanQty + '</td></tr>'
+                + '<tr><td>计划达成率</td><td class="text-right" id="PlanRatio' + index + '">' + obj.PlanRatio + '</td></tr>'
+                + '<tr><td>备存计划达成率</td><td class="text-right" id="ReserveRate' + index + '">' + obj.ReserveRate + '</td></tr>'
+                + '<tr><td>模穴率</td><td class="text-right" id="MouldRate' + index + '">' + obj.MouldRate + '</td></tr>'
+                + '</tbody>'
+                + '</table>'
+                + '</div>'
+                + '</div>';
+            return table;
+        }
+        //第一次加载车间看板信息
+        function LoadWorkshopBoard() {
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantID = Request["TenantID"];
+            var DepartCode = Request["DepartCode"];
+            $.ajax({
+                url: "../WorkshopBoard/LoadWorkshopBoard",
+                data: {
+                    "DepartCode": "" + DepartCode + "",
+                    "TenantID": TenantID
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    //商
+                    var Quotient = parseInt((result.length) / 6);
+                    //余数
+                    var Remainder = (result.length) % 6;
+                    var strhtml = "";
+                    var strcarousel = "";
+                    for (var i = 0; i < Quotient; i++) {
+                        strcarousel += '<li data-target="#myCarousel" data-slide-to="' + i + '" class="' + (i == 0 ? "active" : "") + '"></li>';
+                        strhtml += '<div class="item ' + (i == 0 ?"winditem active":"")+' ">';
+                        for (var j = 0; j < 6; j++) {
+                            if (j%3==0) {
+                                strhtml += '<div class="row windtable">';
+                            }
+                            strhtml += LoadTable(result[i * 6 + j], i * 6 + j);
+                            if (j % 3 == 2) {
+                                strhtml += '</div>';
+                            }
+                        }
+                        strhtml += '</div>';
+                    }
+                    if (Remainder > 0) {
+                        strcarousel += '<li data-target="#myCarousel" data-slide-to="' + Quotient+'" ></li>';
+                        strhtml += '<div class="item">';
+                        for (var k = 0; k < Remainder; k++) {
+                            if (k % 3 == 0) {
+                                strhtml += '<div class="row windtable">';
+                            }
+                            strhtml += LoadTable(result[Quotient * 6 + k], Quotient * 6 + k);
+                            if (k % 3 == 2 || k == Remainder-1) {
+                                strhtml += '</div>';
+                            }
+                        }
+                        strhtml += '</div>';
+                    }
+                    $("#id_carousel").html(strcarousel);
+                    $("#id_Main").html(strhtml);
+
+                    GetWorkshopBoardData();
+                    setInterval(GetWorkshopBoardData, 60000);
+
+                }
+            });
+        }
+        LoadWorkshopBoard();
+    </script>
+</body>
+</html> 

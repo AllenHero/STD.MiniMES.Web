@@ -1,0 +1,1033 @@
+2020-05-12 10:43:19,771 [19860] ERROR /api/MiniMES/SummaryBoard/GetWorkSheetList - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “<>f__AnonymousType43<bool,string>”未包含“rows”的定义
+   在 STD.MiniMES.Areas.MiniMES.Controllers.SummaryBoardApiController.GetWorkSheetList(String LineId, String TenantID) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\SummaryBoardController.cs:行号 357
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+2020-05-12 10:43:51,008 [15760] ERROR /api/MiniMES/SummaryBoard/GetCurrentLineList - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “<>f__AnonymousType43<bool,string>”未包含“rows”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 STD.MiniMES.Web.ApiDataSource.GetLineList(String TenantID, String WorkShopId, String AreaId, String LineId, String LineCode) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Common\ApiDataSource.cs:行号 167
+   在 STD.MiniMES.Areas.MiniMES.Controllers.SummaryBoardApiController.GetCurrentLineList(String workshopId) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\SummaryBoardController.cs:行号 416
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass13.<GetExecutor>b__c(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.<>c__DisplayClass5.<ExecuteAsync>b__4()
+   在 System.Threading.Tasks.TaskHelpers.RunSynchronously[TResult](Func`1 func, CancellationToken cancellationToken)
+2020-05-12 10:43:52,030 [19860] ERROR /MiniMES/LineBoard/GetLineBoardData - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “<>f__AnonymousType43<bool,string>”未包含“rows”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 STD.MiniMES.Web.ApiDataSource.GetLineList(String TenantID, String WorkShopId, String AreaId, String LineId, String LineCode) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Common\ApiDataSource.cs:行号 167
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineBoardData(String LineId, String TenantID) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 35
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2020-05-12 10:43:52,101 [15760] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 10:43:52,101 [11052] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:43:52,844 [11052] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:43:52,849 [15760] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:43:55,526 [15760] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 10:43:55,528 [11740] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 10:43:55,531 [19860] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:43:55,659 [11740] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-3'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 10:43:55,662 [19860] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:43:55,719 [15760] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:43:55,737 [15760] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:43:55,766 [11052] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:43:55,767 [11052] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-3'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 10:43:55,847 [15760] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:43:55,848 [15760] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-3'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 10:43:55,891 [11052] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:43:55,892 [11052] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-3'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 10:44:00,976 [19860] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:44:00,978 [19860] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:00,985 [19860] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-3' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:00,995 [19860] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-3' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:09,509 [5444] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 10:44:09,510 [5444] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:09,512 [15760] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:09,520 [15760] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:09,590 [10016] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:09,592 [10016] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:09,592 [11052] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 10:44:09,593 [5444] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 10:44:09,594 [5444] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-3'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 10:44:09,632 [24404] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:44:09,639 [24404] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:44:09,675 [19860] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:44:09,676 [19860] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-3'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 10:44:09,694 [5444] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:44:09,695 [5444] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-3'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 10:44:09,710 [15760] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:44:09,712 [15760] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-3'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 10:44:09,808 [10016] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:44:09,809 [10016] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:09,811 [10016] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-3' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:09,812 [10016] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-3' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:15,849 [15760] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:44:15,852 [15760] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:19,403 [15760] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:44:19,404 [15760] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.23630SY104'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:29,735 [536] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:44:29,745 [536] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:44:29,781 [15760] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:44:29,791 [15760] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:44:35,338 [15760] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:35,340 [15760] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-4'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:35,370 [15760] DEBUG MiniMes - update minimes_order_record set `State` = '0' where `LineId` = '3e746356-3589-49d3-ae76-7dad5de40d29'
+2020-05-12 10:44:35,396 [15760] DEBUG MiniMes - update minimes_order_record set `UPH` = '1', `Ratio` = '1', `State` = '1', `LineId` = '3e746356-3589-49d3-ae76-7dad5de40d29', `LineName` = '高速冲床1号机', `PlanDate` = '2020/5/12 0:00:00', `Person` = '1', `PlanPerson` = '1' where `ID` = '1995'
+2020-05-12 10:44:35,478 [11052] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:35,479 [11052] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:35,535 [24404] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:35,537 [24404] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:35,725 [24404] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:44:35,726 [24404] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:35,728 [24404] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-4' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:35,729 [24404] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-4' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:39,736 [11052] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:39,739 [11052] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:39,802 [24404] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:39,803 [24404] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:39,845 [11740] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:39,846 [11740] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:39,847 [10016] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:39,848 [10016] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:44:50,519 [11052] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:44:50,532 [11052] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:44:50,566 [15760] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:44:50,575 [15760] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:44:52,993 [11052] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:44:52,994 [11052] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-4'
+2020-05-12 10:45:09,738 [24404] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:45:09,751 [24404] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:45:09,795 [15760] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:45:09,801 [15760] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:45:09,831 [11052] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:45:09,832 [11052] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:46:24,693 [10016] ERROR /MiniMES/LineBoard/GetLineOrderData - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “<>f__AnonymousType43<bool,string>”未包含“rows”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 STD.MiniMES.Web.ApiDataSource.GetWorkSheetDetail(String TenantId, String WorkSheetNo) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Common\ApiDataSource.cs:行号 801
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineOrderData(String LineId, String TenantID) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 118
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2020-05-12 10:46:24,693 [11740] ERROR /MiniMES/LineBoard/GetLineOrderData - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “<>f__AnonymousType43<bool,string>”未包含“rows”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 STD.MiniMES.Web.ApiDataSource.GetWorkSheetDetail(String TenantId, String WorkSheetNo) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Common\ApiDataSource.cs:行号 801
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineOrderData(String LineId, String TenantID) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 118
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2020-05-12 10:46:25,095 [536] ERROR logs - nizeheng 时间：2020/5/12 10:46:25----【工单】：SC-200403947-4 【异常】：“<>f__AnonymousType43<bool,string>”未包含“rows”的定义
+2020-05-12 10:46:53,278 [11052] ERROR /MiniMES/LineBoard/GetLineData - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “<>f__AnonymousType43<bool,string>”未包含“rows”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 STD.MiniMES.Web.ApiDataSource.GetLineList(String TenantID, String WorkShopId, String AreaId, String LineId, String LineCode) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Common\ApiDataSource.cs:行号 167
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineData(String LineId, String TenantID) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 60
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2020-05-12 10:46:53,302 [18356] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:46:53,303 [18356] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:50:45,385 [18356] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:50:45,385 [15068] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 10:50:46,053 [18356] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:50:46,056 [15068] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:50:46,215 [1020] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 10:50:46,218 [15068] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 10:50:46,219 [23716] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:50:46,372 [15068] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-4'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 10:50:46,378 [23716] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:50:46,429 [11052] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:50:46,448 [11052] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:50:46,490 [11580] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:50:46,491 [11580] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-4'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 10:50:46,520 [1020] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:50:46,521 [1020] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-4'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 10:50:46,554 [11580] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:50:46,555 [11580] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-4'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 10:50:46,642 [23716] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:50:46,643 [23716] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:50:46,648 [23716] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-4' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:50:46,653 [23716] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-4' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:50:48,583 [11580] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:50:48,584 [11580] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:50:51,710 [1020] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:50:51,711 [1020] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2B850RY202'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:51:03,119 [1020] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:51:03,120 [1020] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2B850RY202'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:51:03,123 [1020] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:51:03,124 [1020] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:51:03,147 [1020] DEBUG MiniMes - update minimes_order_record set `State` = '0' where `LineId` = '3e746356-3589-49d3-ae76-7dad5de40d29'
+2020-05-12 10:51:03,170 [1020] DEBUG MiniMes - update minimes_order_record set `UPH` = '1', `Ratio` = '1', `State` = '1', `LineId` = '3e746356-3589-49d3-ae76-7dad5de40d29', `LineName` = '高速冲床1号机', `PlanDate` = '2020/5/12 0:00:00', `Person` = '1', `PlanPerson` = '1' where `ID` = '1996'
+2020-05-12 10:51:03,251 [10492] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:51:03,253 [10492] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:51:03,293 [1020] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:51:03,295 [1020] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:51:03,538 [1020] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:51:03,539 [1020] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:51:03,545 [1020] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:51:03,547 [1020] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:51:07,522 [23716] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:51:07,532 [23716] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:54:39,619 [8808] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:54:39,619 [12016] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 10:54:40,299 [8808] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:54:40,301 [12016] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:54:40,466 [23224] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 10:54:40,466 [8808] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 10:54:40,470 [11900] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:54:40,616 [8808] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 10:54:40,620 [11900] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:54:40,655 [8808] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:54:40,669 [8808] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:54:40,725 [23224] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:54:40,727 [23224] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 10:54:40,767 [15180] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:54:40,768 [15180] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 10:54:40,800 [23224] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:54:40,801 [23224] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 10:54:40,840 [11900] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:54:40,841 [11900] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:54:40,848 [11900] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:54:40,853 [11900] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:54:43,445 [23224] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:54:43,447 [23224] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:54:47,792 [11900] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:54:47,793 [11900] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2B850RY202'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:00,845 [15180] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:55:00,866 [15180] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:55:00,924 [11900] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:55:00,933 [11900] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:55:07,204 [23224] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:07,206 [23224] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 10:55:10,830 [12016] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:10,832 [12016] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:10,932 [15180] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:10,934 [15180] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:11,014 [12016] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:11,015 [12016] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:11,219 [12016] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:55:11,221 [12016] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:11,224 [12016] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:11,227 [12016] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:11,253 [11900] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:11,254 [11900] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:11,496 [11900] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:55:11,497 [11900] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:11,504 [11900] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:11,507 [11900] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:12,603 [1892] DEBUG MiniMes - update minimes_order_record set `UPH` = '1', `Person` = '1', `Ratio` = '4' where `OrderNo` = 'SC-200403947-5'
+2020-05-12 10:55:12,655 [15180] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:12,655 [15180] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:18,156 [23224] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:18,157 [23796] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 10:55:18,158 [23224] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:18,158 [23796] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:18,224 [12016] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:18,225 [12016] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:18,228 [8808] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 10:55:18,231 [15180] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 10:55:18,232 [15180] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 10:55:18,263 [24920] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:55:18,268 [24920] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:55:18,294 [15180] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:55:18,295 [15180] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 10:55:18,332 [23224] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:55:18,333 [23224] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 10:55:18,372 [15180] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 10:55:18,373 [15180] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 10:55:18,442 [12016] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:55:18,443 [12016] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:18,445 [12016] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:18,447 [12016] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:28,163 [12016] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:28,164 [12016] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 10:55:33,542 [15180] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:55:33,543 [15180] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:36,626 [23224] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:55:36,628 [23224] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2B850RY202'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:38,425 [8808] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:55:38,443 [8808] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:55:38,507 [23224] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:55:38,526 [23224] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:55:48,412 [8808] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:48,415 [8808] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:48,552 [23224] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:48,553 [23224] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:48,606 [23796] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:48,609 [23796] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:48,872 [23796] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:55:48,874 [23796] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:48,876 [23796] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:48,878 [23796] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:48,897 [15180] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:55:48,898 [15180] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:49,092 [15180] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:55:49,093 [15180] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:49,095 [15180] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:49,097 [15180] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:55:58,400 [8808] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:55:58,407 [8808] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:55:58,433 [23224] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:55:58,440 [23224] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:56:02,518 [23796] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 10:56:02,519 [23796] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:18,409 [23224] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:56:18,420 [23224] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:56:18,454 [15180] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:56:18,462 [15180] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:56:18,504 [23224] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:56:18,506 [23224] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:18,595 [15180] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:56:18,597 [15180] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:18,672 [23224] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:56:18,675 [23224] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:18,882 [23224] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:56:18,883 [23224] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:18,885 [23224] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:18,886 [23224] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:18,906 [15180] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:56:18,908 [15180] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:19,119 [15180] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:56:19,120 [15180] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:19,122 [15180] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:19,124 [15180] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:38,401 [1892] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:56:38,409 [1892] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:56:38,435 [15180] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:56:38,441 [15180] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:56:48,402 [10324] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:56:48,404 [10324] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:48,535 [15180] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:56:48,536 [15180] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:48,650 [23224] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:56:48,651 [23224] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:48,912 [23224] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:56:48,913 [23224] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:48,916 [23224] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:48,918 [23224] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:49,001 [12016] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:56:49,003 [12016] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:49,277 [12016] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:56:49,278 [12016] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:49,281 [12016] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:49,283 [12016] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:56:58,399 [8808] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:56:58,405 [8808] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:56:58,430 [23224] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:56:58,435 [23224] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:57:18,406 [16156] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:57:18,418 [16156] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:57:18,469 [15180] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 10:57:18,484 [15180] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 10:57:18,537 [23224] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:57:18,539 [23224] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:57:18,637 [15180] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:57:18,638 [15180] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:57:18,733 [23224] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:57:18,734 [23224] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:57:18,925 [23224] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:57:18,926 [23224] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:57:18,928 [23224] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:57:18,929 [23224] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:57:18,945 [15180] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 10:57:18,946 [15180] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:57:19,194 [15180] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 10:57:19,196 [15180] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:57:19,198 [15180] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 10:57:19,200 [15180] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:13,060 [15200] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 11:00:13,060 [22572] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:00:13,714 [22572] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:13,714 [15200] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:13,904 [6096] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 11:00:13,906 [15200] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 11:00:13,907 [9396] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:00:14,059 [9396] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:14,072 [15200] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 11:00:14,109 [6096] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:00:14,128 [6096] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:00:14,197 [8184] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:00:14,198 [8184] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 11:00:14,232 [6096] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:00:14,233 [6096] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 11:00:14,255 [8184] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:00:14,256 [8184] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 11:00:14,326 [9396] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:00:14,328 [9396] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:14,337 [9396] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:14,343 [9396] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:20,666 [22572] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:00:20,667 [22572] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 11:00:27,861 [8184] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:00:27,863 [8184] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 11:00:32,194 [9396] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:00:32,195 [9396] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 11:00:34,541 [6244] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:00:34,553 [6244] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:00:34,582 [8184] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:00:34,591 [8184] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:00:44,555 [22572] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:00:44,557 [22572] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:44,621 [9396] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:00:44,622 [9396] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:44,704 [8184] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:00:44,705 [6096] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:00:44,706 [8184] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:44,706 [6096] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:00:54,584 [20964] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:00:54,590 [20964] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:00:54,626 [9396] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:00:54,633 [9396] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:02:47,201 [17476] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 11:02:47,201 [17528] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:02:47,902 [17476] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:02:47,904 [17528] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:02:48,074 [22404] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 11:02:48,078 [15748] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:02:48,078 [17476] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 11:02:48,256 [15748] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:02:48,260 [17476] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 11:02:48,308 [22952] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:02:48,325 [22952] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:02:48,372 [22404] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:02:48,374 [22404] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 11:02:48,409 [22952] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:02:48,410 [22952] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 11:02:48,442 [22404] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:02:48,443 [22404] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 11:02:48,503 [15748] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:02:48,504 [15748] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:02:48,511 [15748] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:02:48,516 [15748] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:02:52,829 [15748] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:02:52,831 [15748] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:02:52,833 [15748] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:02:52,835 [15748] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-3'
+2020-05-12 11:02:56,539 [22952] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:02:56,540 [22952] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2B850RY202'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:02:56,541 [22952] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:02:56,543 [22952] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 11:03:01,959 [3896] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:03:01,960 [3896] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:01,963 [3896] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:01,964 [3896] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-3'
+2020-05-12 11:03:04,247 [3896] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:03:04,248 [3896] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2B850RY202'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:04,250 [3896] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:04,251 [3896] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 11:03:08,480 [22404] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:03:08,489 [22404] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:03:08,518 [15748] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:03:08,527 [15748] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:03:18,488 [15748] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:18,490 [15748] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:18,604 [22404] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:18,607 [22404] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:19,274 [3896] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:03:19,275 [3896] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:19,276 [3896] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:19,277 [3896] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-3'
+2020-05-12 11:03:19,306 [15748] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:19,306 [15748] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:19,525 [15748] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:03:19,526 [15748] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:19,530 [15748] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:19,532 [15748] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:19,547 [22404] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:19,549 [22404] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:19,751 [22404] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:03:19,752 [22404] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:19,754 [22404] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:19,756 [22404] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:27,274 [17476] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:03:27,275 [17476] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:27,276 [17476] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:27,277 [17476] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-3'
+2020-05-12 11:03:28,473 [100] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:03:28,481 [100] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:03:28,506 [22952] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:03:28,514 [22952] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:03:35,014 [22952] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:03:35,015 [22952] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:35,016 [22952] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:35,017 [22952] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-3'
+2020-05-12 11:03:48,563 [19716] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:03:48,574 [19716] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:03:48,608 [22952] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:03:48,619 [22952] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:03:48,652 [15748] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:48,653 [15748] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:48,714 [17476] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:48,716 [17476] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:48,819 [22404] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:48,820 [22404] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:03:48,823 [17528] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:03:48,825 [17528] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:04:08,532 [24844] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:04:08,540 [24844] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:04:08,583 [15748] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:04:08,593 [15748] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:04:18,539 [19716] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:04:18,540 [19716] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:05:40,129 [17528] ERROR /MiniMES/LineBoard/GetLineOrderData - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “<>f__AnonymousType43<bool,string>”未包含“rows”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 STD.MiniMES.Web.ApiDataSource.GetWorkSheetDetail(String TenantId, String WorkSheetNo) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Common\ApiDataSource.cs:行号 801
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineOrderData(String LineId, String TenantID) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 118
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2020-05-12 11:05:40,129 [22404] ERROR /MiniMES/LineBoard/GetLineOrderData - Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: “<>f__AnonymousType43<bool,string>”未包含“rows”的定义
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   在 CallSite.Target(Closure , CallSite , Object )
+   在 STD.MiniMES.Web.ApiDataSource.GetWorkSheetDetail(String TenantId, String WorkSheetNo) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Common\ApiDataSource.cs:行号 801
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineOrderData(String LineId, String TenantID) 位置 C:\STD\SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 118
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2020-05-12 11:07:47,085 [20944] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:07:47,086 [20944] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:07:47,214 [20492] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:07:47,215 [17476] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:07:47,216 [20492] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:07:47,216 [17476] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:07:47,257 [14372] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:07:47,264 [14372] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:07:47,304 [13912] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:07:47,311 [13912] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:07:47,355 [14348] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:07:47,356 [14348] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:12:59,624 [23824] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 11:12:59,624 [14836] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:00,228 [23824] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:00,228 [14836] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:00,364 [22884] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 11:13:00,366 [23824] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 11:13:00,368 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:00,513 [23824] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 11:13:00,529 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:00,554 [22428] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:13:00,568 [22428] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:13:00,605 [18580] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:13:00,606 [18580] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 11:13:00,642 [23824] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:13:00,643 [23824] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 11:13:00,666 [18580] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:13:00,667 [18580] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-5'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 11:13:00,776 [18544] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:13:00,777 [18544] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:00,783 [18544] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:00,792 [18544] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:04,237 [18580] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:13:04,238 [18580] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2B850RY202'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:04,239 [18580] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:04,240 [18580] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 11:13:13,528 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:13,529 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 11:13:19,523 [18544] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:13:19,525 [18544] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2B850RY202'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:19,525 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:19,527 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 11:13:20,708 [14836] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:13:20,719 [14836] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:13:20,755 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:13:20,763 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:13:27,494 [23824] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:13:27,496 [23824] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:27,497 [23824] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:27,498 [23824] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:13:30,706 [18580] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:30,708 [18580] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:30,787 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:30,788 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:30,873 [23824] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:30,874 [23824] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:31,088 [23824] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:13:31,090 [23824] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:31,092 [23824] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:31,094 [23824] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:31,122 [18580] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:13:31,124 [18580] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:31,351 [18580] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:13:31,352 [18580] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:31,354 [18580] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:31,356 [18580] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:13:40,702 [18524] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:13:40,710 [18524] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:13:40,734 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:13:40,741 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:14:00,706 [18524] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:14:00,715 [18524] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:14:00,748 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:14:00,757 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:14:00,808 [22884] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:14:00,809 [22884] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:00,899 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:14:00,900 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:00,963 [22428] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:14:00,965 [22428] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:01,184 [22428] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:14:01,185 [22428] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:01,188 [22428] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:01,190 [22428] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:01,208 [23824] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:14:01,209 [23824] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:01,434 [23824] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:14:01,435 [23824] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:01,438 [23824] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:01,439 [23824] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:20,712 [2736] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:14:20,721 [2736] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:14:20,759 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:14:20,767 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:14:30,704 [16160] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:14:30,705 [16160] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:30,818 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:14:30,820 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:30,899 [22884] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:14:30,900 [22884] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:31,105 [22884] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:14:31,107 [22884] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:31,110 [22884] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:31,111 [22884] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:31,143 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:14:31,145 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:31,403 [18544] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:14:31,405 [18544] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:31,408 [18544] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:31,424 [18544] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-5' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:40,706 [22884] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:14:40,714 [22884] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:14:40,741 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:14:40,749 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:14:48,368 [22428] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:14:48,370 [22428] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:48,373 [22428] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:14:48,375 [22428] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:14:48,402 [22428] DEBUG MiniMes - update minimes_order_record set `State` = '0' where `LineId` = '3e746356-3589-49d3-ae76-7dad5de40d29'
+2020-05-12 11:14:48,419 [22428] DEBUG MiniMes - insert into minimes_order_record(`OrderNo`,`WorkShopId`,`WorkShopName`,`LineId`,`LineName`,`ProductCode`,`ProductName`,`PlanDate`,`OrderPlanDate`,`UPH`,`Ratio`,`QtyNG`,`Qty`,`PlanQty`,`ReserveQty`,`StandardMould`,`ActualMould`,`State`,`MachineState`,`StopCount`,`StopTime`,`Person`,`PlanPerson`,`CreateDate`,`TenantID`) values('SC-200403947-1','c3b621ea-29a0-4d7b-b8cc-87f72aee5612','冲压车间','3e746356-3589-49d3-ae76-7dad5de40d29','高速冲床1号机','JL-10003','1.27X4.3PF满底端子/SMT/O端/W4.8/磷铜/素材','2020/5/12 0:00:00','2020/5/12 0:00:00','1','1','0'NG,'0','380000','0','3','','1','1','0','0','1','1','2020/5/12 11:14:48','082d68ce-4d00-4f95-acee-a5b934f3eb9a')
+2020-05-12 11:14:48,580 [22428] ERROR logs - nizeheng 时间：2020/5/12 11:14:48----【工单】：SC-200403947-1 【异常】：Incorrect integer value: '' for column 'ActualMould' at row 1
+2020-05-12 11:15:00,705 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:15:00,713 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:15:00,748 [22884] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:15:00,759 [22884] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:15:00,797 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:15:00,798 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:15:00,832 [22884] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:15:00,833 [22884] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:15:00,853 [18580] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:15:00,854 [18580] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:15:00,884 [22884] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:15:00,884 [22884] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:15:20,726 [14308] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:15:20,735 [14308] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:15:20,810 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:15:20,818 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:15:30,233 [14308] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:15:31,720 [14308] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:15:46,192 [14308] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:15:48,048 [14308] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:15:53,528 [14308] DEBUG MiniMes - update minimes_order_record set `State` = '0' where `LineId` = '3e746356-3589-49d3-ae76-7dad5de40d29'
+2020-05-12 11:16:05,717 [14308] DEBUG MiniMes - insert into minimes_order_record(`OrderNo`,`WorkShopId`,`WorkShopName`,`LineId`,`LineName`,`ProductCode`,`ProductName`,`PlanDate`,`OrderPlanDate`,`UPH`,`Ratio`,`QtyNG`,`Qty`,`PlanQty`,`ReserveQty`,`StandardMould`,`ActualMould`,`State`,`MachineState`,`StopCount`,`StopTime`,`Person`,`PlanPerson`,`CreateDate`,`TenantID`) values('SC-200403947-1','c3b621ea-29a0-4d7b-b8cc-87f72aee5612','冲压车间','3e746356-3589-49d3-ae76-7dad5de40d29','高速冲床1号机','JL-10003','1.27X4.3PF满底端子/SMT/O端/W4.8/磷铜/素材','2020/5/12 0:00:00','2020/5/12 0:00:00','1','1','0'NG,'0','380000','0','3','','1','1','0','0','1','1','2020/5/12 11:16:04','082d68ce-4d00-4f95-acee-a5b934f3eb9a')
+2020-05-12 11:16:05,764 [14308] ERROR logs - nizeheng 时间：2020/5/12 11:16:05----【工单】：SC-200403947-1 【异常】：Incorrect integer value: '' for column 'ActualMould' at row 1
+2020-05-12 11:16:09,123 [13608] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:16:09,124 [13608] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:16:09,152 [18524] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:16:09,153 [18524] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:16:09,189 [14308] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:16:09,192 [14308] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:16:09,192 [13608] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:16:09,209 [13608] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:16:09,214 [22884] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:16:09,217 [22884] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:16:09,238 [824] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:16:09,244 [824] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:16:20,708 [16160] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:16:20,718 [16160] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:16:20,762 [18524] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:16:20,772 [18524] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:16:31,514 [824] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:16:31,515 [824] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:16:31,594 [18524] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:16:31,595 [18524] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:16:31,617 [16160] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:16:31,618 [16160] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:16:31,646 [2736] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:16:31,647 [2736] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:06,203 [18544] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 11:20:06,203 [25080] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:06,873 [18544] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:06,873 [25080] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:06,972 [17260] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 11:20:06,973 [22852] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:06,975 [22852] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:07,112 [17260] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  '无工单'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 11:20:07,113 [15472] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 11:20:07,165 [25080] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:20:07,188 [25080] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:20:07,242 [22852] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:20:07,244 [22852] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  '无工单'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 11:20:07,283 [9060] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:20:07,284 [9060] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  '无工单'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 11:20:07,324 [22852] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:20:07,326 [22852] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  '无工单'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 11:20:12,471 [22852] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:20:12,473 [22852] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '220.F007.1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:12,474 [22852] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:12,476 [22852] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-3'
+2020-05-12 11:20:24,817 [18544] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:20:24,819 [18544] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.23630SY104'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:24,820 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:24,822 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-4'
+2020-05-12 11:20:27,014 [25080] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:20:27,016 [25080] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2B850RY202'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:27,019 [25080] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:27,021 [25080] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-5'
+2020-05-12 11:20:27,363 [22852] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:20:27,372 [22852] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:20:27,414 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:20:27,422 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:20:28,813 [25080] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:20:28,814 [25080] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:28,818 [25080] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:28,819 [25080] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:20:31,772 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:31,773 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:31,803 [9060] DEBUG MiniMes - update minimes_order_record set `State` = '0' where `LineId` = '3e746356-3589-49d3-ae76-7dad5de40d29'
+2020-05-12 11:20:31,821 [9060] DEBUG MiniMes - insert into minimes_order_record(`OrderNo`,`WorkShopId`,`WorkShopName`,`LineId`,`LineName`,`ProductCode`,`ProductName`,`PlanDate`,`OrderPlanDate`,`UPH`,`Ratio`,`QtyNG`,`Qty`,`PlanQty`,`ReserveQty`,`StandardMould`,`ActualMould`,`State`,`MachineState`,`StopCount`,`StopTime`,`Person`,`PlanPerson`,`CreateDate`,`TenantID`) values('SC-200403947-1','c3b621ea-29a0-4d7b-b8cc-87f72aee5612','冲压车间','3e746356-3589-49d3-ae76-7dad5de40d29','高速冲床1号机','JL-10003','1.27X4.3PF满底端子/SMT/O端/W4.8/磷铜/素材','2020/5/12 0:00:00','2020/5/12 0:00:00','55000','1','0'NG,'0','380000','0','3','','1','1','0','0','1','1','2020/5/12 11:20:31','082d68ce-4d00-4f95-acee-a5b934f3eb9a')
+2020-05-12 11:20:31,981 [9060] ERROR logs - nizeheng 时间：2020/5/12 11:20:31----【工单】：SC-200403947-1 【异常】：Incorrect integer value: '' for column 'ActualMould' at row 1
+2020-05-12 11:20:35,487 [7312] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:35,488 [7312] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:35,491 [7312] DEBUG MiniMes - update minimes_order_record set `State` = '0' where `LineId` = '3e746356-3589-49d3-ae76-7dad5de40d29'
+2020-05-12 11:20:35,494 [7312] DEBUG MiniMes - insert into minimes_order_record(`OrderNo`,`WorkShopId`,`WorkShopName`,`LineId`,`LineName`,`ProductCode`,`ProductName`,`PlanDate`,`OrderPlanDate`,`UPH`,`Ratio`,`QtyNG`,`Qty`,`PlanQty`,`ReserveQty`,`StandardMould`,`ActualMould`,`State`,`MachineState`,`StopCount`,`StopTime`,`Person`,`PlanPerson`,`CreateDate`,`TenantID`) values('SC-200403947-1','c3b621ea-29a0-4d7b-b8cc-87f72aee5612','冲压车间','3e746356-3589-49d3-ae76-7dad5de40d29','高速冲床1号机','JL-10003','1.27X4.3PF满底端子/SMT/O端/W4.8/磷铜/素材','2020/5/12 0:00:00','2020/5/12 0:00:00','55000','1','0'NG,'0','380000','0','3','1','1','1','0','0','1','1','2020/5/12 11:20:35','082d68ce-4d00-4f95-acee-a5b934f3eb9a')
+2020-05-12 11:20:35,536 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:35,537 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:35,638 [22852] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:35,640 [22852] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:35,924 [22852] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:20:35,925 [22852] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:35,932 [22852] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:35,941 [22852] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:37,366 [22852] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:37,368 [22852] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:37,458 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:37,461 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:37,550 [15472] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:37,552 [15472] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:37,804 [15472] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:20:37,805 [15472] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:37,807 [15472] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:37,810 [15472] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:37,830 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:37,831 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:38,071 [9060] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:20:38,073 [9060] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:38,075 [9060] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:38,076 [9060] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:39,664 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:39,665 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:20:43,652 [22900] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:43,653 [22900] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:20:47,348 [22852] DEBUG MiniMes - update minimes_order_record set `UPH` = '55000', `Person` = '1', `Ratio` = '2' where `OrderNo` = 'SC-200403947-1'
+2020-05-12 11:20:47,385 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:47,386 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:20:47,471 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:20:47,479 [18544] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:20:47,509 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:20:47,519 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:20:50,286 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:20:50,288 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:21:04,425 [18544] DEBUG MiniMes - update minimes_order_record set `ActualMould` = '3', `StandardMould` = '4' where `OrderNo` = 'SC-200403947-1'
+2020-05-12 11:21:04,451 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:04,454 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:05,722 [25080] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:05,723 [25080] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:21:07,365 [17260] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:21:07,375 [17260] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:21:07,415 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:21:07,423 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:21:07,456 [22852] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:07,458 [22852] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:07,550 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:07,552 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:07,635 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:07,636 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:07,880 [18544] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:21:07,881 [18544] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:07,884 [18544] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:07,887 [18544] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:07,906 [17260] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:07,907 [17260] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:08,119 [17260] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:21:08,120 [17260] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:08,121 [17260] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:08,123 [17260] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:08,876 [9060] DEBUG MiniMes - update minimes_order_record set `UPH` = '55000', `Person` = '4', `Ratio` = '2' where `OrderNo` = 'SC-200403947-1'
+2020-05-12 11:21:08,904 [22852] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:08,905 [22852] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:10,939 [22900] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:21:10,941 [22900] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:10,941 [22900] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:10,943 [22900] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:21:27,361 [22852] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:21:27,369 [22852] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:21:27,403 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:21:27,409 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:21:29,010 [17260] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:29,012 [17260] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:21:37,440 [9060] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:21:37,441 [9060] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:37,442 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:37,444 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:21:37,563 [18544] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:37,565 [18544] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:37,628 [15472] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:37,630 [15472] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:37,689 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:37,691 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:37,919 [9060] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:21:37,920 [9060] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:37,922 [9060] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:37,924 [9060] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:37,942 [22852] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:37,944 [22852] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:38,190 [22852] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:21:38,191 [22852] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:38,193 [22852] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:38,194 [22852] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:21:47,364 [25080] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:21:47,375 [25080] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:21:47,439 [22852] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:21:47,448 [22852] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:21:52,546 [22900] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:21:52,548 [22900] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:22:07,564 [17260] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:22:07,578 [17260] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:22:07,628 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:22:07,636 [9060] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:22:07,668 [22852] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:22:07,669 [22852] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:22:07,734 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:22:07,735 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:22:07,788 [22852] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:22:07,789 [22852] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:22:08,044 [22852] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:22:08,045 [22852] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:22:08,047 [22852] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:22:08,049 [22852] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:22:08,076 [9060] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:22:08,078 [9060] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:22:08,272 [9060] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:22:08,274 [9060] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:22:08,274 [9060] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:22:08,275 [9060] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:04,246 [12236] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:04,246 [17620] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 11:27:04,734 [12236] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-05-12 11:27:04,737 [17620] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  ''
+2020-05-12 11:27:04,781 [15736] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 11:27:04,784 [17112] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:04,793 [17112] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-05-12 11:27:04,813 [12236] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 11:27:04,814 [12236] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  ''and OrderNo =  '无工单'and TenantID =  '' order by CreateDate Desc
+2020-05-12 11:27:04,849 [17620] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:27:04,868 [17620] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:27:04,909 [16500] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:27:04,911 [16500] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  ''and OrderNo =  '无工单'and TenantID =  ''and Type =  '1' order by CreateDate Desc
+2020-05-12 11:27:04,947 [17120] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:27:04,948 [17120] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  ''and OrderNo =  '无工单'and TenantID =  ''and Type =  '2' order by CreateDate Desc
+2020-05-12 11:27:04,977 [16500] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:27:04,978 [16500] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  ''and OrderNo =  '无工单'and TenantID =  ''and Type =  '3' order by CreateDate Desc
+2020-05-12 11:27:12,299 [15736] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 11:27:12,302 [15736] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  ''
+2020-05-12 11:27:12,302 [18100] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:12,311 [18100] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-05-12 11:27:12,338 [17620] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:12,339 [17620] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  ''and State =  '1'and TenantID =  ''
+2020-05-12 11:27:12,355 [16500] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 11:27:12,356 [16500] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  ''and OrderNo =  '无工单'and TenantID =  '' order by CreateDate Desc
+2020-05-12 11:27:12,392 [22548] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:27:12,404 [22548] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '' AND TenantID = '' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:27:12,439 [17120] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:27:12,440 [17120] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  ''and OrderNo =  '无工单'and TenantID =  ''and Type =  '1' order by CreateDate Desc
+2020-05-12 11:27:12,472 [17112] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:27:12,475 [17112] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  ''and OrderNo =  '无工单'and TenantID =  ''and Type =  '2' order by CreateDate Desc
+2020-05-12 11:27:12,507 [17120] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:27:12,508 [17120] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  ''and OrderNo =  '无工单'and TenantID =  ''and Type =  '3' order by CreateDate Desc
+2020-05-12 11:27:12,568 [12236] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 11:27:18,112 [22548] DEBUG Servicecloud_tenant - 获取实体列表
+2020-05-12 11:27:18,113 [22548] DEBUG CMP - select cloud_tenant.* from cloud_tenant where  TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:18,115 [12236] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:18,116 [12236] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:18,231 [17120] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:18,234 [17120] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:18,234 [17112] DEBUG MiniMES - select a.ID, a.OrderNo,a.PlanDate,b.TimeDisplay,b.StartTime,a.ProductName,c.UPH,a.Qty,a.QtyNG,a.Qty+a.QtyNG  as QtySum,a.DetailedNG,a.Remark from minimes_hoursreport a left join minimes_time b on a.Time=b.Time left join minimes_order_record c on a.OrderNo=c.OrderNo where a.LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' and a.PlanDate = '2020/5/12 0:00:00' and a.TenantId = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' and (a.Qty>0 or a.QtyNG>0) order by b.ID; 
+2020-05-12 11:27:18,237 [12236] DEBUG Serviceminimes_ordertime - 获取实体列表
+2020-05-12 11:27:18,238 [12236] DEBUG MiniMES - select minimes_ordertime.* from minimes_ordertime where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a' order by CreateDate Desc
+2020-05-12 11:27:18,284 [12236] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:27:18,292 [12236] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:27:18,320 [17112] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:27:18,322 [17112] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '1' order by CreateDate Desc
+2020-05-12 11:27:18,350 [16500] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:27:18,351 [16500] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '2' order by CreateDate Desc
+2020-05-12 11:27:18,411 [17112] DEBUG Serviceminimes_stop_record - 获取实体列表
+2020-05-12 11:27:18,412 [17112] DEBUG MiniMES - select minimes_stop_record.* from minimes_stop_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and OrderNo =  'SC-200403947-1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'and Type =  '3' order by CreateDate Desc
+2020-05-12 11:27:18,599 [17120] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:27:18,600 [17120] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:18,604 [17120] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:18,609 [17120] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:20,741 [16500] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:27:20,742 [16500] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:20,745 [16500] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:20,747 [16500] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:27:28,056 [12236] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:28,058 [12236] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:27:35,570 [12236] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:35,572 [12236] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:27:38,470 [16500] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:27:38,490 [16500] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:27:38,541 [17120] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:27:38,558 [17120] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:27:39,703 [17120] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:27:39,705 [17120] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:39,706 [17120] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:39,707 [17120] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:27:48,471 [17120] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:27:48,472 [17120] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:48,474 [17120] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:48,475 [17120] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:27:48,575 [15736] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:48,577 [15736] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:48,653 [17620] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:48,654 [17620] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:48,728 [15736] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:48,730 [15736] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:48,974 [15736] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:27:48,975 [15736] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:48,978 [15736] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:48,980 [15736] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:49,000 [17120] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:49,001 [17120] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:49,243 [17120] DEBUG Serviceminimes_resttime - 获取实体列表
+2020-05-12 11:27:49,245 [17120] DEBUG MiniMES - select minimes_resttime.* from minimes_resttime where  WorkShopId =  'c3b621ea-29a0-4d7b-b8cc-87f72aee5612'and TenantId =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:49,247 [17120] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'ProductTime' FROM minimes_hoursreport WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:49,248 [17120] DEBUG MiniMES - SELECT round(sum(TIMESTAMPDIFF(SECOND,BeginTime,EndTime))/60,2) as 'LostTime' FROM minimes_stop_record WHERE OrderNo = 'SC-200403947-1' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:54,328 [22548] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:54,330 [22548] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:27:57,548 [17620] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:27:57,549 [17620] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:27:57,550 [17620] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:27:57,551 [17620] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:27:58,465 [22548] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:27:58,483 [22548] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:27:58,538 [17120] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:27:58,555 [17120] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:28:12,832 [17112] DEBUG Serviceminimes_uph - 获取实体列表
+2020-05-12 11:28:12,833 [17112] DEBUG MiniMES - select minimes_uph.* from minimes_uph where  ProductCode =  '204.2443CMO201'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:28:12,834 [17112] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:28:12,835 [17112] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  OrderNo =  'SC-200403947-1'
+2020-05-12 11:28:18,473 [17112] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:28:18,494 [17112] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:28:18,547 [17120] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 08:00:00' AND LastTime <= '2020-05-12 20:00:00'
+2020-05-12 11:28:18,558 [17120] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2020-05-12 20:00:00' AND LastTime <= '2020-05-13 08:00:00'
+2020-05-12 11:28:18,621 [17112] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:28:18,622 [17112] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:28:18,677 [17120] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:28:18,678 [17120] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:28:18,753 [15736] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:28:18,756 [15736] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2020-05-12 11:28:18,757 [16500] DEBUG Serviceminimes_order_record - 获取实体列表
+2020-05-12 11:28:18,759 [16500] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'

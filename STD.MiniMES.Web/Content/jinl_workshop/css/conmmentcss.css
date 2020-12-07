@@ -1,0 +1,71 @@
+@charset "utf-8";
+body, div, p, h1, h2, h3, h4, form, ul, li, dl, dt, dd, ol, img, a, span, em, i, strong, b, input, label {margin:0;padding:0;}
+img,a {display:block;}
+a {text-decoration: none;cursor:pointer;}
+ul,li {list-style: none;}
+em, i {font-style: normal;}
+dl dd {list-style:none;padding:0;margin:0;}
+body,html{font-size: 14px;width:100%;height:100%;overflow:hidden}
+.clearfix{clear:both;padding:0;margin:0;}
+*{box-sizing:border-box;font-family:"微软雅黑";letter-spacing:0.618px;}
+input{border:none; outline-style:none;}
+table tr:nth-child(odd){background: #10344e;}
+table tr:nth-child(even){background: #0d2d44;}
+.rowleft .headnav{margin-bottom:10px;color:#ffffff; background:url(../images/kangbantitlebg.png) no-repeat; height:60px;padding:6px 15px 0px 15px; background-size: 100% 100%; border-radius:0px;}
+h4{font-size:20px; text-align:center;display:block;}
+.headercenter{padding-top:12px;}
+.headnav .logoimg img{width:60px;height:20px;}
+
+.container{width:100%;height:100%;overflow:hidden;margin:0px;padding:0px;}
+.container .rowbox1 {height: 100%;width: 100%;padding: 0;margin: 0;}
+.container .rowbox1 .rowleft{width: 100%;overflow: hidden;height: 100%;padding: 0;}
+.outslide{height:100%;}
+.outslide .centerslide{height:100%;}
+.outslide .centerslide .innerslide{ margin-top:0;width:100%;height:calc(100% - 80px);position:absolute;overflow-y:auto;padding:0px 15px}
+.innerslide .Orderbox {overflow: hidden;margin:0px 15px 15px 15px;padding:15px; background: url(../images/oderbg.png) no-repeat; background-size:100% 100%;}
+.carousel-inner .item .table{ box-shadow:0px 3px 18px rgba(0,0,0,0.1);}
+.carousel-inner .item .table tr td{padding-left:20px;font-size:16px; border:none;line-height:36px;color:#dce0e1 }
+.carousel-inner .item .table tr th{ padding-left:20px;border-bottom: none; background:#1d425c;color:#51f5ff;font-weight:normal;line-height:26px !important;}
+.carousel .btncarousel{ position:absolute;bottom:-10px;}
+.carousel .btncarousel .active{ background:#1c6dc8;height:8px; }
+.carousel .btncarousel li{width:25px;height:8px; border-radius:0px;background:#2f3c5c; border:none;}
+
+/*--卷绕车间看板--*/
+.Windbox{overflow: hidden;margin:0 auto;padding:0px 15px;}
+.windtable {margin-bottom:15px;}
+
+
+
+/*小屏幕(平板,大于等于768px)*/
+@media (max-width:768px){    
+    }	
+/*小屏幕(桌面显示,大于等于992px)*/
+@media(min-width:992px){
+	}		
+/*小屏幕(大桌面显示器,大于等于1200px)*/
+@media(min-width:1366px){
+
+   }
+@media(min-width:1400px){
+
+	}
+@media(min-width:1440px){
+
+	}
+@media(min-width:1600px){
+
+	}	
+@media(min-width:1680px){
+
+	}
+@media(min-width:1920px){
+
+}
+
+
+
+
+
+
+
+

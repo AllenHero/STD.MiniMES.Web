@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <style>
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+    <title>机台效能排名看板</title>
+    <link href="~/Content/OEEBoard/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/OEEBoard/css/conmmentcss.css" rel="stylesheet" />
+    <script src="~/Content/OEEBoard/js/jquery.min.js"></script>
+    <script src="~/Content/OEEBoard/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+    </script>
+</head>
+<body style="background-color:#0b2637;padding:0;margin:0;position:relative">
+    <div class="container">
+        <div class="rowbox1">
+            <div class="rowleft col-md-12 col-lg-12">
+                <nav class="headnav navbar">
+                    <div class="row">
+                        <div class="logoimg col-md-4 col-lg-4 pull-left">
+                            <img src="~/Content/OEEBoard/images/getwell.jpg" style="height:30px;width:40px">
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                            <h4 class="headercenter" id="id_WorkshopName"></h4>
+                        </div>
+                        <div class="righttime col-md-4 col-lg-4 text-right" id="nowDateTimeSpan">
+                        </div>
+                    </div>
+                </nav>
+                <div class="wind_title row">
+                    <div class="col-md-5 text-left"><p id="showtime"></p></div>
+                    <div class="col-md-2"></div>
+                    <div class="wind_tag col-md-5 text-right" style="padding:0;margin:0">
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="active btn btn-primary lbcheck" style="padding:5px 20px; " id="lbday">
+                                <input type="radio" name="options" value="日" checked="checked" id="optionday"> 日
+                            </label>
+                            <label style="padding:5px 20px; " class="btn btn-primary lbcheck" id="lbweek">
+                                <input type="radio" name="options" value="周" id="optionweek" > 周
+                            </label>
+                            <label style="padding:5px 20px; " class="btn btn-primary lbcheck" id="lbmonth">
+                                <input type="radio" name="options" value="月" id="optionmonth"> 月
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="outslide">
+                    <div class="centerslide">
+                        <div class="innerslide">
+                            <div class="Windbox"> 
+                                <div class="row windtable">
+                                    <div class=" col-md-4">
+                                        <div class="windcol">
+
+                                            <ul class="list-group">
+                                                <li class="list-title list-group-item">产能达成率(<item class="typename"></item>)<span></span></li>
+                                                <div id="myCarouselProductionEfficiency" class="carousel slide">
+                                                    <!-- 轮播（Carousel）指标 -->
+                                                    <ol class="carousel-indicators btncarousel" id="carouselProductionEfficiency">
+                                                        
+                                                    </ol>
+                                                    <!-- 轮播（Carousel）项目 -->
+                                                    <div class="carousel-inner" id="innerProductionEfficiency">
+                                                         
+                                                    </div>
+                                                </div>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" style="padding:0;">
+                                        <div class="windcol">
+                                            <ul class="list-group">
+                                                <li class="list-title list-group-item">时间达成率(<item class="typename"></item>)<span> </span></li>
+                                                <div id="myCarouselTimeEfficiency" class="carousel slide">
+                                                    <!-- 轮播（Carousel）指标 -->
+                                                    <ol class="carousel-indicators btncarousel" id="carouselTimeEfficiency">
+                                                        
+                                                    </ol>
+                                                    <!-- 轮播（Carousel）项目 -->
+                                                    <div class="carousel-inner" id="innerTimeEfficiency">
+                                                         
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="windcol">
+                                            <ul class="list-group">
+                                                <li class="list-title list-group-item">OEE达成率(<item class="typename"></item>)<span> </span></li>
+                                                <div id="myCarouselOEE" class="carousel slide">
+                                                    <!-- 轮播（Carousel）指标 -->
+                                                    <ol class="carousel-indicators btncarousel" id="carouselOEE">
+                                                        
+                                                    </ol>
+                                                    <!-- 轮播（Carousel）项目 -->
+                                                    <div class="carousel-inner" id="innerOEE">
+                                                        
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+    
+
+    <script type="text/javascript" src="~/Content/OEEBoard/js/jquery.nicescroll.js"></script>
+    <script type="text/javascript">
+        $('.innerslide').niceScroll({
+            cursorcolor: "#2E7DC2",//#CC0071 光标颜色
+            cursoropacitymax: "0", //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+            touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+            cursorwidth: "5px", //像素光标的宽度
+            cursorborder: "1", // 游标边框css定义
+            cursorborderradius: "8px",//以像素为光标边界半径
+            autohidemode: false //是否隐藏滚动条
+        });
+    </script>
+
+</body>
+</html>
+
+<script language="JavaScript">
+
+    function startTime() {
+        $.ajax({
+            url: "../WorkshopBoard/GetDate",
+            data: {
+
+            },
+            async: false,
+            success: function (data) {
+                $("#nowDateTimeSpan").html(data);
+            }
+        });
+    }
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+    //setInterval(startTime, 1000);
+</script>
+
+<script type="text/javascript">
+    //加载车间信息
+    function GetWorkshop() {
+        var Request = new Object();
+        Request = GetRequest();
+        var TenantID = Request["TenantID"];
+        var WorkShopId = Request["DepartCode"];
+        $.ajax({
+            url: "../WorkshopBoard/LoadWorkshopName",
+            data: {
+                "WorkShopId": "" + WorkShopId + "",
+                "TenantID": TenantID
+            },
+            async: false,
+            success: function (data) {
+                $("#id_WorkshopName").html("[  " + data + "  ]" + "看板");
+            }
+        });
+    }
+    GetWorkshop();
+</script>
+<script type="text/javascript">
+    //并返回一个可以用来对包含该成员的对象数组进行排序的比较函数
+    var compareAsc = function (prop) {
+        return function (obj1, obj2) {
+            var val1 = obj1[prop];
+            var val2 = obj2[prop];
+            if (!isNaN(Number(val1)) && !isNaN(Number(val2))) {
+                val1 = Number(val1);
+                val2 = Number(val2);
+            }
+            if (val1 < val2) {
+                return -1;
+            } else if (val1 > val2) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
+    var compareDesc = function (prop) {
+        return function (obj1, obj2) {
+            var val1 = obj1[prop];
+            var val2 = obj2[prop];
+            if (!isNaN(Number(val1)) && !isNaN(Number(val2))) {
+                val1 = Number(val1);
+                val2 = Number(val2);
+            }
+            if (val1 > val2) {
+                return -1;
+            } else if (val1 < val2) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
+</script>
+<script type="text/javascript"> 
+    var pagecount = 12,time=20*1000;
+    //读取数据
+    function GetWorkshopBoardData(type) {
+        var id = 'day';
+        if (type =='周') {
+            id = 'week';
+        }
+        if (type == '月') {
+            id = 'month';
+        }
+        $(".lbcheck").removeClass("active");
+        $("#lb" + id).addClass("active");
+        $("#option" + id).attr("checked", "checked");
+
+        $("#carouselProductionEfficiency" ).html('');
+        $("#innerProductionEfficiency").html('');
+        $("#carouselTimeEfficiency").html('');
+        $("#innerTimeEfficiency").html('');
+        $("#carouselOEE").html('');
+        $("#innerOEE").html('');
+        var Request = new Object();
+        Request = GetRequest();
+        var TenantID = Request["TenantID"];
+        var DepartCode = Request["DepartCode"];
+        var StartTime = "2019-08-01";
+        var EndTime = "2019-08-06";
+        $(".typename").html(type);
+        $.ajax({
+            url: "../WorkshopBoard/GetDateByType?type=" + type,
+            async: false,
+            dataType: "json",
+            contentType: "application/json",
+            success: function (result) {
+                var item = $.parseJSON(result);
+                console.log(item);
+                StartTime = item.StartTime;
+                EndTime = item.EndTime;
+                var date = item.Date;
+                $("#showtime").html(date);
+                console.log(date);
+                var data = { "TenantId": TenantID, "DepartCode": DepartCode, "StartTime": StartTime, "EndTime": EndTime };
+                $.ajax({
+                    url: "/api/MiniMES/web/GetOEE",
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    dataType: "json",
+                    contentType: "application/json",
+                    async: true,
+                    success: function (data) {
+                        if (data.status == 'success') {
+                            var rows = data.rows;
+                            var rowProductionEfficiency = rows;
+                            var rowTimeEfficiency = rows;
+                            var rowOEE = rows;
+                            rowProductionEfficiency.sort(compareDesc("ProductionEfficiency"));
+                            SetHtml("ProductionEfficiency", rowProductionEfficiency);
+
+
+                            rowTimeEfficiency.sort(compareDesc("TimeEfficiency"));
+                            SetHtml("TimeEfficiency", rowTimeEfficiency);
+
+                            rowOEE.sort(compareDesc("OEE"));
+                            SetHtml("OEE", rowOEE);
+
+                        }
+
+                    }
+                });
+            }
+        });
+       
+       
+    }
+    function SetHtml(typename,obj)
+    {
+        var carousel = '';
+        var inner = '';
+        var listCount = 1;
+       
+        for (var i = 0; i < obj.length; i++) {
+            var item = obj[i];
+            if (i % pagecount == 0) {
+                listCount++;
+                carousel += '<li data-target="#myCarousel' + typename + '" data-slide-to="' + (i / pagecount) + '" class="' + (i == 0 ? "active" : "") + '"></li>';
+                inner += ' <div class="item winditem  ' + (i == 0 ? "active" : "") + '">'
+                    + '  <li class="list-group-item">机台号</li>';
+            }
+
+            var img = '<div class="Placeholder"></div>';
+            if (i == 0) {
+                img = '<div><img src="/Content/OEEBoard/images/adon_goden.png" style="width:20px;height:25px;"></div>';
+            } else if (i == 1) {
+                img = ' <div><img src="/Content/OEEBoard/images/andon_siler.png" style="width:20px;height:25px;"></div>';
+            }
+            else if (i == 1) {
+                img = '  <div><img src="/Content/OEEBoard/images/andon_copper.png" style="width:20px;height:25px;"></div>';
+            }
+            var lv = item[typename];
+            lv = parseInt((parseFloat(lv) * 100));
+            if (lv>100) {
+                lv = 100;
+            }
+            inner += '  <li class="list-group-item">'
+                + ' <div>' + item.LineName+'</div>'
+                + img
+                + '<div class="progress">'
+                + '<div class="progress-bar progress-bar-info" role="progressbar"  aria-valuenow="60" aria-valuemin="0" aria-valuemin="100" style="width:' + lv+'%;">'
+                + ' <span class="sr-only">' + lv+'% 完成（信息）</span>'
+                + ' </div>'
+                + ' </div>'
+                + ' <div class="text-right" style="line-height:30px;">' + lv +'% </div>'
+                + '</li>' ;
+
+            if (i % pagecount == pagecount - 1 || i == obj.length - 1) {
+                inner += ' </div>';
+            }
+        }
+        $("#carousel" + typename).html(carousel);
+        $("#inner" + typename).html(inner);
+        $('#myCarousel'+ typename ).carousel({ interval: 10000 }); 
+    }
+    GetWorkshopBoardData('日');
+    var list = new Array('日', '周', '月');
+    var index = 1;
+    $(function () {
+        $('[name="options"]').change(function () {
+            var checkValue = $('input:radio[name="options"]:checked').val();
+            GetWorkshopBoardData(checkValue);
+        });
+        setInterval(function () {
+            if (index >= list.length) {
+                index = 0;
+            } 
+            GetWorkshopBoardData(list[index]);
+            index++;
+        }, time);
+    })
+   
+</script>

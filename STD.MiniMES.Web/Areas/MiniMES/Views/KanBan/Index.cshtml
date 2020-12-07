@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>机台看板</title>
+    <link href="~/Content/MiniMes/Css/commentbox_css.css" rel="stylesheet" />
+    <link href="~/Content/MiniMes/Css/hwLayer.css" rel="stylesheet" />
+    <link href="~/Content/MiniMes/Css/focusImg.css" rel="stylesheet" />
+
+</head>
+<body style="overflow:hidden;" scroll="no">
+    <iframe class="J_iframe" id="iframe" style="width:100%;height:100%;" name="iframe0" frameborder="0" data-id="?v=4.0.html" seamless></iframe>
+    <script src="~/Content/MiniMes/js/jquery-1.8.3.min.js"></script>
+    <script src="~/Content/MiniMes/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Content/MiniMes/js/STDCommonJS.js"></script>
+    <script src="~/Content/MiniMes/js/jquery.SuperSlide.js"></script>
+
+    <script type="text/javascript">
+
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+        function menu_Click(url, KanbanIndex) {
+            var Request = new Object();
+            Request = GetRequest();
+            var LineId = Request["LineId"];
+            var BoardCaption = "";//LineCode + "线体看板：";
+            switch (KanbanIndex) {
+                case 1:
+                    BoardCaption += "当前生产信息";
+                    break;
+                case 2:
+                    BoardCaption += "生产统计";
+                    break;
+                case 3:
+                    BoardCaption += "小时产量";
+                    break;
+                case 4:
+                    BoardCaption += "损失报表";
+                    break;
+                case 5:
+                    BoardCaption += "损失工时";
+                    break;
+                case 6:
+                    BoardCaption += "效率统计";
+                    break;
+                case 7:
+                    BoardCaption += "效率报表";
+                    break;
+                case 8:
+                    BoardCaption += "损失工时报表";
+                    break;
+
+            }
+
+            $("#LineCaption").html(BoardCaption);
+
+
+            $('#iframe').attr('src', url + "?LineId=" + Request['LineId'] + "&TenantID=" + Request['TenantID']);//设置属性 链接地址的值
+        }
+        $(function () {
+            menu_Click('../LineBoard', 1);
+        });
+    </script>
+</body>
+</html>

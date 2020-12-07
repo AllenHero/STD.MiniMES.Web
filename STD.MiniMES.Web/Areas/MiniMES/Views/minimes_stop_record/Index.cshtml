@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "minimes_stop_record";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <style type="text/css">
+
+        .container_12 ul {
+            padding-left: 27px;
+        }
+
+            .container_12 ul li {
+                float: left;
+                list-style-type: none;
+            }
+
+                .container_12 ul li .divtxt {
+                    display: inline;
+                    float: left;
+                    margin-left: 3px;
+                    margin-right: 3px;
+                    vertical-align: middle;
+                    width: 70px;
+                }
+
+        .z-txt {
+            margin: 0px;
+            padding: 0 3px;
+            width: 103px;
+            line-height: 20px;
+            height: 20px;
+            border: 1px solid #A4BED4;
+            background: white;
+            font-size: 12px;
+            display: inline-block;
+        }
+    </style>
+}
+@section scripts{
+    <script src="/Content/js/viewModel/com.viewModel.searchEdit.js"></script>
+    <script src="~/Scripts/plupload/js/plupload.full.min.js"></script>
+    <script src="~/Scripts/plupload/js/i18n/zh_CN.js"></script>
+    <script type="text/javascript">
+    using(['numberbox','datebox','combobox','lookup','datetimebox']);
+        var data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+
+        data.dataSource.dsShift = [
+            { value: "白班", text: '白班' },
+            { value: "晚班", text: '晚班' },
+        ];
+
+        data.dataSource.dsType = [
+            { value: "1", text: '换模' },
+            { value: "2", text: '处理异常' },
+            { value: "3", text: '机台维修' },
+        ];
+
+        function viewModel(data) {
+            com.viewModel.searchEdit.apply(this, arguments);
+            this.grid.OnBeforeDestroyEditor = function (editors, row) {
+            };
+        };
+
+        ko.bindingViewModel(new viewModel(data));
+
+        //双击选择操作员
+        $("#Operator").click(function () {
+            var target = parent.$('#selectUsers').length ? parent.$('#selectUsers') : parent.$('<div id="selectUsers"></div>').appendTo('body');
+            utils.clearIframe(target);
+            var opt = { title: '选择人员', width: 800, height: 550, modal: true, collapsible: false, minimizable: false, maximizable: true, closable: true };
+            opt.content = "<iframe id='frm_win_user' src='/minimes/LookupUsers?Type=single' style='height:100%;width:100%;border:0;' frameborder='0'></iframe>";
+            opt.onSelect = function (data) {
+                var total = data.total;
+                var rows = data.rows;
+                if (rows != null) {
+                    $("#Operator").attr("value", data.rows[0].UserName);//赋值
+                    $("#Operator").change();
+                }
+            };
+            target.window(opt);
+        });
+    </script>
+}
+
+<div class="z-toolbar">
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-arrow_refresh" title="刷新" data-bind="click:refreshClick">刷新</a>
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-edit" title="编辑" data-bind="click:editClick">编辑</a>
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-save" title="保存" data-bind="click:saveClick">保存</a>
+    <a href="#" plain="true" class="easyui-splitbutton" data-options="menu:'#dropdown',iconCls:'icon-download'">导出</a>
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-search" title="查询" data-bind="click:searchClick">查询</a>
+    <a href="#" plain="true" class="easyui-linkbutton" icon="icon-clear" title="清空" data-bind="click:clearClick">清空</a>
+</div>
+
+<div id="dropdown" style="width:100px; display:none;">
+    <div data-options="iconCls:'icon-ext-xls'" suffix="xls" data-bind="click:downloadClick">Excel2003   </div>
+    <div data-options="iconCls:'icon-page_excel'" suffix="xlsx" data-bind="click:downloadClick">Excel2007   </div>
+    <div data-options="iconCls:'icon-ext-doc'" suffix="doc" data-bind="click:downloadClick">Word2003    </div>
+</div>
+
+<div class="container_12" style="position:relative;height:50px;">
+    <ul>
+        <li>
+            <div class="divtxt">车间</div>
+            <input type="text" id="WorkShopId" data-bind="comboboxValue:form.WorkShopId,datasource:dataSource.dsWrokShopName" data-options="showblank:true" class="z-txt easyui-combobox" />
+        </li>
+        <li>
+            <div class="divtxt">产线</div>
+            <input type="text" id="LineId" data-bind="comboboxValue:form.LineId,datasource:dataSource.dsLineName" data-options="showblank:true" class="z-txt easyui-combobox" />
+        </li>
+        <li>
+            <div class="divtxt">日期</div>
+            <input type="text" id="Date" data-bind="value:form.Date" class="z-txt easyui-daterange" />
+        </li>
+        <li>
+            <div class="divtxt">班别</div>
+            <input type="text" id="Shift" data-bind="comboboxValue:form.Shift,datasource:dataSource.dsShift" data-options="showblank:true" class="z-txt easyui-combobox" />
+        </li>
+        <li>
+            <div class="divtxt">操作员</div>
+            <input type="text" id="Operator" data-bind="value:form.Operator" class="z-txt " />
+        </li>
+        <li>
+            <div class="divtxt">停机原因</div>
+            <input type="text" id="Type" data-bind="comboboxValue:form.Type,datasource:dataSource.dsType" data-options="showblank:true" class="z-txt easyui-combobox" />
+        </li>
+        <li>
+            <div class="divtxt">工单编号</div>
+            <input type="text" id="OrderNo" data-bind="value:form.OrderNo" class="z-txt " />
+        </li>
+    </ul>
+</div>
+
+<table data-bind="datagrid:grid" style="display:none">
+    <thead>
+        <tr>
+            <th field="ID" hidden="true" sortable="true" align="left" width="80" editor="text">ID</th>
+            <th field="WorkShopName" sortable="true" align="center" width="100">车间</th>
+            <th field="LineName" sortable="true" align="center" width="100">产线</th>
+            <th field="OrderNo" sortable="true" align="center" width="100">工单编号</th>
+            <th field="BeginTime" sortable="true" align="center" width="150" formatter="com.formatTime">开始时间</th>
+            <th field="EndTime" sortable="true" align="center" width="150" formatter="com.formatTime">结束时间</th>
+            <th field="Type" sortable="true" align="center" width="150">停机原因</th>
+            <th field="Shift" sortable="true" align="center" width="100">班别</th>
+            <th field="Operator" sortable="true" align="center" width="100">操作员</th>
+            <th field="StopTime" sortable="true" align="center" width="100">停机时间(分钟)</th>
+            <th field="Remark" sortable="true" align="center" width="200" editor="{type:'validatebox'}">备注</th>
+            <th field="Date" sortable="true" align="center" width="100" formatter="com.formatDate">日期</th>
+        </tr>
+    </thead>
+</table>
+
+
+

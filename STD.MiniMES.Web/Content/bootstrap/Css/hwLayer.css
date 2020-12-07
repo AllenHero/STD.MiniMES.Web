@@ -1,0 +1,50 @@
+.hw-overlay,.hw-overlay2{display:none; position: fixed; top:0;left:0;width:100%;height:100%; background-color: rgba(0,0,0,0.3);z-index:10;}
+.hw-layer-wrap{box-sizing:border-box; width:55%;height:440px;overflow:hidden; border:solid 4px #B7BFC6; 
+position:absolute;left:25%;top:20%; border-radius:0px; background-color:#f0f5f5; box-shadow:1px 2px 8px 0 rgba(0,0,0,0.32); padding:10px 40px;}
+
+.hwLayer-close{position:absolute; right:10px; top:10px; width:30px; height:30px; cursor:pointer; font-size:20px; color:#ccc; background:url('../images/popwrong.png') no-repeat; background-size:100% 100%;}
+    .hwLayer-close:hover {
+        background: url('../images/popwrongclick.png') no-repeat;
+        background-size: 100% 100%;
+    }
+.hw-layer-wrap .hw-icon{color:#b4d8f3;font-size:86px;text-align:center; }
+.hw-layer-wrap h4{margin:5px auto; font-size:24px; font-weight:600;text-shadow:0px -1px 1px #fff;color:#333;text-align:center;}
+.hw-layer-wrap h4 div{font-size:16px;color:#666;font-weight:normal;line-height:12px;padding-bottom:15px;}
+.select-box ul li{margin-bottom:30px;}
+.yc-cause h4,.Solving h4{ text-align:left;}
+.hw-layer-wrap p{margin:30px 0; line-height:22px; color:#595d60; text-align:left;}
+.hw-layer-title{height: 32px;line-height: 32px; font-size: 16px; position: absolute; left: 20px; top: 10px; font-weight: bold;}
+
+
+*{ box-sizing:border-box;}
+.btnbox{width:160px;height:60px; background-color:rgba(0,51,255,1)}
+
+.tb-head,.tb-button{width:100%;overflow:hidden;}
+.tb-head table tr td,.tb-body table tr td,.tb-button table tr td{height:78px; text-align:left;font-size:18px;color:rgba(0,0,0,0.8)}
+.hw-layer-wrap .tb-body {overflow:auto;width:90%;padding:10px;box-shadow:inset 0px 0px 2px rgba(255,255,255,0);height:340px;margin-bottom:20px;display:block;position:absolute;}
+.hw-layer-wrap .tb-body .pop_btn{height:60px;width:450px;padding-left:20px;box-shadow:inset 2px 2px 0 #ccc;color:rgba(0,0,0,0.5); border:solid 1px #d9d9d9;}
+.tb-body table{overflow:hidden; background-color:#142F76;color:#333333;font-weight:600;font-size:20px;}
+.tb-button{margin-top:20px;}
+
+.hw-layer-wrap .tb-button tr td input{width:160px;float:right;margin:0 auto;height:50px; color:#fff; text-shadow:0 -1px 0px #5A6583;background:url('../images/surebg.png') no-repeat; background-size:100% 100%;}
+.hw-layer-wrap .tb-button tr td input:hover{ background:url('../images/surebtnclick.png') no-repeat; background-size:100% 100%;}
+.tb-body tr td div,.tb-head tr td div{color:#666;font-size:16px;line-height:12px;font-weight:normal;}
+
+@media (max-width:768px){
+	.hw-layer-wrap{width:350px; margin-left:-175px; margin-top:-200px; padding:45px 50px; text-align:center;}
+}
+@media (max-width:400px){
+	.hw-layer-wrap{width:250px; margin-left:-125px;padding:25px 30px;}
+}
+
+.hw-layer-wrap table tr:nth-child(2n-1){  background-color:#f0f5f5;}
+ 
+.hw-layer-wrap table tr:nth-child(2n){  background-color:#f0f5f5;}
+@media(min-width:1367px) and (max-width:1921px){
+	.hw-layer-wrap{border:solid 8px #B7BFC6;}
+	.hw-layer-wrap h4{ font-size:24px;} 
+	.hw-layer-wrap{height:560px;top:25%;width:60%;left:20%; border-radius:3px; padding:20px 40px;}
+.hw-layer-wrap .tb-body {height:340px;}
+
+.hw-layer-wrap .tb-button tr td input,.tb-body table tr td .pop_btn{height:58px;}
+	}

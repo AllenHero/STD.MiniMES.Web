@@ -1,0 +1,195 @@
+#myCarousel{
+		magin:50px 0 0 0;
+		
+	}
+#navbar-collapse ul{
+		margin-top:0;
+		
+	}
+.carousel-inner img{
+	 	margin:0 auto;
+		
+	}
+.carousel-control{
+		font-size:60px;
+		line-height:440px;
+	}
+.tab-h2{
+		font-size:20px;
+		text-align:center;
+		letter-spacing:1px;
+		ccolor:#0059b2;	
+	}
+.tab-p{
+		font-size:15px;
+		text-align:center;
+		letter-spacing:1px;
+		color:#666;
+	}
+.tab1{
+		margin:30px 0;
+		color:#666;
+	}
+.tab1 .text-muted{
+		color:#999;
+		text-decoration:line-through;
+	}
+.tab1 .media-heading{
+		margin:5px 0 20px 0;
+	}
+.tab1 .col{
+		padding:20px;
+	}
+.tab2{ 
+		background-color:#eee;
+	}
+.tab2,.tab3{
+		padding:20px 0;
+	}
+.jumbotron{
+		background-color:#333;
+		color:#eee;
+		margin:0;
+	}
+.jumbotron h1{
+		font-size:24px;
+		padding:20px 0 0 0;
+	}
+.info-content{ 
+		background-color:#eee;
+		box-shadow:1px 2px 3px #ccc;
+		margin:0 0 15px 0;
+	}
+.info-content p{
+		line-height:1.6
+	}
+.info-right{
+		background-color:#f0f0f0;
+		box-shadow:1px 2px 3px #ccc;
+	}
+.info-right p{
+		font-size:16px;
+	}
+.info-right h2{
+		font-size:20px;
+	}	
+.info-right blockquote{
+		padding:0;
+		margin:0;
+	}	
+footer{
+		background-color:#666;
+		border-top:1px solid #ccc;
+		padding:20px;
+		text-align:center;
+		color:#999;
+	}
+#case{
+		padding:40px 0;
+		margin:0;
+		text-align:center;
+		background-color:#eee;
+	}
+#case h4{
+		color:#000;
+		font-weight:600;
+	}	
+#case p{
+		color:666;
+		line-height:1.6;
+	}
+#case .col{
+		margin:0 0 20px 0;
+	}
+#case img{width:100%;height:150px;}	
+#about{
+		background-color:#eee;
+	}
+#about a{
+		color:#0059b2;
+	}
+#about .about{
+		background-color:#fff;
+		box-shadow:1px 2px 3px #ccc;
+	}
+#about h3{
+		color:#333;
+		font-size:22px;
+		border-bottom:solid 1px #eee;
+		padding:20px 0px;
+		margin:0 0 10px 0;
+	}
+#about p{
+		line-height:2;
+		font-size:16px;
+	}
+/*没有小于*/
+/*小屏幕(平板,大于等于768px)*/
+@media(min-width:768px){
+	.tab-h2{
+		font-size:26px;
+	}
+	.tab-p{
+		font-size:16px;
+	}
+	.tab2 .tab2-img{
+		float:right
+	}
+	.tab2 text{
+		float:left;
+	}
+	.jumbotron h1{
+		font-size:26px;
+		padding:20px 0 0 0;
+	}
+
+	}
+/*小屏幕(桌面显示,大于等于992px)*/
+@media(min-width:992px){
+	.tab-h2{
+		font-size:28px;
+	}
+	.tab-p{
+		font-size:17px;
+	}
+	.tab2 .tab2-img{
+		float:right
+	}
+	.tab2 text{
+		float:left;
+	}
+	.tab2 h3,.tab3 h3{
+		font-size:20px	
+	}
+	.jumbotron h1{
+		font-size:28px;
+		padding:20px 0 0 0;
+	}
+
+	}
+/*小屏幕(大桌面显示器,大于等于1200px)*/
+@media(min-width:1200px){
+	.tab-h2{
+		font-size:38px;
+	}
+	.tab-p{
+		font-size:20px;
+	}
+	.media-body p{
+		font-size:18px;
+		}
+	.tab2 .tab2-img{
+		float:right
+	}
+	.tab2 text{
+		float:left;
+	}
+	.tab2 h3,.tab3 h3{
+		font-size:22px	
+	}
+	.jumbotron h1{
+		font-size:36px;
+		padding:20px 0 0 0;
+	}
+
+	}

@@ -1,0 +1,138 @@
+2019-08-23 13:37:08,052 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:37:08,501 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:37:13,873 [15564] DEBUG Serviceminimes_product - 获取实体列表
+2019-08-23 13:37:13,874 [15564] DEBUG MiniMES - select minimes_product.* from minimes_product where  InventoryCode =  '10502219A043'and TenantId =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:37:19,489 [5304] DEBUG Serviceminimes_product - 获取实体列表
+2019-08-23 13:37:19,490 [5304] DEBUG MiniMES - select minimes_product.* from minimes_product where  InventoryCode =  '10302204B101'and TenantId =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:37:21,728 [16512] DEBUG Serviceminimes_product - 获取实体列表
+2019-08-23 13:37:21,729 [16512] DEBUG MiniMES - select minimes_product.* from minimes_product where  InventoryCode =  '10312209F019'and TenantId =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:37:28,658 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:37:28,659 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:37:48,660 [5304] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:37:48,661 [5304] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:38:08,659 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:38:08,659 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:38:28,707 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:38:28,707 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:38:48,660 [5304] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:38:48,660 [5304] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:39:08,659 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:39:08,659 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:39:28,658 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:39:28,658 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:39:48,661 [5304] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:39:48,663 [5304] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:40:08,659 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:40:08,659 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:40:13,735 [15000] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:40:13,735 [15000] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:40:16,483 [9064] DEBUG Serviceminimes_product - 获取实体列表
+2019-08-23 13:40:16,483 [9064] DEBUG MiniMES - select minimes_product.* from minimes_product where  InventoryCode =  '10502219A043'and TenantId =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:40:34,657 [13696] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:40:34,658 [13696] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:40:38,405 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:40:38,405 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:44:13,028 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:44:13,029 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:44:18,661 [15000] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:44:18,662 [15000] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:44:38,661 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:44:38,662 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:44:58,661 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:44:58,663 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:45:18,658 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:45:18,659 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:45:38,663 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:45:38,664 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:45:58,660 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:45:58,660 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:46:18,659 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:46:18,659 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:46:38,660 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:46:38,661 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:46:58,657 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:46:58,658 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:47:18,658 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:47:18,658 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:47:38,662 [15564] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:47:38,663 [15564] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:47:58,659 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:47:58,660 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:48:18,658 [15000] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:48:18,659 [15000] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:48:38,660 [16704] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:48:38,661 [16704] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:48:58,661 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:48:58,661 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:49:18,659 [16704] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:49:18,659 [16704] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:49:38,661 [16704] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:49:38,662 [16704] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:49:58,661 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:49:58,662 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:50:18,658 [16512] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:50:18,658 [16512] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:50:38,658 [9192] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:50:38,659 [9192] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:50:58,658 [16704] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:50:58,659 [16704] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:51:18,658 [16704] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:51:18,658 [16704] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:51:38,658 [9192] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:51:38,659 [9192] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:51:58,659 [16704] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:51:58,660 [16704] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:52:18,658 [16704] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:52:18,659 [16704] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:52:38,660 [9192] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:52:38,661 [9192] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:52:58,660 [9192] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:52:58,660 [9192] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:53:18,659 [9192] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:53:18,659 [9192] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:53:38,660 [6604] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:53:38,661 [6604] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:53:58,661 [9192] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:53:58,663 [9192] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:54:18,659 [9192] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:54:18,659 [9192] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:54:38,660 [6604] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:54:38,661 [6604] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:54:58,661 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:54:58,662 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:55:18,657 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:55:18,658 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:55:38,660 [16812] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:55:38,662 [16812] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:55:58,660 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:55:58,661 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:56:18,661 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:56:18,661 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:56:38,661 [16812] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:56:38,662 [16812] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:56:58,660 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:56:58,661 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:57:18,662 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:57:18,662 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:57:38,667 [13612] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:57:38,673 [13612] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:57:58,661 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:57:58,661 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:58:18,658 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:58:18,658 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:58:38,660 [13612] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:58:38,661 [13612] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:58:58,658 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:58:58,659 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:59:10,342 [2820] DEBUG Serviceminimes_product - 获取实体列表
+2019-08-23 13:59:10,343 [2820] DEBUG MiniMES - select minimes_product.* from minimes_product where  InventoryCode =  '10502219A043'and TenantId =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:59:18,408 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:59:18,416 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:59:38,405 [13612] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:59:38,407 [13612] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 13:59:58,406 [2820] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 13:59:58,407 [2820] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 14:00:15,189 [13612] DEBUG Serviceminimes_order_record - 获取实体列表
+2019-08-23 14:00:15,189 [13612] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  'b9d12b01-b9b2-47d4-a100-954588925af7'and State =  '1'and TenantID =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'
+2019-08-23 14:00:19,312 [17292] DEBUG Serviceminimes_product - 获取实体列表
+2019-08-23 14:00:19,313 [17292] DEBUG MiniMES - select minimes_product.* from minimes_product where  InventoryCode =  '10502219A043'and TenantId =  'ed37a619-d6ba-4e2f-9486-c28f3f2c2978'

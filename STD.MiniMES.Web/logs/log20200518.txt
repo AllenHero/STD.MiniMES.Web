@@ -1,0 +1,16 @@
+2020-05-18 15:02:21,688 [27308] DEBUG Serviceminimes_uph - 获取动态列表
+2020-05-18 15:02:22,541 [27308] DEBUG MiniMES - select * from minimes_uph order by ID limit 0, 20
+2020-05-18 15:02:22,596 [27308] DEBUG MiniMES - select count(*) from ( select * from minimes_uph ) tb_temp
+2020-05-18 15:02:34,234 [27308] DEBUG Serviceminimes_uph - 编辑记录
+2020-05-18 15:02:34,253 [27308] DEBUG Serviceminimes_uph - 获取动态对象
+2020-05-18 15:02:34,265 [27308] DEBUG MiniMES - select 
+                    minimes_uph
+                .* from 
+                    minimes_uph
+                 where  ID =  '9e2e973c-98d7-4af5-bb6b-a79f9431ec4c'
+2020-05-18 15:02:34,307 [27308] DEBUG MiniMES - update 
+                    minimes_uph
+                 set `WorkShopId` = 'c3b621ea-29a0-4d7b-b8cc-87f72aee5612', `WorkShopName` = '冲压车间', `ProductCode` = '204.2443CMO201', `StandardUPH` = '55000', `CreateDate` = '2020-05-18 15:02:34', `CreatePerson` = '管理员', `TenantID` = '082d68ce-4d00-4f95-acee-a5b934f3eb9a', `Ratio` = '3', `PackCount` = '1', `BoxCount` = '1' where  ID =  '9e2e973c-98d7-4af5-bb6b-a79f9431ec4c'
+2020-05-18 15:02:37,525 [27308] DEBUG Serviceminimes_uph - 获取动态列表
+2020-05-18 15:02:37,527 [27308] DEBUG MiniMES - select * from minimes_uph order by ID limit 0, 20
+2020-05-18 15:02:37,529 [27308] DEBUG MiniMES - select count(*) from ( select * from minimes_uph ) tb_temp
