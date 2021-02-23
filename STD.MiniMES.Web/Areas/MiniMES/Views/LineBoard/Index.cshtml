@@ -75,6 +75,21 @@
                 box-shadow: none;
             }
 
+        #Repair {
+            width: 80px;
+            height: 30px;
+            background-color: #6FB243;
+            border-radius: 8px;
+            box-shadow: 2px 3px 6px rgba(0,0,0,0.3);
+            line-height: 30px;
+            border: none;
+            text-align: center;
+        }
+
+            #Repair:active {
+                box-shadow: none;
+            }
+
         #HandleException {
             width: 100px;
             height: 30px;
@@ -144,7 +159,7 @@
                                 <td>模穴率 : <span id="txtMouldRate"></span></td>
                             </tr>
                             <tr>
-                                <td>计划达成率 : <span id="txtRatioQty" ></span></td>
+                                <td>计划达成率 : <span id="txtRatioQty"></span></td>
                                 <td>计划数量 : <span id="txtPlanQty"></span></td>
                                 <td>完成数量 : <span id="txtQty"></span></td>
                             </tr>
@@ -204,11 +219,10 @@
                                                 <tbody>
                                                     <tr><td>日计划量</td><td class="text-right"><b id="txtPlanQtyNew"></b></td></tr>
                                                     <tr><td>日产能</td><td class="text-right"><b id="txtQtyNew"></b></td></tr>
-                                                    @*
-                                                    <tr><td>差异数量</td><td class="text-right"><b id="txtDifferQty"></b></td></tr>*@
+                                                    @*<tr><td>差异数量</td><td class="text-right"><b id="txtDifferQty"></b></td></tr>*@
                                                     <tr><td>备存计划达成率</td><td class="text-right"><b id="txtReserveRate"></b></td>
                                                     <tr><td>单次计数</td><td class="text-right"><b id="txtRatio"></b></td></tr>
-                                                    <tr><td><button id="ChangeOver" onclick="Operate(1)">换模开始/换模结束</button></td><td class="text-right"></td></tr>
+                                                    <tr><td><button id="ChangeOver" onclick="Operate(1)">换模开始/换模结束</button></td><td class="text-right"><button id="Repair" onclick="Operate(4)">修模开始/修模结束</button></td></tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -372,7 +386,7 @@
                             <label for="txtPrePerson" class="col-sm-3 control-label">人数</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="txtPrePerson" value="">
-                             
+
                             </div>
                         </div>
                     </form>
@@ -448,9 +462,41 @@
                 <div class="modal-body" style="background-color:#17325d">
 
                     @{
-                    Html.RenderPartial("WorkNo_Partial");
+                        Html.RenderPartial("WorkNo_Partial");
                     }
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框（Modal） 录入停机原因-->
+    <div class="modal fade" id="editRemark" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel" style="color:#000">录入停机原因</h4>
+                </div>
+                <div class="modal-body" style="color:#000">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="txtRemark" class="col-sm-3 control-label">停机原因</label>
+                            <div class="col-sm-9">
+                                <textarea type="text" class="form-control" id="txtRemark" value="" style="height:100px"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="id_CancelRemark" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" id="btnEditRemark" class="btn btn-primary">
+                        确定
+                    </button>
                 </div>
             </div>
         </div>
@@ -481,7 +527,7 @@
             var StationCode = utils.getQueryString("StationCode").replace("#", "");
             var TenantID = utils.getQueryString("TenantID").replace("#", "");
             if (TenantID == null || TenantID == '') {
-                TenantID = utils.getQueryString("TenantId").replace("#", ""); 
+                TenantID = utils.getQueryString("TenantId").replace("#", "");
             }
             var TenantPSD = utils.getQueryString("TenantPSD").replace("#", "");
             UserName = decodeURI(utils.getQueryString("UserName").replace("#", ""));
@@ -509,6 +555,8 @@
             ShowStatus(2);
             //机台维修
             ShowStatus(3);
+            //修模
+            ShowStatus(4);
 
             //每隔10s刷新一次数据
             var showQtyAndTimeTimes = setInterval(GetLineQtyAndTime, 20000);
@@ -542,15 +590,20 @@
                 //var WorkSheetNoProduct = $("#divSelect").val();
                 //var strs = WorkSheetNoProduct.split("|");
                 //var WorkSheetNo = strs[0];
-                var WorkSheetNo=$("#id_OrderNo").val();//直接取出
+                var WorkSheetNo = $("#id_OrderNo").val();//直接取出
                 var UPH = $("#id_UPH").val();
                 var Ratio = $("#id_Ratio").val();
                 var Person = $("#id_Person").val();
                 var PlanPerson = $("#txtPlanPerson").html();//标准人数
                 var ActualMould = $("#id_ActualMould").val();//实际模穴
+                if (ActualMould == null || ActualMould == "") {
+                    alert("实际模穴不能为空");
+                    return;
+                }
                 var StandardMould = $("#id_StandardMould").val();//标准模穴
                 if (UPH == "" || Ratio == "" || Person == "") {
                     alert("请输入相关参数");
+                    return;
                 } else {
                     var TenantId = Request['TenantID'];
                     if (TenantId == null || TenantId == '') {
@@ -607,9 +660,9 @@
             });
 
             //打开弹框
-             $("#OrderNoSelect").click(function () {
-                 $('#WorkNoSelect').modal("show");//显示
-                 //QueryWorkList()(function () {  });//当点击时再加载数据
+            $("#OrderNoSelect").click(function () {
+                $('#WorkNoSelect').modal("show");//显示
+                //QueryWorkList()(function () {  });//当点击时再加载数据
             });
 
             //关闭弹框
@@ -627,10 +680,27 @@
             if (ChangeOverData == "换模结束") {
                 document.getElementById("HandleException").disabled = true;
                 document.getElementById("MachineMaintenance").disabled = true;
+                document.getElementById("Repair").disabled = true;
             }
             else if (ChangeOverData == "换模开始") {
                 document.getElementById("HandleException").disabled = false;
                 document.getElementById("MachineMaintenance").disabled = false;
+                document.getElementById("Repair").disabled = false;
+            }
+        }
+
+        //修模
+        function IsEnableRepairStatus() {
+            var RepairData = $("#Repair").text();
+            if (RepairData == "修模结束") {
+                document.getElementById("HandleException").disabled = true;
+                document.getElementById("MachineMaintenance").disabled = true;
+                document.getElementById("ChangeOver").disabled = true;
+            }
+            else if (RepairData == "修模开始") {
+                document.getElementById("HandleException").disabled = false;
+                document.getElementById("MachineMaintenance").disabled = false;
+                document.getElementById("ChangeOver").disabled = false;
             }
         }
 
@@ -640,10 +710,12 @@
             if (HandleExceptionData == "处理异常结束") {
                 document.getElementById("ChangeOver").disabled = true;
                 document.getElementById("MachineMaintenance").disabled = true;
+                document.getElementById("Repair").disabled = true;
             }
             else if (HandleExceptionData == "处理异常开始") {
                 document.getElementById("ChangeOver").disabled = false;
                 document.getElementById("MachineMaintenance").disabled = false;
+                document.getElementById("Repair").disabled = false;
             }
         }
 
@@ -653,10 +725,12 @@
             if (MachineMaintenanceData == "机台维修结束") {
                 document.getElementById("ChangeOver").disabled = true;
                 document.getElementById("HandleException").disabled = true;
+                document.getElementById("Repair").disabled = true;
             }
             else if (MachineMaintenanceData == "机台维修开始") {
                 document.getElementById("ChangeOver").disabled = false;
                 document.getElementById("HandleException").disabled = false;
+                document.getElementById("Repair").disabled = false;
             }
         }
 
@@ -671,25 +745,25 @@
             }
             var OrderNo = $("#txtOrderNo").html();
             $.ajax({
-                    url: "../LineBoard/Show",
-                    data: {
-                        "LineId": LineId,
-                        "TenantID": TenantId,
-                        "OrderNo": OrderNo
-                    },
-                    async: false,
-                    success: function (data) {
-                        var result = $.parseJSON(data);
-                        if (result.Data == "开始") {
-                            $("#StartAndEnd").text("开始");
-                            $("#StartAndEnd").css('background-color', 'green');
-                        }
-                        else {
-                            $("#StartAndEnd").text("停止");
-                            $("#StartAndEnd").css('background-color', 'red');
-                        }
+                url: "../LineBoard/Show",
+                data: {
+                    "LineId": LineId,
+                    "TenantID": TenantId,
+                    "OrderNo": OrderNo
+                },
+                async: false,
+                success: function (data) {
+                    var result = $.parseJSON(data);
+                    if (result.Data == "开始") {
+                        $("#StartAndEnd").text("开始");
+                        $("#StartAndEnd").css('background-color', 'green');
                     }
-                });
+                    else {
+                        $("#StartAndEnd").text("停止");
+                        $("#StartAndEnd").css('background-color', 'red');
+                    }
+                }
+            });
         }
 
         //工单开始/暂停操作
@@ -704,26 +778,10 @@
             }
             var LineId = Request['LineId'];
             if (data == "停止") {
-                $.ajax({
-                    url: "../LineBoard/StartTime",
-                    data: {
-                        "OrderNo": OrderNo,
-                        "LineId": LineId,
-                        "TenantId": TenantId
-                    },
-                    async: false,
-                    success: function (data) {
-                        if (data == "") {
-                            Show();
-                        }
-                        else {
-                            alert(data);
-                        }
-                    },
-                    error: function () {
-                        alert("更新失败");
-                    }
-                });
+                //弹出录入停机原因弹框
+                $('#editRemark').modal();
+                //清除内容
+                $("#txtRemark").val("");
             }
             else {
                 $.ajax({
@@ -748,6 +806,45 @@
                 });
             }
         }
+
+        //工单暂停
+        $("#btnEditRemark").click(function () {
+            var OrderNo = $("#txtOrderNo").html();
+            var Request = new Object();
+            Request = GetRequest();
+            var TenantId = Request['TenantID'];
+            if (TenantId == null || TenantId == '') {
+                TenantId = Request["TenantId"];
+            }
+            var LineId = Request['LineId'];
+            var Remark = $("#txtRemark").val();//停机原因
+            if (Remark == null || Remark == "") {
+                alert("停机原因不能为空");
+                return;
+            }
+            $.ajax({
+                url: "../LineBoard/StartTime",
+                data: {
+                    "OrderNo": OrderNo,
+                    "LineId": LineId,
+                    "TenantId": TenantId,
+                    "Remark": Remark
+                },
+                async: false,
+                success: function (data) {
+                    if (data == "") {
+                        $('#id_CancelRemark').trigger('click');
+                        Show();
+                    }
+                    else {
+                        alert(data);
+                    }
+                },
+                error: function () {
+                    alert("更新失败");
+                }
+            });
+        })
 
         //加载客户名称
         function LoadTenantName() {
@@ -890,7 +987,7 @@
                     "LineId": LineId,
                     "TenantID": TenantId,
                     "Type": Type,
-                    "OrderNo":OrderNo
+                    "OrderNo": OrderNo
                 },
                 async: false,
                 success: function (data) {
@@ -925,15 +1022,26 @@
                             $("#MachineMaintenance").css('background-color', 'red');
                         }
                     }
+                    else if (Type == 4) {
+                        if (result.RepairData == "修模开始") {
+                            $("#Repair").text("修模开始");
+                            $("#Repair").css('background-color', 'blue');
+                        }
+                        else {
+                            $("#Repair").text("修模结束");
+                            $("#Repair").css('background-color', 'red');
+                        }
+                    }
                 }
             });
         }
 
-        //操作换模/处理异常/机台维修
+        //操作换模/处理异常/机台维修/修模
         function Operate(Type) {
             var ChangeOverData = $("#ChangeOver").text();
             var HandleExceptionData = $("#HandleException").text();
             var MachineMaintenanceData = $("#MachineMaintenance").text();
+            var RepairData = $("#Repair").text();
             var Request = new Object();
             Request = GetRequest();
             var TenantId = Request['TenantID'];
@@ -951,7 +1059,7 @@
                             "TenantId": TenantId,
                             "Type": Type,
                             "UserName": UserName,
-                            "OrderNo":OrderNo,
+                            "OrderNo": OrderNo,
                         },
                         async: false,
                         success: function (data) {
@@ -975,7 +1083,7 @@
                             "LineId": LineId,
                             "TenantId": TenantId,
                             "Type": Type,
-                            "OrderNo":OrderNo,
+                            "OrderNo": OrderNo,
                         },
                         async: false,
                         success: function (data) {
@@ -1002,7 +1110,7 @@
                             "TenantId": TenantId,
                             "Type": Type,
                             "UserName": UserName,
-                            "OrderNo":OrderNo,
+                            "OrderNo": OrderNo,
                         },
                         async: false,
                         success: function (data) {
@@ -1026,7 +1134,7 @@
                             "LineId": LineId,
                             "TenantId": TenantId,
                             "Type": Type,
-                            "OrderNo":OrderNo,
+                            "OrderNo": OrderNo,
                         },
                         async: false,
                         success: function (data) {
@@ -1053,7 +1161,7 @@
                             "TenantId": TenantId,
                             "Type": Type,
                             "UserName": UserName,
-                            "OrderNo":OrderNo,
+                            "OrderNo": OrderNo,
                         },
                         async: false,
                         success: function (data) {
@@ -1077,7 +1185,7 @@
                             "LineId": LineId,
                             "TenantId": TenantId,
                             "Type": Type,
-                            "OrderNo":OrderNo,
+                            "OrderNo": OrderNo,
                         },
                         async: false,
                         success: function (data) {
@@ -1095,17 +1203,68 @@
                     });
                 }
             }
+            else if (Type == 4) {
+                if (RepairData == "修模开始") {
+                    $.ajax({
+                        url: "../LineBoard/StartOperate",
+                        data: {
+                            "LineId": LineId,
+                            "TenantId": TenantId,
+                            "Type": Type,
+                            "UserName": UserName,
+                            "OrderNo": OrderNo,
+                        },
+                        async: false,
+                        success: function (data) {
+                            if (data == "") {
+                                ShowStatus(4);
+                                IsEnableRepairStatus();
+                            }
+                            else {
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("更新失败");
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        url: "../LineBoard/EndOperate",
+                        data: {
+                            "LineId": LineId,
+                            "TenantId": TenantId,
+                            "Type": Type,
+                            "OrderNo": OrderNo,
+                        },
+                        async: false,
+                        success: function (data) {
+                            if (data == "") {
+                                ShowStatus(4);
+                                IsEnableRepairStatus();
+                            }
+                            else {
+                                alert(data);
+                            }
+                        },
+                        error: function () {
+                            alert("更新失败");
+                        }
+                    });
+                }
+            }
         }
 
         function ChangeHourMinutestr(time) {
             var Hour = parseInt(parseInt(time) / 60);
             var Minutestr = parseInt(parseInt(time) % 60);
             var str = '';
-            if (Hour!=0) {
-                str += " "+Hour + "小时";
+            if (Hour != 0) {
+                str += " " + Hour + "小时";
             }
             if (Minutestr != 0) {
-                str += " " +Minutestr + "分钟";
+                str += " " + Minutestr + "分钟";
             }
             return str;
         }
@@ -1133,7 +1292,7 @@
                         $("#txtQtyNew").html("0");
                         $("#txtPlanQtyNew").html("0");
 
- $("#txtRatioQty").html("0%");
+                        $("#txtRatioQty").html("0%");
                         $("#txtQty").html("0");
 
                         $("#txtDifferQty").html("0");
@@ -1156,13 +1315,13 @@
                         $("#txtPlanQtyNew").html(resultValue.DayPlanQty);
                         $("#txtQtyNew").html(resultValue.DayQty);
                         $("#txtRatioQtyNew").html(resultValue.DayRatioQty);//计划达成率
- $("#txtQty").html(resultValue.Qty);
+                        $("#txtQty").html(resultValue.Qty);
                         $("#txtRatioQty").html(resultValue.RatioQty);//计划达成率
 
                         $("#txtStateName").attr("class", resultValue.Color);
                         $("#txtStateName").html(resultValue.StateName);
                         $("#txtUtilization").html(resultValue.Utilization);//时间稼动率
-                     
+
                         $("#txtStopCount").html(resultValue.StopCount);
                         $("#txtStopTime").html(resultValue.StopTime);
                         $("#txtCreateDateStr").html(resultValue.CreateDateStr);
@@ -1239,10 +1398,10 @@
                     var OrderNo = $("#txtOrderNo").html();
                     for (var i = 0; i < result.length; i++) {
                         var select = '';
-                        if (result[i].WorkSheetNo!=null&&result[i].WorkSheetNo.trim() == OrderNo) {
+                        if (result[i].WorkSheetNo != null && result[i].WorkSheetNo.trim() == OrderNo) {
                             select = 'selected="selected"';
                         }
-                        selectStr += '<option ' + select+' MaterialCode="' + result[i].MaterialCode.trim() +'" value="' + result[i].WorkSheetNo.trim() + '|' + result[i].ProductCode.trim() + '">' + "序号" + result[i].Seq + '|' + result[i].WorkSheetNo.trim() + '|' + result[i].ProductName.trim() + '|' + result[i].ProductCode.trim() + '|' + result[i].LineName + '</option>';
+                        selectStr += '<option ' + select + ' MaterialCode="' + result[i].MaterialCode.trim() + '" value="' + result[i].WorkSheetNo.trim() + '|' + result[i].ProductCode.trim() + '">' + "序号" + result[i].Seq + '|' + result[i].WorkSheetNo.trim() + '|' + result[i].ProductName.trim() + '|' + result[i].ProductCode.trim() + '|' + result[i].LineName + '</option>';
                     }
                     selectStr += '</select>';
                     $("#divSelect").html(selectStr);
@@ -1266,7 +1425,7 @@
                 TenantId = Request["TenantId"];
             }
             var WorkSheetNoProduct = $("#divSelect").val();
-            var MaterialCode=$('#divSelect').find('option:selected').attr('MaterialCode')
+            var MaterialCode = $('#divSelect').find('option:selected').attr('MaterialCode')
             var strs = WorkSheetNoProduct.split("|");
             var ProductCode = strs[1];
             var OrderNo = strs[0];
@@ -1290,7 +1449,7 @@
             });
         }
 
-         //切换产品获取单次计数和UPH
+        //切换产品获取单次计数和UPH
         function GetInfo(ProductCode) {
             var Request = new Object();
             Request = GetRequest();

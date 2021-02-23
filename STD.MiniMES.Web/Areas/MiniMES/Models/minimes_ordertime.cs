@@ -21,5 +21,6 @@ namespace STD.MiniMES.Models
         public DateTime? EndTime { get; set; }
         public DateTime? CreateDate { get; set; }
         public string TenantID { get; set; }
+        public string Remark { get; set; }
     }
 }

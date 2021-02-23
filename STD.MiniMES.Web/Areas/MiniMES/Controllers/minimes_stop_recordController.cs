@@ -113,6 +113,10 @@ namespace STD.MiniMES.Areas.MiniMES.Controllers
                     {
                         item.Type = "机台维修";
                     }
+                    else if (item.Type == "4")
+                    {
+                        item.Type = "修模";
+                    }
                 }
                 return result;
             }

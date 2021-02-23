@@ -683,8 +683,9 @@ namespace STD.MiniMES.Areas.MiniMES.Controllers
         /// <param name="LineId"></param>
         /// <param name="TenantId"></param>
         /// <param name="OrderNo"></param>
+        /// <param name="Remark"></param>
         /// <returns></returns>
-        public ActionResult StartTime(string LineId, string TenantId, string OrderNo)
+        public ActionResult StartTime(string LineId, string TenantId, string OrderNo,string Remark)
         {
             string js = "";
             try
@@ -699,6 +700,7 @@ namespace STD.MiniMES.Areas.MiniMES.Controllers
                     .Column("EndTime", null)
                     .Column("CreateDate", DateTime.Now)
                     .Column("TenantID", TenantId)
+                    .Column("Remark", Remark)
                     .Execute();
                 }
             }
@@ -852,6 +854,7 @@ namespace STD.MiniMES.Areas.MiniMES.Controllers
             string ChangeOverData = null;
             string HandleExceptionData = null;
             string MachineMaintenanceData = null;
+            string RepairData = null;
             minimes_stop_recordService ordertimeService = new minimes_stop_recordService();
             List<minimes_stop_record> stoprecordList = ordertimeService.GetModelList(ParamQuery.Instance().AndWhere("LineId", LineId).AndWhere("OrderNo", OrderNo).AndWhere("TenantID", TenantID).AndWhere("Type", Type).OrderBy("CreateDate Desc"));
             if (stoprecordList.Count > 0 && stoprecordList[0].EndTime == null)
@@ -868,6 +871,10 @@ namespace STD.MiniMES.Areas.MiniMES.Controllers
                 {
                     MachineMaintenanceData = "机台维修结束";
                 }
+                else if (Type == "4")
+                {
+                    RepairData = "修模结束";
+                }
             }
             else
             {
@@ -883,12 +890,17 @@ namespace STD.MiniMES.Areas.MiniMES.Controllers
                 {
                     MachineMaintenanceData = "机台维修开始";
                 }
+                else if (Type == "4")
+                {
+                    RepairData = "修模开始";
+                }
             }
             var result = new
             {
                 ChangeOverData,
                 HandleExceptionData,
-                MachineMaintenanceData
+                MachineMaintenanceData,
+                RepairData
             };
             string js = JsonConvert.SerializeObject(result);
             return Json(js, "application/json", JsonRequestBehavior.AllowGet);
