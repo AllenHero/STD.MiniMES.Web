@@ -558,27 +558,27 @@
             //修模
             ShowStatus(4);
 
-            //每隔10s刷新一次数据
+            //每隔20s刷新一次数据 产能和生产时间
             var showQtyAndTimeTimes = setInterval(GetLineQtyAndTime, 20000);
             clearInterval(GetLineQtyAndTime);
             showQtyAndTimeTimes = setInterval(GetLineQtyAndTime, 20000);
 
-            //每隔1h刷新一次数据
+            //每隔1h刷新一次数据 产线信息
             var showLineTimes = setInterval(GetLineData, 3600000);
             clearInterval(GetLineData);
             showLineTimes = setInterval(GetLineData, 3600000);
 
-            //每隔10s刷新一次数据
+            //每隔30s刷新一次数据 固定数据
             var showOrderTimes = setInterval(GetMainData, 30000);
             clearInterval(GetMainData);
             showOrderTimes = setInterval(GetMainData, 30000);
 
-            //每隔20s刷新一次数据
+            //每隔30s刷新一次数据 产线相关
             var showTimes = setInterval(GetOrderData, 30000);
             clearInterval(GetOrderData);
             showTimes = setInterval(GetOrderData, 30000);
 
-            //每隔1小时刷新一次数据
+            //每隔1小时刷新一次数据 小时产量
             var showhourTimes = setInterval(GetChartData, 3600000);
             clearInterval(GetChartData);
             showhourTimes = setInterval(GetChartData, 3600000);
