@@ -1,0 +1,88 @@
+2021-06-07 16:51:40,145 [29500] DEBUG Serviceminimes_order_record - 获取实体列表
+2021-06-07 16:51:40,690 [33512] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2021-06-07 08:00:00' AND LastTime <= '2021-06-07 20:00:00'
+2021-06-07 16:51:40,697 [29500] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2021-06-07 16:51:41,735 [33512] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2021-06-07 20:00:00' AND LastTime <= '2021-06-08 08:00:00'
+2021-06-07 16:51:41,738 [29500] ERROR /MiniMES/LineBoard/GetLineOrderData - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineOrderData(String LineId, String TenantID) 位置 E:\上云上平台mes系统\锦凌SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 130
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2021-06-07 16:51:41,764 [25708] DEBUG Serviceminimes_order_record - 获取实体列表
+2021-06-07 16:51:41,764 [25708] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2021-06-07 16:51:42,806 [25708] ERROR /MiniMES/LineBoard/GetLineOrderData - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineOrderData(String LineId, String TenantID) 位置 E:\上云上平台mes系统\锦凌SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 130
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2021-06-07 16:51:42,881 [38492] DEBUG MiniMES -  SELECT SUM(Qty) as 'DayShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'DayShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2021-06-07 08:00:00' AND LastTime <= '2021-06-07 20:00:00'
+2021-06-07 16:51:42,887 [38492] DEBUG MiniMES -  SELECT SUM(Qty) as 'EveningShiftQty',round(sum(TIMESTAMPDIFF(SECOND,StartTime,LastTime))/60,2) as 'EveningShiftTime' FROM minimes_hoursreport WHERE LineId = '3e746356-3589-49d3-ae76-7dad5de40d29' AND TenantID = '082d68ce-4d00-4f95-acee-a5b934f3eb9a' AND StartTime >= '2021-06-07 20:00:00' AND LastTime <= '2021-06-08 08:00:00'
+2021-06-07 16:51:42,900 [29500] DEBUG Serviceminimes_order_record - 获取实体列表
+2021-06-07 16:51:42,901 [29500] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2021-06-07 16:51:43,855 [29500] ERROR /MiniMES/LineBoard/GetLineData - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineData(String LineId, String TenantID) 位置 E:\上云上平台mes系统\锦凌SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 63
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
+2021-06-07 16:51:43,862 [2208] DEBUG Serviceminimes_order_record - 获取实体列表
+2021-06-07 16:51:43,863 [2208] DEBUG MiniMES - select minimes_order_record.* from minimes_order_record where  LineId =  '3e746356-3589-49d3-ae76-7dad5de40d29'and State =  '1'and TenantID =  '082d68ce-4d00-4f95-acee-a5b934f3eb9a'
+2021-06-07 16:51:44,427 [2208] ERROR /MiniMES/LineBoard/GetLineData - System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 STD.MiniMES.Areas.MiniMES.Controllers.LineBoardController.GetLineData(String LineId, String TenantID) 位置 E:\上云上平台mes系统\锦凌SMES\锦凌SMES\STD.MiniMES.Web\Areas\MiniMES\Controllers\LineBoardController.cs:行号 63
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncResultWrapper.<>c__DisplayClass8`1.<BeginSynchronous>b__7(IAsyncResult _)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<BeginInvokeActionMethodWithFilters>b__36(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)
